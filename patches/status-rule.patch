@@ -1,0 +1,301 @@
+diff --git a/ui-tui/src/__tests__/appChromeBlockedTimers.test.tsx b/ui-tui/src/__tests__/appChromeBlockedTimers.test.tsx
+index eafc6d0cee14635ca12c4bb0f4f1c05de58c03bd..da35fe54a60ccd4f835e7b62ef4091c22f771403 100644
+--- a/ui-tui/src/__tests__/appChromeBlockedTimers.test.tsx
++++ b/ui-tui/src/__tests__/appChromeBlockedTimers.test.tsx
+@@ -34,14 +34,14 @@ const mounted: Array<() => void> = []
+  * Teardown is registered up front so a failing assertion still unmounts the
+  * tree — a leaked instance would keep re-arming timers into the next test.
+  */
+-const mountTree = (tree: React.ReactElement, { interactive = false } = {}) => {
++const mountTree = (tree: React.ReactElement, { columns = 120, interactive = false } = {}) => {
+   const stdout = new PassThrough()
+   const stdin = new PassThrough()
+   const stderr = new PassThrough()
+ 
+   let output = ''
+ 
+-  Object.assign(stdout, { columns: 120, isTTY: false, rows: 20 })
++  Object.assign(stdout, { columns, isTTY: false, rows: 20 })
+   // PromptZone's prompts call `useInput`, which needs raw mode; without it Ink
+   // swaps the whole tree for an error panel and stops updating.
+   Object.assign(
+@@ -410,6 +410,20 @@ describe('status-chrome timers track the current overlay model', () => {
+ // above ComposerPane) and FloatingOverlays (absolute, growing upward), then
+ // assert on what is actually on screen rather than on the store alone.
+ describe('AppLayout status-rule visibility', () => {
++  it.each([100, 42])('keeps exactly one blank row between the draft and bottom status at %i columns', async cols => {
++    patchUiState({ sid: 'sid-1', status: 'ready', statusBar: 'bottom' })
++
++    const view = mountTree(
++      <GatewayProvider value={gatewayStub}>
++        <AppLayout {...layoutProps} composer={{ ...layoutProps.composer, cols, input: 'DraftLine' }} />
++      </GatewayProvider>,
++      { columns: cols, interactive: true }
++    )
++
++    await flush()
++    expect(view.output()).toMatch(/DraftLine[^\n]*\n[^\S\n]*\n {2}─[^\n]*ready/u)
++  })
++
+   it('keeps the status rule on screen AND its clock advancing under a flow-layout approval prompt', async () => {
+     const layout = mountLayout({ approval: { command: 'rm -rf /', requestId: 'a-1' } as OverlayState['approval'] })
+ 
+diff --git a/ui-tui/src/__tests__/appChromeStatusRule.test.tsx b/ui-tui/src/__tests__/appChromeStatusRule.test.tsx
+index 31eaf8555f9cb69272084f620b22fa878cf85b7e..720e155f1a96248645b15a2ec4a9080bed07b75a 100644
+--- a/ui-tui/src/__tests__/appChromeStatusRule.test.tsx
++++ b/ui-tui/src/__tests__/appChromeStatusRule.test.tsx
+@@ -1,6 +1,10 @@
++import { Box, Text } from '@hermes/ink'
++import chalk from 'chalk'
+ import React from 'react'
+ import { describe, expect, it, vi } from 'vitest'
+ 
++import { renderToScreen } from '../../packages/hermes-ink/src/ink/render-to-screen.js'
++import { cellAtIndex } from '../../packages/hermes-ink/src/ink/screen.js'
+ import { StatusRule } from '../components/appChrome.js'
+ import { DEFAULT_THEME } from '../theme.js'
+ 
+@@ -104,6 +108,46 @@ const baseProps = {
+   voiceLabel: ''
+ }
+ 
++it('paints one status row with two blank edge cells and preserves state colours at narrow widths', () => {
++  const level = chalk.level
++  chalk.level = 3
++
++  try {
++    // Render reference swatches through the same Ink cell/style pool.
++    const swatch = renderToScreen(
++      <Box backgroundColor="#171A21">
++        <Text color="#E6EDF3">A</Text>
++        <Text color="#DDAA22">B</Text>
++      </Box>,
++      3
++    ).screen
++
++    const [labelStyle, stateStyle, fillStyle] = [0, 1, 2].map(i => cellAtIndex(swatch, i).styleId)
++
++    for (const cols of [100, 42, 18]) {
++      const { screen, height } = renderToScreen(<StatusRule {...baseProps} cols={cols} statusColor="#DDAA22" />, cols)
++      const cells = Array.from({ length: cols }, (_, i) => cellAtIndex(screen, i))
++      const row = cells.map(c => c.char).join('')
++      expect(height).toBe(1)
++      expect(row).toMatch(/^ {2}─.* {2}$/u)
++      expect(cells.every(c => c.styleId & 1)).toBe(true)
++      expect([cells[0].styleId, cells.at(-1)?.styleId]).toEqual([fillStyle, fillStyle])
++      expect(cells[row.indexOf('ready')]?.styleId).toBe(stateStyle)
++
++      if (cols >= 42) {
++        const context = cols === 100 ? '50k/200k' : '50k tok'
++        expect(row.endsWith('~/repo  ')).toBe(true)
++
++        for (const label of ['opus 4.8', context, '~/repo']) {
++          expect(cells[row.indexOf(label)]?.styleId, label).toBe(labelStyle)
++        }
++      }
++    }
++  } finally {
++    chalk.level = level
++  }
++})
++
+ describe('StatusRule model label', () => {
+   it('shows a clamped effort as what the route sends, never as a distinct level (#61634)', () => {
+     const clamped = textContent(
+@@ -185,6 +229,7 @@ describe('StatusRule background-subagent indicator', () => {
+   it('spells out the auto-resume hint when idle with subagents in flight', () => {
+     const element = StatusRule({
+       ...baseProps,
++      cols: 104, // 100 content cells, plus the status row's side padding.
+       usage: { ...baseProps.usage, active_subagents: 1 }
+     })
+ 
+diff --git a/ui-tui/src/components/appChrome.tsx b/ui-tui/src/components/appChrome.tsx
+index 967f26906560303965fbf81cc038bc4557bcef49..1a7b79201a044d731054382e625d032fcb1c5154 100644
+--- a/ui-tui/src/components/appChrome.tsx
++++ b/ui-tui/src/components/appChrome.tsx
+@@ -530,6 +530,10 @@ export function GoodVibesHeart({ tick, t }: { tick: number; t: Theme }) {
+   return <Text color={color}>♥</Text>
+ }
+ 
++const STATUS_PADDING_X = 2
++const STATUS_LABEL = '#E6EDF3'
++const NOTICE_RESERVE_MAX = 24
++
+ export function StatusRule({
+   battery,
+   focusView,
+@@ -562,7 +566,8 @@ export function StatusRule({
+   const pct = usage.context_percent ?? undefined
+   const contextMark = usage.context_estimated ? '~' : ''
+   const barColor = ctxBarColor(pct, t)
+-  const segs = statusBarSegments(cols)
++  const contentCols = Math.max(0, cols - 2 * STATUS_PADDING_X)
++  const segs = statusBarSegments(contentCols)
+ 
+   // display.status_bar.fields visibility gate (same key + names as the
+   // classic CLI bar). null = user hasn't customized → everything shows.
+@@ -599,7 +604,6 @@ export function StatusRule({
+   // a short notice never gets crushed, but a long one ellipsizes instead of
+   // shoving `model │ ctx` off-screen (R3-M7). Cap at the notice's own width
+   // so short notices reserve exactly what they need.
+-  const NOTICE_RESERVE_MAX = 24
+   const noticeReserve = showNotice ? Math.min(stringWidth(notice!.text), NOTICE_RESERVE_MAX) : 0
+ 
+   // Width of the must-keep left segments (indicator + model + context). They
+@@ -621,8 +625,8 @@ export function StatusRule({
+     stringWidth(modelText) +
+     (ctxLabel ? stringWidth(' │ ') + stringWidth(ctxLabel) : 0)
+ 
+-  const rightLabel = sessionTitle && ok('title') ? ` ${sessionTitle} ` : cwdLabel
+-  const { leftWidth, rightWidth, separatorWidth } = statusRuleWidths(cols, rightLabel, essentialWidth)
++  const rightLabel = sessionTitle && ok('title') ? sessionTitle : cwdLabel
++  const { leftWidth, rightWidth, separatorWidth } = statusRuleWidths(contentCols, rightLabel, essentialWidth)
+ 
+   // Whole-segment progressive disclosure for the tail: a segment renders only
+   // if it fits in the space left after the pinned essentials, evaluated in
+@@ -716,11 +720,11 @@ export function StatusRule({
+       <Text color={t.color.accent}> │ {sessionCountText}</Text>
+     </Box>
+   ) : (
+-    <Text color={t.color.muted}> │ {sessionCountText}</Text>
++    <Text color={STATUS_LABEL}> │ {sessionCountText}</Text>
+   )
+ 
+   return (
+-    <Box height={1}>
++    <Box backgroundColor="#171A21" height={1} overflow="hidden" paddingX={STATUS_PADDING_X} width={cols}>
+       <Box flexDirection="row" flexShrink={1} overflow="hidden" width={leftWidth}>
+         {/* Leading pinned chrome: border + busy face / idle status. When a
+             notice occupies the slot the status text is dropped — the notice
+@@ -731,7 +735,7 @@ export function StatusRule({
+           {showBattery ? (
+             <Text color={batteryColorVal}>
+               {batteryText}
+-              <Text color={t.color.muted}>{' │ '}</Text>
++              <Text color={STATUS_LABEL}>{' │ '}</Text>
+             </Text>
+           ) : null}
+           {busy ? (
+@@ -764,12 +768,12 @@ export function StatusRule({
+               {T.status.devCredits}
+             </Text>
+           ) : null}
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             {modelText}
+           </Text>
+           {ctxLabel ? (
+-            <Text color={t.color.muted} wrap="truncate-end">
++            <Text color={STATUS_LABEL} wrap="truncate-end">
+               {' │ '}
+               {ctxLabel}
+             </Text>
+@@ -777,31 +781,31 @@ export function StatusRule({
+         </Box>
+         {showFocus ? (
+           <Box flexDirection="row" flexShrink={0}>
+-            <Text color={t.color.muted}>{' │ '}</Text>
++            <Text color={STATUS_LABEL}>{' │ '}</Text>
+             <Text color={t.color.warn}>◉ focus</Text>
+           </Box>
+         ) : null}
+         {showBar ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             <Text color={barColor}>[{bar}]</Text>{' '}
+             <Text color={barColor}>{pct != null ? `${contextMark}${pct}%` : ''}</Text>
+           </Text>
+         ) : null}
+         {showDuration ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             <SessionDuration startedAt={sessionStartedAt!} />
+           </Text>
+         ) : null}
+         {showIdle ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             <IdleSince endedAt={lastTurnEndedAt!} />
+           </Text>
+         ) : null}
+         {showCompressions ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             <Text color={compressions >= 10 ? t.color.error : compressions >= 5 ? t.color.warn : t.color.muted}>
+               {T.status.compressions(compressions)}
+@@ -809,7 +813,7 @@ export function StatusRule({
+           </Text>
+         ) : null}
+         {showCacheHit ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             <Text
+               color={
+@@ -825,13 +829,13 @@ export function StatusRule({
+           </Text>
+         ) : null}
+         {showLatency ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             {latencyText}
+           </Text>
+         ) : null}
+         {showTps ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             {tpsText}
+           </Text>
+@@ -849,18 +853,18 @@ export function StatusRule({
+         ) : null}
+         {showSessionCount ? sessionCountNode : null}
+         {showBg ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}
+             {T.status.bgTasks(bgCount)}
+           </Text>
+         ) : null}
+         {showSubagents ? (
+-          <Text color={t.color.muted} wrap="truncate-end">
++          <Text color={STATUS_LABEL} wrap="truncate-end">
+             {' │ '}⛓ {subagentCount}
+           </Text>
+         ) : null}
+         {showResumeHint ? (
+-          <Text color={t.color.muted} dim wrap="truncate-end">
++          <Text color={STATUS_LABEL} dim wrap="truncate-end">
+             {' │ '}
+             {resumeHintText}
+           </Text>
+@@ -881,7 +885,7 @@ export function StatusRule({
+         <>
+           <Text color={t.color.border}>{separatorWidth >= 3 ? ' ─ ' : ' '}</Text>
+           <Box flexShrink={0} width={rightWidth}>
+-            <Text bold={!!sessionTitle} color={sessionTitle ? t.color.accent : t.color.label} wrap="truncate-end">
++            <Text bold={!!sessionTitle} color={sessionTitle ? t.color.accent : STATUS_LABEL} wrap="truncate-end">
+               {rightLabel}
+             </Text>
+           </Box>
+diff --git a/ui-tui/src/components/appLayout.tsx b/ui-tui/src/components/appLayout.tsx
+index dbcf11e9adb7af2a57bdc5a4c17849e5c44c4d8e..82ec29ea201e6ea6e5a131af7515d1e0b17c1b7e 100644
+--- a/ui-tui/src/components/appLayout.tsx
++++ b/ui-tui/src/components/appLayout.tsx
+@@ -603,7 +603,8 @@ const StatusRulePane = memo(function StatusRulePane({
+   }
+ 
+   return (
+-    <Box marginTop={at === 'top' ? 1 : 0}>
++    // Bleed through the composer's one-cell gutters; the rule owns its own padding.
++    <Box marginTop={at === 'bottom' ? 1 : 0} marginX={-1}>
+       <StatusRule
+         battery={ui.battery ? ui.batteryStatus : null}
+         bgCount={ui.bgTasks.size}

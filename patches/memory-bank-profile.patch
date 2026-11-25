@@ -1,0 +1,98 @@
+--- a/hermes/memory-bank/__init__.py
++++ b/hermes/memory-bank/__init__.py
+@@ -1,9 +1,6 @@
+ """Memory Bank for Hermes: pick each session's bank, then let the skill's own scripts do the work.
+
+-Bank per session (first match wins):
+-  folder   the nearest ``.memory-bank/`` at or above the session's cwd (shared with other agents)
+-  project  ``$HERMES_HOME/projects/<slug>/.memory-bank`` for a Hermes project folder without its own bank
+-  general  ``$HERMES_HOME/.memory-bank``: one bank per profile (bot) for every other session
++Workbench binds every session to this installation's profile bank.
+
+ ``render_soul_brick()`` is this plugin's soul-composer brick. Without the composer the plugin keeps the
+ same block in ``$HERMES_HOME/SOUL.md`` itself, in a background thread started by ``register()``;
+@@ -37,57 +34,23 @@
+ _SHARED = {
+     "folder": "this project folder's own bank, shared by every session and agent working in it",
+     "project": "this Hermes project's bank, shared by every session of the project",
+-    "general": "this bot's general bank, shared by all of its sessions outside projects",
++    "general": "the bank for all sessions of this Workbench installation",
+ }
+
+
+ def _hermes_home() -> Path:
+-    try:
+-        from hermes_constants import get_hermes_home
+-
+-        return Path(get_hermes_home()).expanduser().resolve()
+-    except ImportError:
+-        return Path(os.environ.get("HERMES_HOME") or Path.home() / ".hermes").expanduser().resolve()
+-
+-
+-def _project_slug(cwd: Path) -> str | None:
+-    """The slug of the Hermes project owning *cwd* (core's own resolver), else None."""
+-    try:
+-        from hermes_cli import projects_db
+-
+-        with projects_db.connect_closing() as conn:
+-            project = projects_db.project_for_path(conn, str(cwd))
+-    except Exception:  # an unreadable projects.db names no project, as in core
+-        logger.debug("memory-bank: project lookup failed", exc_info=True)
+-        return None
+-    return project.slug if project else None
+-
+-
+-def _trusted(*paths: Path) -> bool:
+-    """A folder bank feeds the system prompt and receives writes: accept it only when this user owns it
+-    and nobody else can write to it or its folder (e.g. a planted /tmp/.memory-bank is refused)."""
+-    try:
+-        stats = [path.stat() for path in paths]
+-    except OSError:
+-        return False
+-    uid = os.getuid() if hasattr(os, "getuid") else None
+-    return all((uid is None or st.st_uid == uid) and not st.st_mode & 0o022 for st in stats)
++    profile = SKILL_ROOT.parent / "profile"
++    if (str(profile) != os.environ.get("HERMES_HOME") or profile.resolve() != profile
++            or str(profile.parent / "home") != os.environ.get("HOME")):
++        raise ValueError("memory-bank: Workbench profile not bound")
++    return profile
+
+
+ def resolve_bank(cwd: str) -> tuple[Path, str]:
+-    home = _hermes_home()
+-    if cwd and Path(cwd).is_absolute() and Path(cwd).is_dir():
+-        start = Path(cwd).resolve()
+-        stop = {Path.home().resolve(), Path(start.anchor)}
+-        for folder in (start, *start.parents):
+-            if folder in stop:
+-                break
+-            if (folder / ".memory-bank").is_dir() and _trusted(folder, folder / ".memory-bank"):
+-                return folder / ".memory-bank", "folder"
+-        slug = _project_slug(start)
+-        if slug and _SLUG.fullmatch(slug):
+-            return home / "projects" / slug / ".memory-bank", "project"
+-    return home / ".memory-bank", "general"
++    bank = _hermes_home() / ".memory-bank"
++    if bank.is_symlink():
++        raise ValueError("memory-bank: unsafe profile bank")
++    return bank, "general"
+
+
+ def _script(
+@@ -138,7 +101,7 @@
+         raw = _script(
+             "hooks/mb-session-start-context.sh",
+             env={"MB_PATH": str(bank)},
+-            stdin=json.dumps({"workspace_roots": [cwd or str(bank.parent)]}),
++            stdin=json.dumps({"workspace_roots": [str(bank.parent)]}),
+         )
+         # The skill builds this for Cursor with literal "\\n" escapes.
+         context = json.loads(raw or "{}").get("additional_context", "").replace("\\n", "\n")
+@@ -263,6 +226,7 @@
+
+
+ def register(ctx):
++    _hermes_home()  # Reject missing or foreign bindings before registering hooks.
+     ctx.register_system_prompt_section("memory-bank", _section)
+     ctx.register_session_env(
+         ["MB_PATH", "MB_SKILLS_ROOT"], lambda session_id: _session_env(session_id, ctx)

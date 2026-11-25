@@ -1,0 +1,44 @@
+{
+  "upstream": "https://github.com/NousResearch/hermes-agent.git",
+  "tag": "v0.23.3",
+  "commit": "caafe5389ae585ef77387a962aee05b1bcf17029",
+  "python": "3.14",
+  "node": "26.12.1",
+  "pnpm": "12.15.0",
+  "uv": "0.13.5",
+  "components": {
+    "memory-bank": {
+      "upstream": "https://github.com/fockus/skill-memory-bank.git",
+      "commit": "c0e56506df71bd1d066ff77870382797a4bf611b",
+      "license": "LICENSES/Memory-Bank.txt",
+      "paths": ["LICENSE", "SKILL.md", "VERSION", "hermes", "memory_bank_skill", "scripts", "hooks", "commands", "docs", "references", "agents", "rules", "templates", "flow-templates", "workflows", "settings", "codebase", "adapters", "install.sh", "uninstall.sh", "packaging", "tools", "pyproject.toml", "README.md", "CHANGELOG.md"],
+      "installed_digest": "c9663a80eb4e5d80bf41cba89b298f201a3d125001ae12a8a3d912ebb3068386",
+      "digest": "c83a2c1866ad89c86a6c9452970ee0865acbacb192f7af36778415fbb4375989"
+    },
+    "llm-wiki": {
+      "upstream": "https://github.com/fockus/skill-llm-wiki.git",
+      "commit": "99fea439401fcd079150db571a4650250a47943a",
+      "license": "LICENSES/LLM-Wiki.txt",
+      "paths": ["LICENSE", "README.md", "requirements.lock", "scripts"],
+      "digest": "07fd5851ce436cf84b8daa5e7d983723b91f17c5021f5541c4f1ee5230937ed2"
+    }
+  },
+  "wiki_adapter_source": {"repository": "fockus/skill-llm-wiki", "commit": "c5bdf680393a429d857397d03918406c2d0260cf", "path": "hermes/llm-wiki", "python_blob": "10e2b760bfa506e85dc8f810b7a3414148876f85", "manifest_blob": "7f83d08d82a29b6c0f301508513d0db2f2592369", "license": "LICENSES/LLM-Wiki.txt"},
+  "assets": {
+    "plugins/llm-wiki/__init__.py": "ae7361de1e3cbef04aa21a6e9116e7130e7e335fa1f72bca61cabc2bc3a6be0b",
+    "plugins/llm-wiki/plugin.yaml": "942d2b9f631496eb57269ebbd33f6bb55b3fa1703fa9263414126321589f6146",
+    "patches/memory-bank-profile.patch": "fba169ef83d1c9e2d46206a0c355f4f634be615a7563aa384f4e2e90d2a4f002",
+    "LICENSES/Superpowers.txt": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "LICENSES/Memory-Bank.txt": "6efa85e896bc02d37c4152933fa8b6870b3525c6c1d3661d1b5d1a2675e93e9d",
+    "LICENSES/LLM-Wiki.txt": "6efa85e896bc02d37c4152933fa8b6870b3525c6c1d3661d1b5d1a2675e93e9d",
+    "patches/status-rule.patch": "872d884100d7666cba064257afeac02b0c122ab82978261988e980036a7e1a63",
+    "skins/claude-graphite.yaml": "fb8f3a89c2444b81fd313d82b3eacadeeea90383184d17fc5ebabfe79c51e4e3",
+    "LICENSES/Hermes-Agent.txt": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6"
+  },
+  "patched": {
+    "ui-tui/src/components/appChrome.tsx": "83df7a53361b0d3a8c1f44f39da869fcc3d352ca58aba5d19cac5f4bd5742f86",
+    "ui-tui/src/components/appLayout.tsx": "54ae5d93c97205af50cd7827868917798fe73777febb52765f46d0c1379a2f2c",
+    "ui-tui/src/__tests__/appChromeStatusRule.test.tsx": "06ecc4f827b06867620660d4e18fd4bdf4b0e05c9c1294f325aa61ae4a8ea50f",
+    "ui-tui/src/__tests__/appChromeBlockedTimers.test.tsx": "dfaa0e8e34a490b9e161983fa68546064c9b6d564b9e0e598decef75e9545272"
+  }
+}

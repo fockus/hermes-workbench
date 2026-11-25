@@ -1,0 +1,20 @@
+#!/bin/sh
+# The only network-enabled model operation is the explicit prepare-model command.
+set -eu
+root=$(CDPATH='' cd -P -- "$(dirname -- "$0")" && pwd)
+script=wiki.py
+offline=1
+if [ "${1:-}" = prepare-model ]; then
+  shift
+  [ "$#" = 1 ] || { printf '%s\n' 'usage: llm-wiki prepare-model --download | --offline' >&2; exit 2; }
+  script=prepare_model.py
+  case "${1:-}" in
+    --download) offline=0; shift ;;
+    --offline) set -- --offline ;;
+    *) printf '%s\n' 'usage: llm-wiki prepare-model --download | --offline' >&2; exit 2 ;;
+  esac
+fi
+exec /usr/bin/env -i HOME="$root/home" PATH="$root/wiki-venv/bin:/usr/bin:/bin" \
+  TMPDIR="$root/tmp" XDG_CACHE_HOME="$root/home/.cache" HF_HUB_OFFLINE="$offline" \
+  HF_HUB_DISABLE_TELEMETRY=1 HF_HUB_DISABLE_IMPLICIT_TOKEN=1 \
+  "$root/wiki-venv/bin/python" -E -s -B "$root/llm-wiki-src/scripts/$script" "$@"
