@@ -1,0 +1,6 @@
+name: workbench-executors
+version: 0.1.0
+description: User-invoked text-only tasks for explicitly bound local coding CLIs.
+author: Hermes Workbench
+kind: standalone
+platforms: [macos]

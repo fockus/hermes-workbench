@@ -16,6 +16,7 @@ PATCH = ROOT / 'patches/status-rule.patch'
 SKIN = 'skins/claude-graphite.yaml'
 BUNDLE = 'tui/dist/entry.js'
 RECEIPT = '.workbench-installed.json'
+EXEC_LOCK = ROOT / 'executors.lock.json'
 
 
 def require(value, message):
@@ -64,15 +65,19 @@ def ui_artifacts():
             **{'source/' + p: h for p, h in LOCK['patched'].items()}}
 
 
-def verify_existing(dest, mode):
+def verify_existing(dest, mode, executors=False):
     receipt = dest / RECEIPT
     require(receipt.is_file() and not receipt.is_symlink(), 'not a verified Workbench installation')
     data = json.loads(receipt.read_text())
     require(data.get('lock') == sha(ROOT / 'workbench.lock.json') and data.get('prefix') == str(dest),
             'different Workbench lock or relocated installation; choose a new prefix')
     require(data.get('mode') == mode, 'different installation mode; choose a new prefix')
+    require(data.get('executors') == (sha(EXEC_LOCK) if executors else None),
+            'different executor option or lock; choose a new prefix')
     require(export_digest(dest / 'llm-wiki-src') == LOCK['components']['llm-wiki']['digest'], 'drift: llm-wiki')
     expected = {'llm-wiki': sha(ROOT / 'llm-wiki')}
+    if executors:
+        expected.update({'profile/' + p: h for p, h in json.loads(EXEC_LOCK.read_text()).items()})
     expected.update({p: sha(ROOT / p) for p in legal_files(mode)})
     entries = ['llm-wiki', 'wiki-venv/bin/python']
     if mode != 'wiki':
@@ -167,12 +172,13 @@ def legal_files(mode):
     return ['LICENSE', 'NOTICE.md', *[f'LICENSES/{name}.txt' for name in third_party]]
 
 
-def receipt_for(dest, mode):
+def receipt_for(dest, mode, executors=False):
     for path in legal_files(mode):
         (dest / path).parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / path, dest / path)
     with (dest / RECEIPT).open('x') as receipt:
         json.dump(dict(mode=mode, lock=sha(ROOT / 'workbench.lock.json'),
+                       **({'executors': sha(EXEC_LOCK)} if executors else {}),
                        bundle=sha(dest / BUNDLE) if mode == 'tui' else None, prefix=str(dest)), receipt)
 
 
@@ -239,7 +245,7 @@ def mb_links(dest):
             skills / 'mb/SKILL.md': mb / 'commands/mb.md', profile / 'plugins/memory-bank': mb / 'hermes/memory-bank'}
 
 
-def install(dest, tree, mb, wiki, wiki_python, bins, env, ui):
+def install(dest, tree, mb, wiki, wiki_python, bins, env, ui, executors=False):
     dest.mkdir(mode=0o700)
     repo = dest / 'source'
     shutil.move(tree, repo)
@@ -262,7 +268,9 @@ def install(dest, tree, mb, wiki, wiki_python, bins, env, ui):
         run([dest / 'llm-wiki', *args, '--root', wiki_root], env, dest / 'home')
     run(['bash', dest / 'memory-bank/scripts/mb-init-bank.sh', '--project-root=' + str(dest / 'profile')],
         env, dest / 'home')
-    for p in LOCK['assets']:
+    if executors:
+        (dest / 'executors/bin').mkdir(parents=True)
+    for p in [*LOCK['assets'], *(json.loads(EXEC_LOCK.read_text()) if executors else ())]:
         if p.startswith('plugins/'):
             install_path = dest / 'profile' / p
             install_path.parent.mkdir(parents=True, exist_ok=True)
@@ -277,8 +285,11 @@ def install(dest, tree, mb, wiki, wiki_python, bins, env, ui):
         run([launcher, 'config', 'set', 'skills.external_dirs', json.dumps([*dirs, external])], env, dest / 'home')
     for plugin in ('memory-bank', 'llm-wiki'):
         run([launcher, 'plugins', 'enable', plugin], env, dest / 'home')
+    if executors:
+        run([launcher, 'plugins', 'enable', 'workbench-executors'], env, dest / 'home')
+        run([launcher, 'executor', '--help'], env, dest / 'home')
     run([sys.executable, '-I', ROOT / 'tests/smoke_mb.py', dest], env, dest / 'home')
-    receipt_for(dest, 'tui' if ui else 'base')
+    receipt_for(dest, 'tui' if ui else 'base', executors)
     print('Installed:', launcher)
 
 
@@ -312,6 +323,7 @@ def main():
     parser.add_argument('--prefix', required=True, help='new directory under an existing parent')
     parser.add_argument('--source', type=Path, help='read-only local Git checkout; uses only committed objects')
     parser.add_argument('--check', action='store_true', help='verify source, assets and tools in temp; do not install')
+    parser.add_argument('--with-executors', action='store_true', help='add local user-invoked coding CLI adapters (macOS)')
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--with-tui', action='store_true', help='also build the optional patched TUI and Graphite')
     modes.add_argument('--wiki', action='store_true', help='install only the standalone Wiki CLI into its own prefix')
@@ -320,10 +332,12 @@ def main():
     source = args.source.expanduser().resolve(strict=True) if args.source else None
     dest = target(args.prefix, source)
     require(not (source and args.wiki), '--source applies only to Hermes')
-    for path, digest in LOCK['assets'].items():
+    require(not args.with_executors or (not args.wiki and sys.platform == 'darwin'),
+            '--with-executors requires a macOS Hermes installation')
+    for path, digest in (LOCK['assets'] | (json.loads(EXEC_LOCK.read_text()) if args.with_executors else {})).items():
         require(sha(ROOT / path) == digest, f'distribution asset checksum differs: {path}')
     if dest.exists():
-        verify_existing(dest, 'wiki' if args.wiki else 'tui' if args.with_tui else 'base')
+        verify_existing(dest, 'wiki' if args.wiki else 'tui' if args.with_tui else 'base', args.with_executors)
         return
     with tempfile.TemporaryDirectory(prefix='workbench-') as temp:
         tmp = Path(temp).resolve()
@@ -341,7 +355,7 @@ def main():
             mb = component('memory-bank', tmp, env)
             wiki, py = prepare_wiki(tmp, env)
             if not args.check:
-                install(dest, repo, mb, wiki, py, bins, env, args.with_tui)
+                install(dest, repo, mb, wiki, py, bins, env, args.with_tui, args.with_executors)
                 return
         print('Preflight passed; prefix not created.')
 
