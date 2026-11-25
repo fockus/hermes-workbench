@@ -1,0 +1,2505 @@
+{
+  "baseline": {
+    "excluded_runtime_files": [
+      "__pycache__",
+      ".DS_Store"
+    ],
+    "note": "Source profile and private history are not release inputs. Distribution exclusions refer to original wording, not missing skill names.",
+    "union": 90,
+    "visible": 89
+  },
+  "counts": {
+    "base-component": 2,
+    "host-bundled": 19,
+    "owner-reading": 1,
+    "owner-release": 11,
+    "plugin-owned": 8,
+    "publisher-edition": 2,
+    "publisher-reading": 1,
+    "review-pack": 9,
+    "vendored": 37
+  },
+  "distribution_exclusions": {
+    "mlops-model-lifecycle": [
+      "references/lm-evaluation-harness/benchmark-guide.md"
+    ],
+    "writing-clearly": [
+      "SKILL.md",
+      "references/infostyle-ru.md",
+      "references/yasno-ponyatno.md",
+      "references/plain-english.md"
+    ],
+    "writing-skills": [
+      "references/anthropic-best-practices.md"
+    ]
+  },
+  "schema": 1,
+  "skills": {
+    "apple-notes": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/apple/apple-notes",
+        "source": "NousResearch/hermes-agent",
+        "tree": "a44bf261f6c4d5a0ec60426e1b81c1719cc076cb"
+      },
+      "observed_version": "1.0.1",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "apple-platform-automation": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "aa84e45fd4c6f7b4c4a9a0c9b525d2e826c1ba87d9ad57a85a729430d95433bb"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "1741ee44d72af914b0f31cf5248f3053a7605823"
+      },
+      "local_review_member": "apple/apple-platform-automation",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "apple-reminders": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/apple/apple-reminders",
+        "source": "NousResearch/hermes-agent",
+        "tree": "715c5c777667ed1e91581ea81dc4e481712393c9"
+      },
+      "observed_version": "1.0.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "audio-video-media-generation": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "0778298936599194c88d8d763357cead463db648f364e481b5ac45f030109720"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "ce99e3b5bf2513848597c4aa1e102b70991aeef0"
+      },
+      "local_review_member": "media/audio-video-media-generation",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "autonomous-agent-orchestration": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "c809900d8c1f80a3442b0decf9832b345e6ceea305fe627aade5823f561611c0",
+          "references/scoped-worker-preflight.md": "e9b3ddfab6cb502800c4c9e87eecca7f1cf0407cf74ffccc3f2995ddc688d56a"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "5a94183e04ab42b13d137e1d8d67b35abb4e3d31"
+      },
+      "local_review_member": "autonomous-ai-agents/autonomous-agent-orchestration",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 2,
+      "private_member_names_digest": "db57c7b64810c1d22114ec9d87c0426ba4216fa454f2491abd5ea82491ca15b2",
+      "private_review_files": 2,
+      "visible": true
+    },
+    "blocked-page-recovery": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/web/blocked-page-recovery",
+        "source": "NousResearch/hermes-agent",
+        "tree": "d31fe3255997c2401dd45cfe35307174042a5510"
+      },
+      "observed_version": "1.0.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "brainstorming": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [
+        "scripts/start-server.sh",
+        "scripts/stop-server.sh"
+      ],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "2c9ca71f94886f9ca9f4aef055f7cafb3e1a9bdf3aeebf8f4cb547c69405d207",
+        "builder-check-prompt.md": "36d51a4723d6f0a3ce5811a0ea3b3a8424f07533947e1355f5d8cb8cce40c55e",
+        "scripts/frame-template.html": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e",
+        "scripts/helper.js": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+        "scripts/server.cjs": "763abf96510e0b892a1141397b31aa82ef900cf87ed34dde94bc8782baf4a7ca",
+        "scripts/start-server.sh": "314dd68dc00e8dd94c7491aca8a5f004c7fddffc161e2b07482f29f48d13659a",
+        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+        "visual-companion.md": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/brainstorming",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "ebd5b1afb600976b12a4c07fedd9c408c1e82f97",
+      "visible": true
+    },
+    "caveman": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "Only SKILL.md is selected by the reference profile; the public package also includes upstream README.md and all required notices.",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "LICENSE-MIT": "5eb826cd03151bcc7cce3f80d40e87733237fedfc6c36d6908aca5fd650a0bdb",
+        "NOTICE": "20112dc6e62e91da4f03c29fd10cfa41743a9c526389fdf1396c3649c18216fc",
+        "README.md": "e8b22f37ccb204bd00cdf98c723c0df37aeda1f5863e9ad1d634f5c839d99e5d",
+        "SKILL.md": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "source": "JuliusBrussee/caveman"
+        },
+        "LICENSE-MIT": {
+          "path": "LICENSE-MIT",
+          "sha256": "5eb826cd03151bcc7cce3f80d40e87733237fedfc6c36d6908aca5fd650a0bdb",
+          "source": "JuliusBrussee/caveman"
+        },
+        "NOTICE": {
+          "path": "NOTICE",
+          "sha256": "20112dc6e62e91da4f03c29fd10cfa41743a9c526389fdf1396c3649c18216fc",
+          "source": "JuliusBrussee/caveman"
+        }
+      },
+      "path": "skills/caveman",
+      "public_additional_files": 1,
+      "source": "JuliusBrussee/caveman",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "b314dd99b2b8723aae2de5a22079914567f2e58f",
+      "visible": true
+    },
+    "claude-code": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/autonomous-ai-agents/claude-code",
+        "source": "NousResearch/hermes-agent",
+        "tree": "f6dae140d69e863f10fff02e13b0b5151bf4ce2e"
+      },
+      "observed_version": "2.2.1",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "code-review": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "9c921a8d88138a41401d8897ca1bb852088ab1b7b605cdd04edc13e3e8aab6dd",
+        "agents/openai.yaml": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/code-review",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "a8ef561571acbb611de8ff19ba6da75b197c63a8",
+      "visible": true
+    },
+    "codex": {
+      "default_different_or_extra_files": 1,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/autonomous-ai-agents/codex",
+        "source": "NousResearch/hermes-agent",
+        "tree": "7e85952ac26f1a2b5b3142aaa781ebdc8281e5d0"
+      },
+      "local_review_member": "autonomous-ai-agents/codex",
+      "observed_version": "1.0.1",
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "public_additional_files": 0,
+      "visible": true,
+      "workbench_companion": "recovery/companions/codex.md"
+    },
+    "competitor-news-monitor": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/research/competitor-news-monitor",
+        "source": "NousResearch/hermes-agent",
+        "tree": "8f266b5fd368cc00c920a774c30822e265e2b9cb"
+      },
+      "observed_version": "0.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "computer-use": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/autonomous-ai-agents/computer-use",
+        "source": "NousResearch/hermes-agent",
+        "tree": "11b3a9b45bf15c13a1c0699be215b309f0335ca1"
+      },
+      "observed_version": "2.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "creative-visual-artifacts": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "e7ad3f6a4433fef1a1cfab39c68356d997eaa79b87d464cf8a9b3440eb5e507b"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "0b68a5db43722d08da85a21cdd83969aba2b33ca"
+      },
+      "local_review_member": "creative/creative-visual-artifacts",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "dag-ulw": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "b77f402d67bfaebb0725967bd9c083611858c7d891c82e8cd66e4ffe3978ef1e",
+        "references/run-loop.md": "2a570e71f8797228f618cedc1c6259c6d8792574bb600552d7a5ed8880969910"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/dag-ulw",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "75d7b1821d3e1bae637e5ce4c6cf45c0ae7f2e5e",
+      "visible": true
+    },
+    "data-toolkit:analysis": {
+      "delivery": "plugin-owned",
+      "plugin": "data-toolkit",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "owner-release-review",
+      "provider_commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "provider_files": {
+        "SKILL.md": "f6c12f8a8faf451c442ccf4585b5bdf6ef47fb45fecd5241a5907bd9091cae65"
+      },
+      "provider_path": "SKILL.md",
+      "provider_version": "1.0.0",
+      "skill_sha256": "f6c12f8a8faf451c442ccf4585b5bdf6ef47fb45fecd5241a5907bd9091cae65",
+      "visible": true
+    },
+    "diagnosing-bugs": {
+      "default_different_or_extra_files": 1,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d",
+        "agents/openai.yaml": "3e430dbe4334a87597488c060cb3dc3786bb00c9182877d6f5ec41f62490e90b",
+        "scripts/hitl-loop.template.sh": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503"
+      },
+      "local_review_member": "diagnosing-bugs",
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/diagnosing-bugs",
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "5fdd6cc53385395441910b026c72d71768e993d4",
+      "visible": true,
+      "workbench_companion": "recovery/companions/diagnosing-bugs.md"
+    },
+    "diagnosing-superpowers": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886",
+        "prompts/analyst-common.md": "88801c36070be2a54a8a9a29632b01ab21db053e2e76ee49b5252a9b74ca4090",
+        "prompts/cost-and-time.md": "fe97a66d4db3b436816ef82694bda413b522b3a862dd41978da01e358fffecc4",
+        "prompts/plan-adherence.md": "1dcbab82033598a2e9c9ee42e950d4b1822d2c871c02cef9e102cdd5cbbda113",
+        "prompts/quality-evidence.md": "749d11cf678f379ed77a29274cad456634e0284aa523639a1a214a9f2b986eb1",
+        "prompts/repeated-work.md": "895027f2dfa4b1b8bcdb7ac9aec8d45a80bff212fad6ec6cad5ab38fa68322f5",
+        "prompts/request-conflicts.md": "e800e38d8b7752c212c76c5c3ed75cd78b749684263ea0c313586f26af6f4b5c",
+        "prompts/scrub-audit.md": "5cc48f05a7f81f5f7e05e0c7ceafc0fb8774bcaf75fe88dcb5c7e408026c70ad",
+        "prompts/scrub.md": "854cb3320cc5377b493cea2f72519d67983464882db68a0f408a7d0a0f040b8c",
+        "prompts/similar-session.md": "b190f713b463df2bb5ec3914647e204074d1bd50643a53159db6d13cace916c1",
+        "prompts/skill-timeline.md": "45d604d583b57a77b9033eced8eb875ef342af70fcd66cf7d15c6dc89964890f",
+        "prompts/stumbles.md": "1f2d1f048aff7b8b400006301f1ce8c232ecc7e9d5f705af27a849b2c03ea2e7",
+        "references/context-safety.md": "e6be2bd3495f454d4bedee9484d728d245d1fa656e11fc4ceec5693c16e4730a",
+        "references/github-issues.md": "d26ef9197b4a6ae5159ae6d11abd162bcc624d95fc7ccf508e07b68f916a1b19",
+        "references/redaction-policy.md": "96b16f47074838fe2d7e609577d6f8b0ad460f8378b281a3f96ee23cb5a08bde",
+        "references/session-discovery.md": "6d1dced083e5d978448a78df298cf515531b0eb39b2854a4a2afbffeb69a7435",
+        "templates/bundle-README.md": "2e6ddc6b106028d5ebd00a50ad93a77111d675c219ee1273cd0857869e8d51ec",
+        "templates/case.md": "597892462be83bc478536ec91f7c285f6dd25d119c560734a3a180fe8471301d",
+        "templates/issue.md": "afd21779e5de5bc5adfe2f5a50a04e44ab8d50d9ad0f829243de248d6f023eed",
+        "templates/report.md": "38295d0fd785e8608f330815c59ebd7047942002ec7085aecbed54681f56b0c1"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/diagnosing-superpowers",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "effb02c345170011be4470c73b99530de43182a7",
+      "visible": true
+    },
+    "dispatching-parallel-agents": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/dispatching-parallel-agents",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "15697cb0726c26a66bff737494e8b5266667ba0c",
+      "visible": true
+    },
+    "document-to-action-items": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/document-to-action-items",
+        "source": "NousResearch/hermes-agent",
+        "tree": "0ecdcfc759e709d4c6a703772449e5bc9adedcf5"
+      },
+      "observed_version": "0.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "email-inbox-triage": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/email/email-inbox-triage",
+        "source": "NousResearch/hermes-agent",
+        "tree": "b5a24d9d684c4b7468dcc855802e624abd1f1ac5"
+      },
+      "observed_version": "0.2.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "executing-plans": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [
+        "scripts/task-done",
+        "scripts/task-start"
+      ],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5",
+        "scripts/task-done": "ac0b5ebafc7d471507b7e94d88da77a11f187ba277c8d48fefaf8ff3e4fee50e",
+        "scripts/task-start": "4ae7ce3b6777c3240af786197836a6b4bbf3b0ee831c25f147c149ea8db54a21"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/executing-plans",
+      "public_additional_files": 0,
+      "requires_skill": "subagent-driven-development",
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "3a8438d91d9340747ffd985fdbcfe7238d6e1e57",
+      "visible": true
+    },
+    "finishing-a-development-branch": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/finishing-a-development-branch",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "3b1205aa5038c71946077dd63b9e71b447729e70",
+      "visible": true
+    },
+    "github": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/software-development/github",
+        "source": "NousResearch/hermes-agent",
+        "tree": "0f036f03b07b34b6dc45b741a5eecfabcf960470"
+      },
+      "observed_version": "2.0.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "github-operations": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "ba6709f60a2519473b7abc6f6e759aa6564346c777310a611bf4015c9f315e86"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "95a5e647a60fc7c3f3c56a5320ec655e7903228b"
+      },
+      "local_review_member": "github/github-operations",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "grill-me": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+        "LICENSE-Matt-Pocock": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "6e3b3b81c1ad3a0b3ba3d36ec725e376d225e7867bfbf23a5129cf245e94bb0c"
+      },
+      "host_variant": {
+        "path": "optional-skills/software-development/grill-me",
+        "source": "NousResearch/hermes-agent",
+        "tree": "a5bb9b939d4f2cbf83d54f3e06b6eca230e6509d"
+      },
+      "license_note": "Hermes optional skill credits Matt Pocock; both upstream MIT notices accompany the installation.",
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+          "source": "NousResearch/hermes-agent"
+        },
+        "LICENSE-Matt-Pocock": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "observed_version": "2.0.0",
+      "path": "optional-skills/software-development/grill-me",
+      "public_additional_files": 0,
+      "source": "NousResearch/hermes-agent",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "a5bb9b939d4f2cbf83d54f3e06b6eca230e6509d",
+      "visible": true
+    },
+    "grill-with-docs": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+        "agents/openai.yaml": "94cd0ab161fb468a836349f5ed482ba58ce8e709a05c57ce533d739dbd35cca9"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/grill-with-docs",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "eedaf2562c83155115e9c649fa3ecaac2e10e81d",
+      "visible": true
+    },
+    "grilling": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2",
+        "agents/openai.yaml": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/productivity/grilling",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "f551b6e0d219fdda0b6abf277f8f915b3127d1e9",
+      "visible": true
+    },
+    "grounded-citations": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/research/grounded-citations",
+        "source": "NousResearch/hermes-agent",
+        "tree": "13bf36817196b06f7422ee5a786415e851a83336"
+      },
+      "observed_version": "1.2.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "handoff": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "4cbb043950dad2ffd3662ff1a5a0b51ae676004b5cae10e3787e8ee7a4ee69d3",
+        "agents/openai.yaml": "5c479fd562c691851690e8b18c8501045bef0943c10743d636b2fae26add1d28"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/productivity/handoff",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "ce24892bd2d4b9e7fd5ac9b95c03175e18bef388",
+      "visible": true
+    },
+    "hermes-agent": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/autonomous-ai-agents/hermes-agent",
+        "source": "NousResearch/hermes-agent",
+        "tree": "c10e0649f9a6ee3f4061da525690de606ccdbc5a"
+      },
+      "observed_version": "3.3.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "implement": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "483bdc4ccf4ac31d86ac7beeaa0d0db80313e71e120bb8c59b3196ae5decd53d",
+        "agents/openai.yaml": "8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/implement",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "4804b466ab26c9b9d8d42917547db133d1f20a9f",
+      "visible": true
+    },
+    "improve-codebase-architecture": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "HTML-REPORT.md": "581e8bb5a521e46bbda8ca7e19b15948bed882187108092ebb90c62513b77528",
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "35b03a3db61e0f5aa333ea59b54963e45a3d2ace6649b2ef4f9576603e2582a6",
+        "agents/openai.yaml": "c8cb20f68ebf0edb4e497bc11ae5fcaa196004e661cd189015b04f4109ced7f1"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/improve-codebase-architecture",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "587147dd230da299cc5e84971cb0a33f6676f8a6",
+      "visible": true
+    },
+    "interactive-visual-systems": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "3d0681dc3c142d9e757e26e89dfa2ec4e0af941fedb48d946426863b5f525d28"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "59fce44e7a0462a0ba40ba0d4c885d39d7fe264a"
+      },
+      "local_review_member": "creative/interactive-visual-systems",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "llm-wiki": {
+      "default_source_changed_files": 2,
+      "default_source_revision": "c5bdf680393a429d857397d03918406c2d0260cf",
+      "delivery": "vendored",
+      "executable": [
+        "scripts/eval_search.py",
+        "scripts/run.py"
+      ],
+      "files": {
+        "LICENSE": "6efa85e896bc02d37c4152933fa8b6870b3525c6c1d3661d1b5d1a2675e93e9d",
+        "SKILL.md": "9353bc1c880c39227a3b0cb4704b77a6e9625365affcdf5dbee37a5200ea0daf",
+        "agents/openai.yaml": "7268d6f28d933cc7857806348d710c22cc06db407b44581803a210b611138acd",
+        "references/architecture.md": "a9c8a86e00cc5b906e5e6d11a90b80c10800ad17b616c13f5dc702831df99e69",
+        "references/runtime.md": "bd62770dc06078a86fb8db58ae20298cef756eee135080f89b592b57eb88dcc8",
+        "references/search.md": "f1525d54ad0d9c15c7be5a8be735c29fac095484dbc87c82cf576cceada9f9fc",
+        "references/verification.md": "6bf30e12ed3b5103f598cc500a98e0dc8f32b1c6b2fbb9d559a70c8ecbf54c62",
+        "references/workflows.md": "c79de18b5c6c053fc8788897ec1c29494845564f9e09c6afe6c4b0e0c13171b9",
+        "scripts/bootstrap.py": "cd26713b32fadd7ffea9c56c4f80f8f8e7a1834eab51ce14bd72cc18c89d5633",
+        "scripts/eval_search.py": "e41746b934f77eeef0cf46ef3951156370661016eb783a519880cd13eb0d927a",
+        "scripts/install.py": "652baaf7d16671cfb3b69e7e483859bdae79f330002a494c7db3793be0953338",
+        "scripts/llm_wiki/__init__.py": "62fda0b0a10c6b8f59bb0ce37bafefdb8ecaccb561b37ac2617c0555161e9b08",
+        "scripts/llm_wiki/cli.py": "a5bad52cc008eb7bcdbab01e04a410c6c17d4a0c86304a9d8b1fa6e91a703168",
+        "scripts/llm_wiki/config.py": "184357d5c4b43f299aca0dd25a6cea8bbb0147b1438bfdbbfa196ec735d524f3",
+        "scripts/llm_wiki/contracts.py": "5284c435bb2f345fcb28518876ab50465ba2eabac1874d941dbd1410951b1700",
+        "scripts/llm_wiki/convert.py": "6d416fa04c3d2ffde1f799d21ae255ae745b2c3323bbe6c86c40badbce5c8c59",
+        "scripts/llm_wiki/documents.py": "9dfd4225413d0df805b9ba2e70995d76d561159f15e8a9e6d1bf9f60814b2248",
+        "scripts/llm_wiki/embeddings.py": "ff78d1f7b581b7a549b36ad748d99c85625edc3f979074d324a2152b9689da28",
+        "scripts/llm_wiki/graph.py": "3ebf826bde092496168d649bdc7790ae6450422f23859f5dcb1d218c4cec2c5b",
+        "scripts/llm_wiki/health.py": "0eca4a3f15ed66b87f5db9086bb61179661f9ed33a593b29207aaa81aa15f8e2",
+        "scripts/llm_wiki/index.py": "8a8e5e17b8cedab46571bf69e891d34230078324624df50fed92ec84cdfaaed3",
+        "scripts/llm_wiki/project.py": "2c2a6f549040340fcb76bf9948fee254456734e36cd1dbf7d20b8089d47316b1",
+        "scripts/llm_wiki/search.py": "82c8b2207906a44268f7f4e728925b2c2e64acc6a636dac94c35e378b36464f8",
+        "scripts/llm_wiki/store.py": "dbe3b260886344eec3b5569a7a864cd4df4e0b8201a71f6ad0dd622ae5178295",
+        "scripts/prepare_model.py": "e5746205f5654632a61d799cf94be4624926c971930720a84f29acd7c1cc976e",
+        "scripts/run.py": "16d8850d095c41d8eab3319877df95e215223a6728c7cba5952aa77a28391bbd",
+        "scripts/wiki.py": "f3bc1f4c81d4a275d3bbb9b98b13f7ffa278f7a5f8f586ddb76814ae5e2d4a62"
+      },
+      "host_variant": {
+        "path": "optional-skills/research/llm-wiki",
+        "source": "NousResearch/hermes-agent",
+        "tree": "0051b4298f0b840fbeec290c1706a58676940fa7"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "6efa85e896bc02d37c4152933fa8b6870b3525c6c1d3661d1b5d1a2675e93e9d",
+          "source": "fockus/skill-llm-wiki"
+        }
+      },
+      "path": ".",
+      "source": "fockus/skill-llm-wiki",
+      "source_members": [
+        "LICENSE",
+        "SKILL.md",
+        "agents",
+        "references",
+        "scripts"
+      ],
+      "source_notices_in_tree": [
+        "LICENSE"
+      ],
+      "static_guard": "safe",
+      "tree": "28dd86f712e6e264a059e534aa2a73b0b190cb08",
+      "unpublished_default_revision_available_anonymously": false,
+      "variant_note": "The base projection stays pinned. The two default runtime differences ship separately in plugin-pack/base-overlays/llm-wiki/runtime-changes.",
+      "visible": true
+    },
+    "mb": {
+      "base_component": "memory-bank",
+      "default_document_matches": true,
+      "default_source_revision": "e62fdcf438c7ebc1f2e6de5b63791da6f26ec238",
+      "delivery": "base-component",
+      "document_sha256": "9c5e7ad4109cc29c04ccff46ef5ed564a158d0042ac3bb69ec8d7c7a4f6a3537",
+      "observed_version": null,
+      "path": "commands/mb.md",
+      "source": "fockus/skill-memory-bank",
+      "unpublished_default_revision_available_anonymously": false,
+      "variant_note": "Command document matches the public base pin; runtime is the Workbench Memory Bank component.",
+      "visible": true
+    },
+    "meeting-action-items": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/meeting-action-items",
+        "source": "NousResearch/hermes-agent",
+        "tree": "6fe27b1d479f8acd10e2becce2f69d3f7542dd80"
+      },
+      "observed_version": "0.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "memory-bank": {
+      "base_component": "memory-bank",
+      "default_document_matches": false,
+      "default_source_revision": "e62fdcf438c7ebc1f2e6de5b63791da6f26ec238",
+      "delivery": "base-component",
+      "document_sha256": "24f803e098cda0cc18f45996a50fdc64fee511248dd8493b930f5d2761b387ea",
+      "observed_version": null,
+      "path": "SKILL.md",
+      "source": "fockus/skill-memory-bank",
+      "unpublished_default_revision_available_anonymously": false,
+      "upstream_changed_member_files": 21,
+      "variant_note": "Base stays unchanged. The missing default skill members (including the portable rules-template change) ship in plugin-pack/base-overlays/memory-bank/runtime-changes.",
+      "visible": true
+    },
+    "messaging-and-social-operations": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "276096ba625eac757a9b1163e17f3948231fecbf282325308e2f9754d535f712"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "284e8af76ac4dd2ee3a4e9a3b05baa28d99faefe"
+      },
+      "local_review_member": "messaging/messaging-and-social-operations",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "microsoft-office": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/microsoft-office",
+        "source": "NousResearch/hermes-agent",
+        "tree": "95821ee4e8276f19a9b009c0172c4a12f965751f"
+      },
+      "observed_version": "2.0.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "mlops-model-lifecycle": {
+      "delivery": "owner-reading",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "LICENSE-Orchestra": "80b5899a9ab121a2d4aae63724f0c11defba7f23da487086932bb9abfb0f2a00",
+          "SKILL.md": "520a226da7df2de726e22eb2d792d08ffd174c47d2d8055f79abc9698f162598",
+          "references/audiocraft-audio-generation.md": "993337134087c5ccde93a997ea6efa3e05b47fe4a71fbefc6365c1824f773038",
+          "references/audiocraft/advanced-usage.md": "5efe98c6ebcd0107e48c809cadc0e48591f9c235ac47014f39a40772fc45116d",
+          "references/audiocraft/troubleshooting.md": "af0c56aca0902aca6f05350caab3750de608cf904a4e6bb9dd0967c664d8de0e",
+          "references/evaluating-llms-harness.md": "9a7734d2f09bad228e44b9958b23fbdab277b7dc344bdb9a0b3310484b30d74c",
+          "references/lm-evaluation-harness/api-evaluation.md": "433372d84b8bbd6c28e5b971c1aae7c5d2d032aae9ff23dd7d7a47a51277dc78",
+          "references/lm-evaluation-harness/benchmark-guide.md": "c62e922cb06cf987e6979a827a40bf64a02ca84f10858c99a84816c80f8939fe",
+          "references/lm-evaluation-harness/custom-tasks.md": "c6b5591c77c16570b43fa5f497405a65f35ef73d1702a3871cc0c8a257c76aeb",
+          "references/lm-evaluation-harness/distributed-eval.md": "3ddc4551f25ce0d3cb09f971f27191331fb65b5b4c882efd4a9bde7bdfb82353",
+          "references/segment-anything-model.md": "03a68d86b75c849a87282f770a2d0897ab27cc2da1404dac83817397d88f67a2",
+          "references/segment-anything/advanced-usage.md": "73a46290ac6986333e5ef65b785afc7c9463d6835d8a67c5f74f418fa284fb39",
+          "references/segment-anything/troubleshooting.md": "cbab544d97ddc3813b4f74c805086579e7bd51547ccf9830dd44fa5936b07b4e",
+          "references/serving-llms-vllm.md": "6ec1c9eb3ca57f23ab1433ebc475b9c3924685fb8e0329a16f12fe3ce3b212bb",
+          "references/vllm/optimization.md": "0f860d337adb1d0723d4070d8b3144517f111ad7f653606927bc67a7a019b1ac",
+          "references/vllm/quantization.md": "5fb30ea9e8fbec4a7f3047f37d10c0900d10cd2df66555818ffd425a3b29b270",
+          "references/vllm/server-deployment.md": "b82090cfab4bffdef1e3fe6744194f3d3d0c7c11e3b9452b188e509050fec710",
+          "references/vllm/troubleshooting.md": "307acd908e60674017bd2363726e6b9be19410062e3db0645290a69802976283"
+        },
+        "origin": "MIT Workbench; references mapped to Orchestra retain their original MIT",
+        "tree": "4a2ac2591facc2ad756b09f0b0702ea0796eca29"
+      },
+      "local_review_member": "mlops/mlops-model-lifecycle",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 17,
+      "private_member_names_digest": "058baccf9d1c697878e2a0ba59de75474ef7e5d84889121d1505bf6d3b187f93",
+      "private_review_files": 17,
+      "visible": true
+    },
+    "omh-accessibility-audit": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "7972dd9a73a84b56e347cf5d485da9c3491dad995fcb9485e91c9cc54c467c8a",
+        "references/a11y-rules.md": "615cc9eaa24ee36089d395b215cc25b2d9b0d2549f228a5f81df0553f45d2f75"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/omh-accessibility-audit",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "3070ae12146561ea514156578a9d69ea9079ba2b",
+      "visible": true
+    },
+    "pdf": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/pdf",
+        "source": "NousResearch/hermes-agent",
+        "tree": "cb8cd8fccf17a5d42c75ed6672b9e584c145eb56"
+      },
+      "observed_version": "1.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "ponytail": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "full tree",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+        "SKILL.md": "1b9eaae4b639a2a6c311ad88a83e2bb0b38a612c17c84e8ac0b7603ec325604e"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+          "source": "DietrichGebert/ponytail"
+        }
+      },
+      "path": "skills/ponytail",
+      "public_additional_files": 0,
+      "source": "DietrichGebert/ponytail",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "ad3f664c89e0463555486d42df0aee17a4bbe30d",
+      "visible": true
+    },
+    "ponytail-audit": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "full tree",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+        "SKILL.md": "c0f03b6e1d95809f74e989f4bc51a6959ce98696aef0e334f0c5c332f9504bd5"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+          "source": "DietrichGebert/ponytail"
+        }
+      },
+      "path": "skills/ponytail-audit",
+      "public_additional_files": 0,
+      "source": "DietrichGebert/ponytail",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "fb032279bb5a4342f81484aa889b3bbc6a61210a",
+      "visible": true
+    },
+    "ponytail-debt": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "full tree",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+        "SKILL.md": "83dc090d3c4ad4cf1fcde236e607c4c4c4c42700fb68e7856041bdac69a7df17"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+          "source": "DietrichGebert/ponytail"
+        }
+      },
+      "path": "skills/ponytail-debt",
+      "public_additional_files": 0,
+      "source": "DietrichGebert/ponytail",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "2ccfe92ab8e71ebbf6052d9a0b7b01614e5f9290",
+      "visible": true
+    },
+    "ponytail-help": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "full tree",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+        "SKILL.md": "61ec008731e4788e34000c95e76bc324254849df54dd8fff63ece57dd7c4442b"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+          "source": "DietrichGebert/ponytail"
+        }
+      },
+      "path": "skills/ponytail-help",
+      "public_additional_files": 0,
+      "source": "DietrichGebert/ponytail",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "d3a385f52a8ff841280985c9a821cda889a33697",
+      "visible": true
+    },
+    "ponytail-review": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "full tree",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+        "SKILL.md": "f77338e574a8ca0a7f7a8964322c39a88bc16536e13c707b7fd57ec50848f36a"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab",
+          "source": "DietrichGebert/ponytail"
+        }
+      },
+      "path": "skills/ponytail-review",
+      "public_additional_files": 0,
+      "source": "DietrichGebert/ponytail",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "afe1352ad3e268aeb292d64c7fe0e53ad86f34ee",
+      "visible": true
+    },
+    "product-price-monitor": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/product-price-monitor",
+        "source": "NousResearch/hermes-agent",
+        "tree": "378efe6cb03c2dc364703ef2b4d7268efee42e75"
+      },
+      "observed_version": "0.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "productivity-workspace-automation": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "d8f7e19a7a27ee9ddfd0bd30990fab02c3950ae67031b8a571c7f53daa7ebbde"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "e8de7633b244f877d6809ce517bca55b35b28c07"
+      },
+      "local_review_member": "productivity/productivity-workspace-automation",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "quota:quota-check": {
+      "delivery": "plugin-owned",
+      "plugin": "quota",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "89a2ca39a28dddcdcf01cf587519ea3861274b7a",
+      "provider_files": {
+        "skills/quota-check/SKILL.md": "ddc624d46ebc986de4184fff54089c4a2abad992453c4760213ed7c88ab28f2d"
+      },
+      "provider_notice_sha256": "c612fc0d101daab30434abbe1c23681e8bb21ff8c16cbc903137f94980ab0333",
+      "provider_path": "skills/quota-check/SKILL.md",
+      "provider_tree": "243f846e1a94ff98eb84ed60e90406860c64f5e1",
+      "provider_version": "3.0.0",
+      "skill_sha256": "ddc624d46ebc986de4184fff54089c4a2abad992453c4760213ed7c88ab28f2d",
+      "visible": true
+    },
+    "receiving-code-review": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/receiving-code-review",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "b5e154fc3ec7a6a0b1e710eebacc2168620cc428",
+      "visible": true
+    },
+    "requesting-code-review": {
+      "conflict": "bundled-name",
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
+        "code-reviewer.md": "82e370be6b3447523816286195571e4216ba56ba1ad6ad0e87862294c4c78dcb"
+      },
+      "host_variant": {
+        "path": "skills/software-development/requesting-code-review",
+        "source": "NousResearch/hermes-agent",
+        "tree": "730409acf6d9911f4621f682849a78702fa49afc"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/requesting-code-review",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "f4a6749898702895ea4fd57c7f186cf43205b99a",
+      "visible": true
+    },
+    "research-knowledge-workflows": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "5cf9d3d71bea50af3c73beb6821653da27895b6cec8c425d4bc139a8c630e7da"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "16d922b757b310464a09a4950b5f12b7c8cca6a6"
+      },
+      "local_review_member": "research/research-knowledge-workflows",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "retro": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
+        "agents/openai.yaml": "cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/retro",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "335c1862a43da9d629abafdb79ca0c0de118be08",
+      "visible": true
+    },
+    "sdlc-review": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/devops/sdlc-review",
+        "source": "NousResearch/hermes-agent",
+        "tree": "d4773e96c78b80085d0a35bf0444582c4e900a9a"
+      },
+      "observed_version": "1.1.0",
+      "public_additional_files": 0,
+      "visible": false
+    },
+    "setup-matt-pocock-skills": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "b01e05bfe8c323171275c6ceec78b12f1bd4c62dfd26c2cfe8be806d3883f1ed",
+        "agents/openai.yaml": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939",
+        "domain.md": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9",
+        "issue-tracker-github.md": "6fdb3e9b00b7b0b115ecac3b1c00e3790f637f190abf598815368722c0a94692",
+        "issue-tracker-gitlab.md": "947602d33a80f98f939fb990995b8f95a3459b114b919c4221d08bd75d7cffe0",
+        "issue-tracker-local.md": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e",
+        "triage-labels.md": "ae512af838c78b8750471c42cd2b20fa32319553e61d84c9a23d171b40ce14aa"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/setup-matt-pocock-skills",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "b644b684781fd5baae57f6be000a180a4d4448d7",
+      "visible": true
+    },
+    "simplify-code": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/software-development/simplify-code",
+        "source": "NousResearch/hermes-agent",
+        "tree": "a4504539c88874a047c802ad41d5ec7a2fe4006f"
+      },
+      "observed_version": "1.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "smart-home-local-operations": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "bfea05c2949f92b20e937f7044acd93aaf31ec886ebb9becbf623a36e76a2d3a"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "b1bc8ba4ea2afa08ad33b155d5cfb72af2e687b5"
+      },
+      "local_review_member": "smart-home/smart-home-local-operations",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 1,
+      "private_member_names_digest": "0e95f5a3666031d6fac42bc6ca698b40b61648f4974c8ec355181ed4888c5c26",
+      "private_review_files": 1,
+      "visible": true
+    },
+    "software-delivery-workflows": {
+      "delivery": "owner-release",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "9b84b5a326332bed4745390aeb4795f71857cd6b61865011cca86343caf883b1",
+          "references/agent-host-integration.md": "14f813b9454da50cf70c7fa8f291e0dfe91aecc24c8375472d1ac18a82ad3c21"
+        },
+        "origin": "MIT Workbench original text",
+        "tree": "e8fec03c431534b688cf92e4d4330f9649f99874"
+      },
+      "local_review_member": "software-development/software-delivery-workflows",
+      "observed_version": "1.0.0",
+      "origin": "local curated skill",
+      "private_file_count": 2,
+      "private_member_names_digest": "bd84b0cd6ebedf8aec7b1e8c794afef90959887dee15920253e0a048b3c3504b",
+      "private_review_files": 2,
+      "visible": true
+    },
+    "subagent-driven-development": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [
+        "scripts/review-package",
+        "scripts/sdd-repo",
+        "scripts/sdd-workspace",
+        "scripts/task-brief"
+      ],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+        "implementer-prompt.md": "81dd9d5a3fb0b09b96b5829f03b9796842f3199ef7591d1ba1c2db2a515f64d0",
+        "re-review-prompt.md": "ad54d0a10f1c2c8e656456e0a46e654af5dfe5ee6bcef63428cfd69b8dcd9311",
+        "references/batching.md": "b54dc7e23dbfb90db89bcb2fb3af591aabf6a271a165fbc0da4c6f9439980eac",
+        "references/cannot-verify.md": "e698713a15e0eabf1a2ab26ffe1bb04bf70c9d6d2e2060d44a0f9a1bdd4408bf",
+        "references/final-review.md": "6c9e12093e46c4ad0a203bc07709c17e3470f855f1b78e55c5e7b722a012a32c",
+        "references/fix-loop.md": "1938ce707915efc44021e563ebc29666329e20ad861b6c50b89f305b8f4e8d8b",
+        "references/handling-reports.md": "8f759cdd4936220c38aab05b6d6c48c6df8ac8f146b0f37a6d2facbf87133c67",
+        "references/preflight.md": "3ea21c5fc1af1a190ac8a9d19ceb0849b47bf2ffe27b87dffcc21b6a0539776c",
+        "references/resuming.md": "ff6e38bde2276faa2a7e93513086caded0ea10edbf2ec7f349a7e3b0d7c668c4",
+        "scripts/review-package": "aed7c6e09fc660417d28898ed975e84651cb9f18f4675141cd475edfb7037f3d",
+        "scripts/sdd-repo": "6f8256a776968d394bae679572e41ce572fd45c72074b98f9a8eb8b4f160e06f",
+        "scripts/sdd-workspace": "de3af5252fa595fc2000ba05cf69e06187d5c8aae9d283cced4c167ad1813061",
+        "scripts/task-brief": "0f244a12e146393c552ba62069d3eedcc85cb3f76de67b01f4e11219e5ebbcd8",
+        "task-reviewer-prompt.md": "61a04c2fb29907887d8babee1594f5e35ae26d461e7e584f5b7c283215165e08"
+      },
+      "host_variant": {
+        "path": "optional-skills/software-development/subagent-driven-development",
+        "source": "NousResearch/hermes-agent",
+        "tree": "afd3884ba2fa6252a224c602fceb0e1de44d8025"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/subagent-driven-development",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "c04a61186680d4cfc6784136d0421cd4abcfb40c",
+      "visible": true
+    },
+    "systematic-debugging": {
+      "conflict": "bundled-name",
+      "default_different_or_extra_files": 0,
+      "delivery": "publisher-reading",
+      "edition": {
+        "executable": [],
+        "files": {
+          "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "SKILL.md": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+          "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+          "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+          "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+          "find-polluter.sh": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+          "root-cause-tracing.md": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8"
+        },
+        "origin": "Pinned Superpowers tree; original modes recorded separately",
+        "tree": "398d57e273df8226ac7ede6e31f5fdafc84bd538"
+      },
+      "executable": [
+        "find-polluter.sh"
+      ],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+        "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+        "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+        "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+        "find-polluter.sh": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+        "root-cause-tracing.md": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8"
+      },
+      "host_variant": {
+        "path": "skills/software-development/systematic-debugging",
+        "source": "NousResearch/hermes-agent",
+        "tree": "2c2b42523ac9c62d61c40b199e16a166a920b6ec"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/systematic-debugging",
+      "public_additional_files": 0,
+      "reason": "Bundled name and denied by native community policy. Physical non-executable reading copy only.",
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "caution",
+      "tree": "774f23e27e35cb0a89ede39156e7b079fbb84190",
+      "visible": true
+    },
+    "tavily-plugin:tavily-best-practices": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-best-practices/SKILL.md": "922b63b2d7dd5508bcffb7cda1cf177a1f0027262b7e3a06bad244f213128e9d",
+        "skills/tavily-best-practices/references/crawl.md": "6aad58cf25c1eb5c4a9475a7d1f66580803bb60bf248aace737592f661bab96c",
+        "skills/tavily-best-practices/references/extract.md": "d1d7fbc590a70a7d6f51dda6508f7f5b4bce67c56b46e099ff477c19159973ee",
+        "skills/tavily-best-practices/references/mcp.md": "13c492af6d72760dcecacc6e056e03a4ba0de08b5cdb4f0addcea0a90cde841c",
+        "skills/tavily-best-practices/references/research.md": "fe1d706bf0162217232d2506d4aa70e5ad93e8b594664a417f2335355a0ec3af",
+        "skills/tavily-best-practices/references/search.md": "9deb02b89d6b6fa4990acf6c9253ad53f69d5d97ca171fad90e7f24d72fbc5a0",
+        "skills/tavily-best-practices/references/workflows.md": "f5f286cf2f9340ebc6f40e8085347d402c90eaef012b18f49ca50675dfdac7bc"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-best-practices/SKILL.md",
+      "provider_tree": "fde6232c64f254f87c4282ecf8858add2205a887",
+      "provider_version": "1.0.0",
+      "skill_sha256": "922b63b2d7dd5508bcffb7cda1cf177a1f0027262b7e3a06bad244f213128e9d",
+      "visible": true
+    },
+    "tavily-plugin:tavily-crawl": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-crawl/SKILL.md": "9d469736a114fb9f2b549194f87d05467d5e157b22b5d0399271f61e297d62c1"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-crawl/SKILL.md",
+      "provider_tree": "9efe8335f817c9d0af7aee425fb36f22ad587586",
+      "provider_version": "1.0.0",
+      "skill_sha256": "9d469736a114fb9f2b549194f87d05467d5e157b22b5d0399271f61e297d62c1",
+      "visible": true
+    },
+    "tavily-plugin:tavily-extract": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-extract/SKILL.md": "4641b881cf7fb946a1878d3d43d0cbf0d318df3f7b3a55312732f6f1a8982f64"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-extract/SKILL.md",
+      "provider_tree": "4c2868e60ac728a1f5073b791d77b4a8d13044ff",
+      "provider_version": "1.0.0",
+      "skill_sha256": "4641b881cf7fb946a1878d3d43d0cbf0d318df3f7b3a55312732f6f1a8982f64",
+      "visible": true
+    },
+    "tavily-plugin:tavily-map": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-map/SKILL.md": "32fe021d0b2fc7db49f457448d3fd46c1fd58da4165bc98f40ea50b1cb9d6894"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-map/SKILL.md",
+      "provider_tree": "db28e3083408562f22f84140bf9d9aeccd11a1e1",
+      "provider_version": "1.0.0",
+      "skill_sha256": "32fe021d0b2fc7db49f457448d3fd46c1fd58da4165bc98f40ea50b1cb9d6894",
+      "visible": true
+    },
+    "tavily-plugin:tavily-research": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-research/SKILL.md": "f57a0357908d20e82e97f0077f2dd78ebd61f09776093d542bf5845d32dc3809"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-research/SKILL.md",
+      "provider_tree": "b0e65c4846d1bfb217d73190e72e350637e11dee",
+      "provider_version": "1.0.0",
+      "skill_sha256": "f57a0357908d20e82e97f0077f2dd78ebd61f09776093d542bf5845d32dc3809",
+      "visible": true
+    },
+    "tavily-plugin:tavily-search": {
+      "delivery": "plugin-owned",
+      "plugin": "tavily-plugin",
+      "provider_catalog": "plugin-pack/catalog.json",
+      "provider_channel": "upstream",
+      "provider_commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "provider_files": {
+        "skills/tavily-search/SKILL.md": "e126cf432bd897f7d0582ea4c2b0940dd231adcef1565263f4707be9561de1ea"
+      },
+      "provider_notice_sha256": "bcca89293d4d06be63dd8f41b6ff0dff9a6bf3ab2a98c6b601a4690842cf98f3",
+      "provider_path": "skills/tavily-search/SKILL.md",
+      "provider_tree": "f5c4314a7c2848622085b48526880c2a78b35fd0",
+      "provider_version": "1.0.0",
+      "skill_sha256": "e126cf432bd897f7d0582ea4c2b0940dd231adcef1565263f4707be9561de1ea",
+      "visible": true
+    },
+    "tdd": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+        "agents/openai.yaml": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b",
+        "mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+        "tests.md": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/tdd",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "667dbdd00c09d0e2189e082986e6a4d61a67c2a6",
+      "visible": true
+    },
+    "test-driven-development": {
+      "conflict": "bundled-name",
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+        "writing-good-tests.md": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1"
+      },
+      "host_variant": {
+        "path": "skills/software-development/test-driven-development",
+        "source": "NousResearch/hermes-agent",
+        "tree": "b96071449e8154309741821665fe49a25410cf0d"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/test-driven-development",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "847144cf0824095922c0d4875648b9fa74877e1a",
+      "visible": true
+    },
+    "to-spec": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+        "agents/openai.yaml": "1c5b4d1e3d8e52287ef19cc2742fdbbfae1914ac75d33af3e4c8174f08cc55bb"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/to-spec",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "136b9651747cfccbfbb7c50a6b0dfb757e7547d2",
+      "visible": true
+    },
+    "to-tickets": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995",
+        "agents/openai.yaml": "21bc6215fffcd7614e9f772bb1760e87cc5fc7dcc707e7d282bc9414267a6090"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/to-tickets",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "2dee20ad722a31c04ededf9f2d83842473573045",
+      "visible": true
+    },
+    "ultracave": {
+      "default_different_or_extra_files": 0,
+      "default_materialization": "Only SKILL.md is selected by the reference profile; the public package also includes upstream README.md and all required notices.",
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "LICENSE-MIT": "5eb826cd03151bcc7cce3f80d40e87733237fedfc6c36d6908aca5fd650a0bdb",
+        "NOTICE": "20112dc6e62e91da4f03c29fd10cfa41743a9c526389fdf1396c3649c18216fc",
+        "README.md": "3f4138ddc07c08bb41946f96a41e4cee8800d979ed458d0eec35959686ea781a",
+        "SKILL.md": "a8da5b0b3501b853e1b98f2ae09fe8dc9c0edf481b1d3fa9529f8557011c1ef8"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "source": "JuliusBrussee/caveman"
+        },
+        "LICENSE-MIT": {
+          "path": "LICENSE-MIT",
+          "sha256": "5eb826cd03151bcc7cce3f80d40e87733237fedfc6c36d6908aca5fd650a0bdb",
+          "source": "JuliusBrussee/caveman"
+        },
+        "NOTICE": {
+          "path": "NOTICE",
+          "sha256": "20112dc6e62e91da4f03c29fd10cfa41743a9c526389fdf1396c3649c18216fc",
+          "source": "JuliusBrussee/caveman"
+        }
+      },
+      "path": "skills/ultracave",
+      "public_additional_files": 1,
+      "source": "JuliusBrussee/caveman",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "4046bb0979819379d3f8d052c229bb6ecc2951e6",
+      "visible": true
+    },
+    "ulw-context": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "eded22d91cd0bb290ff004032ff503368ac0dc8921b3aca98b9bd22e061657f6",
+        "references/decision-frontier.md": "122978a41c0a003f8b7a879b00c9ecc2417e75d5fbb787f24ecb3477403a67df",
+        "references/project-terms.md": "46c73bcbfa8873cf69fb340162623cc9df16fb0236cc784ab51398735abf4085"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-context",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "e6cfaf85ea64e4ad28f4945e405c2b849dcbb32f",
+      "visible": true
+    },
+    "ulw-interview": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "ba2bab9854b4fc31f4d21e7433c8f8e8395124412b9911811a7fc35589c8cf7c",
+        "references/ambiguity-taxonomy.md": "d144585524d28f5a84bd686905bedba70c32d3fea1bb920e1c0700f323131c60"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-interview",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "2d265e469163d1a5c52ead0a02f3872f90893347",
+      "visible": true
+    },
+    "ulw-loop": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "750111d1069cf2b1fa2bb49c1849cb3d0b1b7f7bf78f6aab90111639206eeeb3",
+        "references/board-iteration.md": "124fe4bc68f076086fbcc02664939c4894b05390358acd1fe3c342b85a7c4cd3",
+        "references/goal-constraint-discipline.md": "e9755a82604a6b9d363716b6bf33bc980406ea40bce813d763eda9703e1a093f",
+        "references/loop-design-review.md": "d131bcab7823743cf7f91947048bb772e4a861b3478994c4c85d97c092e4d499",
+        "references/measured-loop-discipline.md": "857c7918fd278e8fca1d420c57e9ab4b6e337e44f039dcc6eb5e14ae5204b4fb"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-loop",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "b9822f7b1726438a46022fceb24d7d7c82431054",
+      "visible": true
+    },
+    "ulw-maestro": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "df0caae988fb7c819a1e2765d98b00b72177cb4044fa0acbab0b3c0365198ce0",
+        "references/executor-prompt-composition.md": "745c7d4ed38f7d500ad33943984430c4f4681cc7ff25940b67dfbc840c88a621"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-maestro",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "c3b9356a8a1b8644209565513e22f6b3015c326b",
+      "visible": true
+    },
+    "ulw-perf": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "203748dc3c01d8978eb63c40ed1352105aaa993417fa675cbad742356359ae79"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-perf",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "50077b38def1a9f29ed32ec8be4cb96112f5c9d4",
+      "visible": true
+    },
+    "ulw-plan": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "baa851bbaf8fc7c4fb96b62953150e33ed3da2beb21e407f144e320fd8e005c2"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-plan",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "ca572d2cced6556ceb5ed22a35a17b0e853b3358",
+      "visible": true
+    },
+    "ulw-qa": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "e3aa6b4db06a6d52bbc41bc345e1d84b41a8131608b195e8959eb395ba118e7c",
+        "references/board-fanin.md": "c8685cf459a4766774bc49f8b767d80f73d3a1ef190d90d3258219cef9a9e346",
+        "references/manual-test-guide.md": "caaccfbfaaa1586b1ae74e72457b16dac297a58e648d53dc05e8ecf75e9ac6ce"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-qa",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "3e1770ef962f637bc87c34a92a14de2431d1ec20",
+      "visible": true
+    },
+    "ulw-research": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "27539e24b0375168e9451080e79702b33b0f47727a9798b61aa73cc17b9834b1",
+        "references/briefing-format.md": "b71c4612127bd2467b044ccf9a3a93d301373b33608f776f6acd2845f4322a9c",
+        "references/evidence-records.md": "ff970436cab7ccd274061c168f984e1b710281b82b6c3eb2698c00bfe7900543",
+        "references/search-examples.md": "2dd2c4cb91f0388a3fcf5ba6fb13094bbc6234edab6dce28ac036334d3718821",
+        "references/search-fields.md": "a237da3fc2ab1db91f86056bd53e95e860e130255d4461888607d7f4295e526f",
+        "references/search-method.md": "c6a6b01d1b6d607359755c870f31b3a725a804f802c6a4d7fe2ffcd64425f873"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-research",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "9d692e04f16b11f0d47af939d5c7b48302af4481",
+      "visible": true
+    },
+    "ulw-work": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+        "SKILL.md": "c850018221ab2d5c578e196250cb0079b935618255c4c31b1ffbea293662ac3f",
+        "references/campaign-orchestrator.md": "8bf1198ec38e84cd6a95bb083f10f7f1e90ceda7908461256e87323fb2055475",
+        "references/dependency-topology.md": "8aca3c090bc5539722151b339f8bd0a03cc37c96aa6a5b2b59d0b4650cb58e80",
+        "references/execution-rulings.md": "4c429d0429853c0e1798e4f12c763cc48ea2183d049fe10a0dfea1e8213bc348",
+        "references/file-ownership-manifest.md": "326db419e5d94009b099cda0b50ac448f4cfceac126ee35b4a3b17fe13f5310a",
+        "references/kanban-lane.md": "1e8c982b58f12ace88aa2244b449ba89e3b57cff999e79802472c5accfa2ef49",
+        "references/native-delegation.md": "04129e21e059d4e1871cb01c27874358fca5083b46fc791b0e331b58515ba13b",
+        "references/tdd-red-green.md": "35f9f97c97bcb8d4aa052db67281d780871a2d1b236d97aa3e405b8d67fd7cc0",
+        "references/team-lane.md": "9c6258885f7726b65eef73735051e449ba13c899df846da16df1a33bd8777bf9"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "51a61c8602b3b1ae26985cc16b90adfe3f98c9791b7d22e296f385aa6c85971a",
+          "source": "rlaope/oh-my-hermes"
+        }
+      },
+      "path": "skills/ulw-work",
+      "public_additional_files": 0,
+      "runtime_provider": "omh",
+      "source": "rlaope/oh-my-hermes",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "f0d40599f6067775f594183255e1acef582d7c6c",
+      "visible": true
+    },
+    "using-git-worktrees": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/using-git-worktrees",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "d2b8357b922667a091bfe967840abf5ae84ce99c",
+      "visible": true
+    },
+    "using-superpowers": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "82c5c8866ad7f5dd4440ce66bd7806ba48a2f13771beae5cf112e53f08fe36ba",
+        "references/antigravity-tools.md": "4880f6de3da4e32f9659ebe7a72b9e0ebfff04e028c2ed96173f86d0387a04c0",
+        "references/claude-code-tools.md": "21479a3fee27448cab8748a3b5687e53bb257883bda9c070426f9a1ab5cebf1b",
+        "references/codex-tools.md": "1a38ad9b188c393052f58d95657a1c35ea6aafc8b5a27f198f3922912f70bbe7",
+        "references/gemini-tools.md": "62b9157bcb0ee3c6784e3d0da0798ddfa5872f9e0c34bea48f3079dabea71965",
+        "references/hermes-tools.md": "e2185c976a3c87503910e05e2aea58cc89bc8e569bb624b93df9958ac47a9190",
+        "references/muse-tools.md": "5a1da5c575fe18456ca71cd47ebfd8a38c745f8d82a67fe64d5b83080000eeb3",
+        "references/pi-tools.md": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/using-superpowers",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "4c777432715fe58984d212a36aedc6a18472e512",
+      "visible": true
+    },
+    "verification-before-completion": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/verification-before-completion",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "a4cb0b69aaefeab540947a7f1642bdaad810e37a",
+      "visible": true
+    },
+    "weekly-review-planning": {
+      "default_different_or_extra_files": 0,
+      "delivery": "host-bundled",
+      "host_variant": {
+        "path": "skills/productivity/weekly-review-planning",
+        "source": "NousResearch/hermes-agent",
+        "tree": "f0eea47488fc8dd0b59766e863ba1b3b25f4491c"
+      },
+      "observed_version": "0.1.0",
+      "public_additional_files": 0,
+      "visible": true
+    },
+    "wizard": {
+      "default_different_or_extra_files": 0,
+      "delivery": "vendored",
+      "executable": [],
+      "files": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+        "agents/openai.yaml": "98f44d682d58e262f160dc59a8befc365e0aa65820dd0261864af26aa8e59d83",
+        "template.sh": "6566f147299bc6f1d941e64591ed04385416d543e11f96f564c7228f5018d0ed"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+          "source": "mattpocock/skills"
+        }
+      },
+      "path": "skills/engineering/wizard",
+      "public_additional_files": 0,
+      "source": "mattpocock/skills",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "e396d3ba97c723a78ffd350fb14a3c409137b306",
+      "visible": true
+    },
+    "writing-clearly": {
+      "acquisition": "Physical Workbench edition; optional original-source verification is separate.",
+      "default_materialization": "profile-selected members of the public source tree",
+      "delivery": "publisher-edition",
+      "edition": {
+        "executable": [],
+        "files": {
+          ".gitignore": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+          "LICENSE": "304a5d58c1c814ec892e994bd2c70d1a93557a42c616a73a1c71662803449f3c",
+          "LICENSE-Workbench": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "LICENSE-ru-text": "37ea601e35a544e6a4b08b1c5cb126543b2ea6dc14b23620f12bdc11a00ba839",
+          "README.md": "2ad13602b41a980f6302c79476a849d8b278587520dc3b663cf236dcadaa1023",
+          "SKILL.md": "dd95d8685d7f540ddb18284ebb5f1ce291829f1710f88a2c71f88d2c6401d31c",
+          "evals/evals.json": "ca47fc38e3ac09e6b40bb22f82e0ce2a25b7f8defc6418bc87300db2379d801c",
+          "references/examples.md": "708d50492e92d1d46bf1e1a2fa8290f5499c6e02b8f8025875525b91a7593289",
+          "references/infostyle-ru.md": "9d1b966c95dfd88960bf05b13fb21e6226130b228e37179d4d8058e5ff5e99e5",
+          "references/plain-english.md": "30aa5c57b65b559ebf64e5e6fa642df5475a3bc8d541dee51d3d922e0144a200",
+          "references/yasno-ponyatno.md": "2e437a8955153b53e1f83ba8b773a2b2fceff50512f14ded8639975d2524e45c"
+        },
+        "independently_written": [
+          "README.md",
+          "SKILL.md",
+          "references/infostyle-ru.md",
+          "references/plain-english.md",
+          "references/yasno-ponyatno.md"
+        ],
+        "origin": "Original upstream notices + MIT on Workbench replacement text only",
+        "tree": "85790dfe082da3541c39030cd41f396e670c182f"
+      },
+      "executable": [],
+      "files": {
+        ".gitignore": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+        "LICENSE": "304a5d58c1c814ec892e994bd2c70d1a93557a42c616a73a1c71662803449f3c",
+        "LICENSE-ru-text": "37ea601e35a544e6a4b08b1c5cb126543b2ea6dc14b23620f12bdc11a00ba839",
+        "README.md": "18d4c5d98350c89af0fc65a57bba0e49fe71b434f37de8ab1c4f326ebdadb93c",
+        "SKILL.md": "3a326ceaa2ad05d30841623916d8fab25274f096f9eedfc71e3219f040e650d3",
+        "evals/evals.json": "ca47fc38e3ac09e6b40bb22f82e0ce2a25b7f8defc6418bc87300db2379d801c",
+        "references/examples.md": "708d50492e92d1d46bf1e1a2fa8290f5499c6e02b8f8025875525b91a7593289",
+        "references/infostyle-ru.md": "32ce9fa9f3e203a9c68005f72f29342fda769e9879996433e63658f581ae99e1",
+        "references/plain-english.md": "94137bbf7b05ada90b3b641e1f3d358b030e03a014bb500eab08c6b18f7325bb",
+        "references/yasno-ponyatno.md": "b44e18bdfdcd94cae5242cc8092c023a21ee00ca79f05f29987836a19f0566bd"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "304a5d58c1c814ec892e994bd2c70d1a93557a42c616a73a1c71662803449f3c",
+          "source": "fockus/writing-clearly"
+        },
+        "LICENSE-ru-text": {
+          "path": "LICENSE",
+          "sha256": "37ea601e35a544e6a4b08b1c5cb126543b2ea6dc14b23620f12bdc11a00ba839",
+          "source": "talkstream/ru-text"
+        }
+      },
+      "path": ".",
+      "source": "fockus/writing-clearly",
+      "source_notices_in_tree": [
+        "LICENSE"
+      ],
+      "static_guard": "safe",
+      "terms": "Source pin describes original material; edition hashes describe what Workbench actually ships and installs.",
+      "tree": "20749105b5f7f9e5d829ed7fa978095cc26ca794",
+      "visible": true
+    },
+    "writing-plans": {
+      "default_different_or_extra_files": 0,
+      "delivery": "review-pack",
+      "executable": [],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/writing-plans",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "tree": "cc97fa00eb2ccd4f283e34eb2ba06a48e1e679f7",
+      "visible": true
+    },
+    "writing-skills": {
+      "acquisition": "Physical Workbench edition; optional original-source verification is separate.",
+      "default_different_or_extra_files": 0,
+      "delivery": "publisher-edition",
+      "edition": {
+        "executable": [
+          "render-graphs.js"
+        ],
+        "files": {
+          "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "LICENSE-Workbench": "397114c5ddba2cdeef4598f5393bd0315950e8fae68246f550affb793b15119f",
+          "SKILL.md": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+          "references/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
+          "references/anthropic-best-practices.md": "1874503d4b8714682e2d8d1d0f9a635a2ceafd9c6fd3e2fd5275c887efe6bdea",
+          "references/bulletproofing.md": "9397023e6bc85b556a57f3097371363bf03e28e755c57f403f470bcda90e0a23",
+          "references/discovery.md": "c6bbc74af3be90f693f7cbc986af6fa94e8df75f65109b52e96032587f5b92af",
+          "references/flowcharts.md": "8b1f542391f274f0d33f3457ac099a3d317d6877eaa3b8d3b1ebef151b55fda7",
+          "references/graphviz-conventions.dot": "e2890a593c91370e384b42f2f67b1a6232c9e69dddea7891a0c1c46d7b20b694",
+          "references/persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
+          "references/testing-skills-with-subagents.md": "ed8a6862c085900135962390530d9dc7637ad6d650b4324ce3b051287a5c3f22",
+          "render-graphs.js": "c7f412cc629461c4d10287e668731874c0497707023e3e3f74a5355eb2cee196"
+        },
+        "independently_written": [
+          "references/anthropic-best-practices.md"
+        ],
+        "origin": "Original upstream notices + MIT on Workbench replacement text only",
+        "tree": "df3930247a88dadfc9b4eb9e18603fb27c32da48"
+      },
+      "executable": [
+        "render-graphs.js"
+      ],
+      "files": {
+        "LICENSE": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+        "SKILL.md": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+        "references/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
+        "references/anthropic-best-practices.md": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
+        "references/bulletproofing.md": "9397023e6bc85b556a57f3097371363bf03e28e755c57f403f470bcda90e0a23",
+        "references/discovery.md": "c6bbc74af3be90f693f7cbc986af6fa94e8df75f65109b52e96032587f5b92af",
+        "references/flowcharts.md": "8b1f542391f274f0d33f3457ac099a3d317d6877eaa3b8d3b1ebef151b55fda7",
+        "references/graphviz-conventions.dot": "e2890a593c91370e384b42f2f67b1a6232c9e69dddea7891a0c1c46d7b20b694",
+        "references/persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
+        "references/testing-skills-with-subagents.md": "ed8a6862c085900135962390530d9dc7637ad6d650b4324ce3b051287a5c3f22",
+        "render-graphs.js": "c7f412cc629461c4d10287e668731874c0497707023e3e3f74a5355eb2cee196"
+      },
+      "notices": {
+        "LICENSE": {
+          "path": "LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "source": "obra/superpowers"
+        }
+      },
+      "path": "skills/writing-skills",
+      "public_additional_files": 0,
+      "source": "obra/superpowers",
+      "source_notices_in_tree": [],
+      "static_guard": "safe",
+      "terms": "Source pin describes original material; edition hashes describe what Workbench actually ships and installs.",
+      "tree": "660ede63b84ce5d07ef28cccc2973165e2ca06e2",
+      "visible": true
+    }
+  },
+  "sources": {
+    "DietrichGebert/ponytail": {
+      "commit": "caf138df5685b24f1d8ad6985a3cfdd5fa76caaf",
+      "repo": "https://github.com/DietrichGebert/ponytail.git"
+    },
+    "JuliusBrussee/caveman": {
+      "commit": "a192894723a8f47e7f504c7b5041967ff1f18e55",
+      "repo": "https://github.com/JuliusBrussee/caveman.git"
+    },
+    "NousResearch/hermes-agent": {
+      "commit": "caafe5389ae585ef77387a962aee05b1bcf17029",
+      "repo": "https://github.com/NousResearch/hermes-agent.git"
+    },
+    "fockus/skill-llm-wiki": {
+      "commit": "99fea439401fcd079150db571a4650250a47943a",
+      "repo": "https://github.com/fockus/skill-llm-wiki.git"
+    },
+    "fockus/skill-memory-bank": {
+      "commit": "c0e56506df71bd1d066ff77870382797a4bf611b",
+      "repo": "https://github.com/fockus/skill-memory-bank.git"
+    },
+    "fockus/writing-clearly": {
+      "commit": "ea6454751617916a2ef40866ea98da223e975d15",
+      "repo": "https://github.com/fockus/writing-clearly.git"
+    },
+    "mattpocock/skills": {
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "repo": "https://github.com/mattpocock/skills.git"
+    },
+    "obra/superpowers": {
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "repo": "https://github.com/obra/superpowers.git"
+    },
+    "rlaope/oh-my-hermes": {
+      "commit": "736f8f7d4745c2def66ed9af53cf0a7af87c0df8",
+      "repo": "https://github.com/rlaope/oh-my-hermes.git"
+    },
+    "talkstream/ru-text": {
+      "commit": "e398aec9e6f02d1bf28ae5a79a118e2404d52e90",
+      "repo": "https://github.com/talkstream/ru-text.git"
+    }
+  },
+  "static_admission": {
+    "host": "caafe5389ae585ef77387a962aee05b1bcf17029",
+    "observed": {
+      "apple-platform-automation": [
+        "safe",
+        true,
+        true
+      ],
+      "audio-video-media-generation": [
+        "safe",
+        true,
+        true
+      ],
+      "autonomous-agent-orchestration": [
+        "safe",
+        true,
+        true
+      ],
+      "brainstorming": [
+        "safe",
+        true,
+        true
+      ],
+      "caveman": [
+        "safe",
+        true,
+        true
+      ],
+      "code-review": [
+        "safe",
+        true,
+        true
+      ],
+      "creative-visual-artifacts": [
+        "safe",
+        true,
+        true
+      ],
+      "dag-ulw": [
+        "safe",
+        true,
+        true
+      ],
+      "diagnosing-bugs": [
+        "safe",
+        true,
+        true
+      ],
+      "diagnosing-superpowers": [
+        "safe",
+        true,
+        true
+      ],
+      "dispatching-parallel-agents": [
+        "safe",
+        true,
+        true
+      ],
+      "executing-plans": [
+        "safe",
+        true,
+        true
+      ],
+      "finishing-a-development-branch": [
+        "safe",
+        true,
+        true
+      ],
+      "github-operations": [
+        "safe",
+        true,
+        true
+      ],
+      "grill-me": [
+        "safe",
+        true,
+        true
+      ],
+      "grill-with-docs": [
+        "safe",
+        true,
+        true
+      ],
+      "grilling": [
+        "safe",
+        true,
+        true
+      ],
+      "handoff": [
+        "safe",
+        true,
+        true
+      ],
+      "implement": [
+        "safe",
+        true,
+        true
+      ],
+      "improve-codebase-architecture": [
+        "safe",
+        true,
+        true
+      ],
+      "interactive-visual-systems": [
+        "safe",
+        true,
+        true
+      ],
+      "llm-wiki": [
+        "safe",
+        true,
+        true
+      ],
+      "messaging-and-social-operations": [
+        "safe",
+        true,
+        true
+      ],
+      "mlops-model-lifecycle": [
+        "caution",
+        false,
+        false
+      ],
+      "omh-accessibility-audit": [
+        "safe",
+        true,
+        true
+      ],
+      "ponytail": [
+        "safe",
+        true,
+        true
+      ],
+      "ponytail-audit": [
+        "safe",
+        true,
+        true
+      ],
+      "ponytail-debt": [
+        "safe",
+        true,
+        true
+      ],
+      "ponytail-help": [
+        "safe",
+        true,
+        true
+      ],
+      "ponytail-review": [
+        "safe",
+        true,
+        true
+      ],
+      "productivity-workspace-automation": [
+        "safe",
+        true,
+        true
+      ],
+      "receiving-code-review": [
+        "safe",
+        true,
+        true
+      ],
+      "requesting-code-review": [
+        "safe",
+        true,
+        false
+      ],
+      "research-knowledge-workflows": [
+        "safe",
+        true,
+        true
+      ],
+      "retro": [
+        "safe",
+        true,
+        true
+      ],
+      "setup-matt-pocock-skills": [
+        "safe",
+        true,
+        true
+      ],
+      "smart-home-local-operations": [
+        "safe",
+        true,
+        true
+      ],
+      "software-delivery-workflows": [
+        "safe",
+        true,
+        true
+      ],
+      "subagent-driven-development": [
+        "safe",
+        true,
+        true
+      ],
+      "systematic-debugging": [
+        "caution",
+        false,
+        false
+      ],
+      "tdd": [
+        "safe",
+        true,
+        true
+      ],
+      "test-driven-development": [
+        "safe",
+        true,
+        false
+      ],
+      "to-spec": [
+        "safe",
+        true,
+        true
+      ],
+      "to-tickets": [
+        "safe",
+        true,
+        true
+      ],
+      "ultracave": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-context": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-interview": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-loop": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-maestro": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-perf": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-plan": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-qa": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-research": [
+        "safe",
+        true,
+        true
+      ],
+      "ulw-work": [
+        "safe",
+        true,
+        true
+      ],
+      "using-git-worktrees": [
+        "safe",
+        true,
+        true
+      ],
+      "using-superpowers": [
+        "safe",
+        true,
+        true
+      ],
+      "verification-before-completion": [
+        "safe",
+        true,
+        true
+      ],
+      "wizard": [
+        "safe",
+        true,
+        true
+      ],
+      "writing-clearly": [
+        "safe",
+        true,
+        true
+      ],
+      "writing-plans": [
+        "safe",
+        true,
+        true
+      ],
+      "writing-skills": [
+        "safe",
+        true,
+        true
+      ]
+    },
+    "policy": "community",
+    "requires": "safe + native allow, repeated at install",
+    "scanner_files": {
+      "tools/__init__.py": "7bca460f476ac9ace706c8cfd07e98f8aae34d839862f0f68abafc3a8397cf35",
+      "tools/skills_guard.py": "de9729f85ebc7821054aba59482787b42bbeaf3903a8bfa34b8354c03e09d7ff",
+      "tools/skills_guard_credentials.py": "59c9554ac517e0e9d99aa6bd1c79220308017dcf0dfe35adc7a74c98453dd180",
+      "tools/threat_patterns.py": "2339e0c9d0427b157cb37272b68fc674184fc8267db199aced2cc6464c3bd4dd"
+    },
+    "scanner_version": "skills-guard-v16",
+    "selected": 57
+  }
+}

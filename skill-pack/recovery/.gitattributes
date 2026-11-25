@@ -1,0 +1,3 @@
+# Publisher originals: retain the pinned blobs' trailing blank lines.
+upstream-reading/Orchestra-Research/11-evaluation/lm-evaluation-harness/SKILL.md whitespace=-blank-at-eof
+upstream-reading/Orchestra-Research/12-inference-serving/vllm/SKILL.md whitespace=-blank-at-eof

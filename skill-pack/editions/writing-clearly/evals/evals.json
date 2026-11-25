@@ -1,0 +1,65 @@
+{
+  "skill_name": "writing-clearly",
+  "evals": [
+    {
+      "id": 0,
+      "name": "readme-section",
+      "prompt": "Напиши раздел README «Установка и запуск» на русском языке для CLI-утилиты logsift. Факты: утилита фильтрует JSON-логи по уровню и времени; установка: brew install logsift (macOS) или go install github.com/logsift/logsift@latest; запуск: logsift --level error --since 2h app.log; поддерживает чтение из stdin: cat app.log | logsift --level warn.",
+      "expected_output": "Информативный заголовок, команды установки и запуска сохранены точно, без канцелярита и пустых оценок, списки оформлены по правилам типографики.",
+      "assertions": [
+        {"name": "no-bureaucratese", "check": "regex_absent", "pattern": "осуществл|представляет собой|в настоящее время|на сегодняшний день|стоит отметить|широкий спектр|данная утилита"},
+        {"name": "install-commands-preserved", "check": "contains_all", "values": ["brew install logsift", "go install"]},
+        {"name": "run-command-preserved", "check": "contains", "value": "--level error"}
+      ],
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "pr-description",
+      "prompt": "Напиши описание pull request на русском языке по этим изменениям: в auth-сервисе заменён синхронный вызов сервиса профилей на кэш с TTL 60 секунд; p95 времени логина упал с 800 мс до 120 мс; добавлена инвалидация кэша при смене пароля; добавлено 3 новых интеграционных теста.",
+      "expected_output": "Главное изменение и эффект — в первых строках, цифры сохранены, активный залог, без «был осуществлён ряд улучшений».",
+      "assertions": [
+        {"name": "no-bureaucratese", "check": "regex_absent", "pattern": "осуществл|был[аои]? (произведен|выполнен|добавлен)|в рамках данного|направленн?ы[йх] на"},
+        {"name": "numbers-preserved", "check": "contains_all", "values": ["120", "800"]},
+        {"name": "main-point-first", "check": "regex_present_first_300", "pattern": "кэш|120|логин"}
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "bureaucratic-edit",
+      "prompt": "Отредактируй канцелярский абзац внутренней рассылки (осуществляется активная работа по внедрению инновационных решений...). Факты для замены брехни: автоматическое формирование отчётов, экономия ~5 часов в неделю на сотрудника, запуск в сентябре.",
+      "expected_output": "Канцелярит и брехня заменены фактами: что внедряют, сколько экономит, когда запуск.",
+      "assertions": [
+        {"name": "no-bureaucratese", "check": "regex_absent", "pattern": "осуществл|данн(ый|ого|ые|ых) (проект|мероприят)|стоит отметить|на сегодняшний день|в настоящее время|в кратчайшие сроки|все возможные усилия"},
+        {"name": "facts-added", "check": "contains_all", "values": ["отчёт", "сентябр"]},
+        {"name": "hours-fact-used", "check": "regex_present", "pattern": "5 час|пят[ьи] час"}
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "offline-mode-en",
+      "prompt": "Write a short product-blog announcement (English) explaining the new offline mode to non-technical users: last 50 documents stored locally, editable without internet, auto-sync on reconnect, conflict keeps both versions for the user to pick.",
+      "expected_output": "Reader benefit first, no 'leverage/seamless/robust', concrete scenario instead of abstractions, no ceremonial conclusion.",
+      "assertions": [
+        {"name": "no-corporate-speak", "check": "regex_absent_ci", "pattern": "leverage|utilize|seamless|robust|cutting-edge|revolutioniz|game.chang|excited to announce"},
+        {"name": "facts-preserved", "check": "contains", "value": "50"},
+        {"name": "conflict-explained", "check": "regex_present_ci", "pattern": "both versions|two versions|both copies|keeps? both|neither (copy|version)"}
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "release-postpone-letter",
+      "prompt": "Напиши письмо команде о переносе релиза 2.4 с 3 на 17 августа: причина — деградация поиска при 10 000 пользователей (ответ до 8 секунд), неделя на фикс + неделя на ретест, демо 5 августа на стейдже как планировали.",
+      "expected_output": "Новая дата — в первых строках, честная причина с цифрами вместо эвфемизмов, блок «что это меняет».",
+      "assertions": [
+        {"name": "no-euphemisms", "check": "regex_absent", "pattern": "непредвиденн|приносим извинения за возможные|корректировк[аеи] сроков|делаем вс[её] возможное|сложивш[аеу]"},
+        {"name": "new-date-first", "check": "regex_present_first_300", "pattern": "17 августа"},
+        {"name": "honest-reason", "check": "regex_present", "pattern": "8 секунд"}
+      ],
+      "files": []
+    }
+  ]
+}

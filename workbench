@@ -2,6 +2,10 @@
 # Launch only this installation. Never source a login script, .env or active profile.
 set -eu
 root=$(CDPATH='' cd -P -- "$(dirname -- "$0")" && pwd)
+if [ -e "$root/.workbench-full-pending" ]; then
+  printf '%s\n' 'Incomplete full-profile installation; use a fresh prefix.' >&2
+  exit 1
+fi
 if [ -x "$root/tool-bin/node" ]; then
   set -- HERMES_TUI_DIR="$root/tui" HERMES_NODE="$root/tool-bin/node" "$root/venv/bin/hermes" "$@"
 else
@@ -10,6 +14,7 @@ fi
 exec /usr/bin/env -i PYTHONDONTWRITEBYTECODE=1 \
   PATH="$root/venv/bin:$root/tool-bin:/usr/bin:/bin" \
   HOME="$root/home" HERMES_HOME="$root/profile" \
+  WORKBENCH_MB_RUNTIME="$root/plugin-pack/runtime/memory-bank" \
   HERMES_PYTHON="$root/venv/bin/python" VIRTUAL_ENV="$root/venv" \
   XDG_DATA_HOME="$root/home/data" XDG_STATE_HOME="$root/home/state" \
   XDG_CONFIG_HOME="$root/home/config" XDG_CACHE_HOME="$root/home/cache" \

@@ -1,0 +1,4 @@
+name: soul-composer
+version: "0.1.0"
+description: "Builds every bot's SOUL.md from shared bricks, provider plugins and a team.yaml (hermes soul)."
+author: fockus

@@ -1,0 +1,9 @@
+name: codemode
+version: "0.1.0"
+description: "Code mode: model-written Python in a Monty sandbox that calls every suitable tool through a typed SDK."
+author: fockus
+config_schema:
+  mode:
+    type: string
+    default: "on"
+    description: "How codemode is offered: on (tool plus prompt rule), only (reserved: needs `hermes codemode patch`; codemode registers no tool filter yet, so it acts as on until Task 18), optin (tool registered, prompt only says it exists)."

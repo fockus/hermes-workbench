@@ -1,0 +1,5 @@
+# Optional dense retrieval only. These are direct pins, not a transitive lock.
+# Supply compatible, individually licensed ONNX/tokenizer assets yourself.
+-r requirements-core.txt
+onnxruntime==1.26.0
+tokenizers==0.23.1

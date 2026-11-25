@@ -1,0 +1,664 @@
+{
+  "assembly": {
+    "apple-platform-automation": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/apple/apple-notes",
+          "tree": "a44bf261f6c4d5a0ec60426e1b81c1719cc076cb"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/apple/apple-reminders",
+          "tree": "715c5c777667ed1e91581ea81dc4e481712393c9"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/apple/findmy",
+          "tree": "3a0231e2318c9936941de6d2716240df857c6cf2"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/apple/imessage",
+          "tree": "64492659a012989db62320a799af2320bf79fdf8"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/autonomous-ai-agents/computer-use",
+          "tree": "11b3a9b45bf15c13a1c0699be215b309f0335ca1"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "audio-video-media-generation": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/creative/heartmula",
+          "tree": "fffd6834e2e6003369dd665c046d2f8cd62f3b46"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/songwriting-and-ai-music",
+          "tree": "90da32755484ad32d33cfc1f3d34c6ebefc4c5d2"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/media/songsee",
+          "tree": "be2576bbf7da84c494d85945310749e2e1eecabf"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/manim-video",
+          "tree": "bfc37ddcd42eb8016625c1e62dcc32b55654dd2e"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/ascii-video",
+          "tree": "2e53b2910dcdd981cc03a75da29871d6f81718ab"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/media/gif-search",
+          "tree": "6b66816ef99990600861a2896a04ce74be770e23"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/media/youtube-content",
+          "tree": "1a3d97d23ed2f707ae407d7bc73c8a255c659092"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "autonomous-agent-orchestration": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/autonomous-ai-agents/claude-code",
+          "tree": "f6dae140d69e863f10fff02e13b0b5151bf4ce2e"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/autonomous-ai-agents/codex",
+          "tree": "7e85952ac26f1a2b5b3142aaa781ebdc8281e5d0"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/autonomous-ai-agents/opencode",
+          "tree": "17f144a85bf57eb8fccf94d8d5231e0bd18d0e89"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/autonomous-ai-agents/hermes-agent",
+          "tree": "c10e0649f9a6ee3f4061da525690de606ccdbc5a"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "creative-visual-artifacts": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/architecture-diagram",
+          "tree": "ef341eda975e4b1f96babced447db85045885f4d"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/claude-design",
+          "tree": "1651167d8707efea07120b9e6e5bac779895db0e"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/baoyu-infographic",
+          "tree": "0d0ef37b25e925bd9032ab000e87fd1bcb3ec205"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/creative/excalidraw",
+          "tree": "bd5b1219b3b558e61515e7ebf39a3a05acd0ab2c"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/p5js",
+          "tree": "d31e3f3c77f942e410b104fabec574f8ad1c34b9"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/creative/design-md",
+          "tree": "90abc370d9748e759e957e359f8c0edff956f305"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/creative/popular-web-designs",
+          "tree": "b5d08979b8af4e32d2871502f7f7f4c96636a3fd"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "github-operations": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/github",
+          "tree": "0f036f03b07b34b6dc45b741a5eecfabcf960470"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/codebase-inspection",
+          "tree": "8dd5ae79720eaea75da4654ed8e46d187bef9b28"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "interactive-visual-systems": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/creative/comfyui",
+          "tree": "c4c464cc5d1a775035954f16d02d0e5bb5cdd318"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "messaging-and-social-operations": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/email/himalaya",
+          "tree": "eb3fd363cfcf281169fb0f0b7c5b9d7475b6513f"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/social-media/xurl",
+          "tree": "e6e822d02bccbb497deadf82ec2087091e51ac0e"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "mlops-model-lifecycle": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/mlops/inference/llama-cpp",
+          "tree": "a78f0d7e57940dae8f8a78a28ff8e964c90d157d"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/mlops/evaluation/evaluating-llms-harness",
+          "tree": "23c87e5e27f435a05c849e27fc43530360d55748"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/mlops/inference/serving-llms-vllm",
+          "tree": "3e31a2ebaf8910dd0ed2e52fb27a1892c653c87f"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/mlops/models/segment-anything-model",
+          "tree": "1bd5f0f69632c7febea8fee659b4dc555e6fba32"
+        }
+      ],
+      "orchestra_members": {
+        "references/audiocraft-audio-generation.md": "18-multimodal/audiocraft/SKILL.md",
+        "references/audiocraft/advanced-usage.md": "18-multimodal/audiocraft/references/advanced-usage.md",
+        "references/audiocraft/troubleshooting.md": "18-multimodal/audiocraft/references/troubleshooting.md",
+        "references/evaluating-llms-harness.md": "11-evaluation/lm-evaluation-harness/SKILL.md",
+        "references/lm-evaluation-harness/api-evaluation.md": "11-evaluation/lm-evaluation-harness/references/api-evaluation.md",
+        "references/lm-evaluation-harness/custom-tasks.md": "11-evaluation/lm-evaluation-harness/references/custom-tasks.md",
+        "references/lm-evaluation-harness/distributed-eval.md": "11-evaluation/lm-evaluation-harness/references/distributed-eval.md",
+        "references/segment-anything-model.md": "18-multimodal/segment-anything/SKILL.md",
+        "references/segment-anything/advanced-usage.md": "18-multimodal/segment-anything/references/advanced-usage.md",
+        "references/segment-anything/troubleshooting.md": "18-multimodal/segment-anything/references/troubleshooting.md",
+        "references/serving-llms-vllm.md": "12-inference-serving/vllm/SKILL.md",
+        "references/vllm/optimization.md": "12-inference-serving/vllm/references/optimization.md",
+        "references/vllm/quantization.md": "12-inference-serving/vllm/references/quantization.md",
+        "references/vllm/server-deployment.md": "12-inference-serving/vllm/references/server-deployment.md",
+        "references/vllm/troubleshooting.md": "12-inference-serving/vllm/references/troubleshooting.md"
+      },
+      "publisher_links": {
+        "references/lm-evaluation-harness/benchmark-guide.md": "11-evaluation/lm-evaluation-harness/references/benchmark-guide.md"
+      },
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "productivity-workspace-automation": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/productivity/google-workspace",
+          "tree": "934b989ce1d4f65e16c37371ad0ec889232be478"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/productivity/pdf",
+          "tree": "cb8cd8fccf17a5d42c75ed6672b9e584c145eb56"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/productivity/microsoft-office",
+          "tree": "95821ee4e8276f19a9b009c0172c4a12f965751f"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/productivity/maps",
+          "tree": "b3be9fd19dba964893cd4c654c627d72dd8b040a"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/note-taking/obsidian",
+          "tree": "056805bcfb91aed2b8fbd8ae9226fb42631de7bb"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/productivity/teams-meeting-pipeline",
+          "tree": "977970ca4193a42d7f6a1c4c56d7d8725059bdd8"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "research-knowledge-workflows": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/research/arxiv",
+          "tree": "ab1a960256ce2fb02194792060e39404d449c940"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/research/blogwatcher",
+          "tree": "233ae2e438746f379e8720bceeb253735a149de4"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/research/llm-wiki",
+          "tree": "0051b4298f0b840fbeec290c1706a58676940fa7"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/finance/polymarket",
+          "tree": "659f5727bb805442036c103672d17f15ab4eb201"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/research/research-paper-writing",
+          "tree": "3701f081caf4696e5c44890e21d73b5c07de4200"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "smart-home-local-operations": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/smart-home/openhue",
+          "tree": "970b7ec88bc9fe57e4d64fcd4a4b7f7388a52456"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    },
+    "software-delivery-workflows": {
+      "clean_host_resources": [
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/codebase-inspection",
+          "tree": "8dd5ae79720eaea75da4654ed8e46d187bef9b28"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/spike",
+          "tree": "b1d7fbc0dddfe1002220146d37c84972aad0c19f"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/systematic-debugging",
+          "tree": "2c2b42523ac9c62d61c40b199e16a166a920b6ec"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/software-development/python-debugpy",
+          "tree": "4bd7d4e9ade96de21f5525baeb51f4223ec6cf4a"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "optional-skills/software-development/node-inspect-debugger",
+          "tree": "814eef1592e4022244334906e9766c31479554fb"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/test-driven-development",
+          "tree": "b96071449e8154309741821665fe49a25410cf0d"
+        },
+        {
+          "declared_license": "MIT",
+          "path": "skills/software-development/requesting-code-review",
+          "tree": "730409acf6d9911f4621f682849a78702fa49afc"
+        }
+      ],
+      "rights": "Workbench contributors: MIT for original editorial material only. Host resources are pointers, not co-authors."
+    }
+  },
+  "companions": {
+    "codex": {
+      "kind": "Licensed, privacy-reviewed local addition; not a replacement for the active upstream document.",
+      "path": "companions/codex.md",
+      "sha256": "268fa16bde6808500854c95a49e1958e5cb7d3f233ba3fba5da8e92510e96697"
+    },
+    "diagnosing-bugs": {
+      "kind": "Licensed, privacy-reviewed local addition; not a replacement for the active upstream document.",
+      "path": "companions/diagnosing-bugs.md",
+      "sha256": "e2018bc6a0fb87ce9d504dac5c5b642a8f1f9b702d2497882b28dbc6f567f615"
+    }
+  },
+  "components": {
+    "llm-wiki": {
+      "commit": "c5bdf680393a429d857397d03918406c2d0260cf",
+      "effective_projection_sha256": "5bdfc72e83450824a947a3e9b7ddda697200b392a37f0b7d2e65b5e43c8f9a1a",
+      "files_added_to_existing_overlay": {
+        "scripts/llm_wiki/cli.py": {
+          "mode": "100644",
+          "sha256": "90da862b5874a6e7fe5a35142bb305ab5f33c26a20ed08b7512787c75a5f7c1c",
+          "source_blob": "9006e4225bfd48f5056194e6cb184e99dbb45e51"
+        },
+        "scripts/llm_wiki/preview.py": {
+          "mode": "100644",
+          "sha256": "9ec00b507218a2bf9a06ba2ead3f2b14d7bf77d74311363b34c3e47dda6f44cb",
+          "source_blob": "7c74ed5e60f280cf9b2e3b3d67fdf6878aa23783"
+        }
+      },
+      "license": "plugin-pack/base-overlays/llm-wiki/LICENSE",
+      "members": [
+        "LICENSE",
+        "SKILL.md",
+        "agents",
+        "references",
+        "scripts"
+      ],
+      "projection_files": 28
+    },
+    "memory-bank": {
+      "commit": "e62fdcf438c7ebc1f2e6de5b63791da6f26ec238",
+      "effective_projection_sha256": "61424d958ed8aca0dd9d941448e42da5bd43b34dc31e196f07696078cbf438ac",
+      "files_added_to_existing_overlay": {
+        "SKILL.md": {
+          "mode": "100644",
+          "sha256": "6b360107be3c548f695a19f76ad6dfa009329526634df83129fe2c3b5c9d8bfe",
+          "source_blob": "121674887990dab4fad9ad2a6128598f767615ad"
+        },
+        "commands/team.md": {
+          "mode": "100644",
+          "sha256": "183afdaf02cd96edd3d6dcd038e23d1e5249d37d101e8d1d09cc95136d694b43",
+          "source_blob": "02e5986d4109777ca0e53fcb581d3db8bf1bf344"
+        },
+        "docs/pipeline-yaml.md": {
+          "mode": "100644",
+          "sha256": "086bee1dba3632d71fa449fe45115499dd109b717a901672064d9fd865433c16",
+          "source_blob": "9b17aee82e936a549bc2448d1425cf0c0f51ed0c"
+        },
+        "hooks/mb-team-guard.py": {
+          "mode": "100755",
+          "sha256": "c084469d4690d761a314e86ef969b28aff24c5fdf76bc38af1d48984e9cd6c5e",
+          "source_blob": "244c2d6301e21bedcead3d522f13c278b84368f8"
+        },
+        "hooks/mb_team_guard_shell.py": {
+          "mode": "100644",
+          "sha256": "94892549ee064f45dc3f4cfa932d5276ce341b0e64d19daa24352e706a27bfb9",
+          "source_blob": "f6e3e9f438602eb91aa6091119180f748b77d8ba"
+        },
+        "hooks/mb_team_rules.py": {
+          "mode": "100644",
+          "sha256": "5fe7fe075efaaae8539e6192e47c5c4c8ddc4cd4aaedb29a25e5596e01bcf537",
+          "source_blob": "ca2447d9afe8b07c5948f7adaf3d5e3c4d563dc4"
+        },
+        "references/scripts.md": {
+          "mode": "100644",
+          "sha256": "e1e0a155bfe9f6e5b22279312c83d30383ffdba4784e20bdda357deeec8d2cdc",
+          "source_blob": "380c0ad3ad3c7bd8c355af64fe2474cf5413cd33"
+        },
+        "rules/RULES.md": {
+          "mode": "100644",
+          "portable_change": "Resolve the rules in this file, not a different agent home.",
+          "sha256": "1b9570e7f4a463ebde51c90d17f465a86800c01c92b54a066b24229de1a08e39",
+          "source_blob": "b72028f1747792cd37e87f55eecef1136f8238fc"
+        },
+        "workflows/mb-team-track.js": {
+          "mode": "100644",
+          "sha256": "fe53c7b96bd3cd7a95d8fd56e778d33ee41379ccda8c54f7e38f27bc7674845f",
+          "source_blob": "202f9df95b79e1aeebea4e384ff019e7e3be6284"
+        },
+        "workflows/mb-team-track.review.md": {
+          "mode": "100644",
+          "sha256": "b2755ae9e51e8139881989dcfaedd40c31e34409b7d35337a4b29f3f65c8f50e",
+          "source_blob": "18cf49667b29fe0376e9659e407c2afd37f09c76"
+        }
+      },
+      "license": "plugin-pack/base-overlays/memory-bank/LICENSE",
+      "members": [
+        "LICENSE",
+        "SKILL.md",
+        "agents",
+        "commands",
+        "docs",
+        "flow-templates",
+        "hooks",
+        "references",
+        "rules",
+        "scripts",
+        "templates"
+      ],
+      "projection_files": 618
+    }
+  },
+  "held_publisher": {
+    "bytes": 542896,
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "delivery": "Optional unopened original publisher archive; a verified inert copy of the selected tree ships under reading-only.",
+    "filename": "superpowers-22f0b463e7a5e579904dd6211a520321035526f7.tar.gz",
+    "name": "systematic-debugging",
+    "sha256": "5f15e6bfa1b628ebabc84f88508b9652f5c7b8cb4529731e266006ba8f798976",
+    "url": "https://codeload.github.com/obra/superpowers/tar.gz/22f0b463e7a5e579904dd6211a520321035526f7",
+    "verified_manifest_members_with_notice": 7
+  },
+  "host_revision": "caafe5389ae585ef77387a962aee05b1bcf17029",
+  "native_policy": {
+    "blocked_superpowers_variant": {
+      "allow": false,
+      "verdict": "caution"
+    },
+    "blocked_umbrella": {
+      "allow": false,
+      "verdict": "caution"
+    },
+    "reading_only": {
+      "audiocraft": {
+        "allow": false,
+        "selection": "never (publisher reading copy)",
+        "verdict": "caution"
+      },
+      "lm-evaluation-harness": {
+        "allow": false,
+        "selection": "never (publisher reading copy)",
+        "verdict": "caution"
+      },
+      "segment-anything": {
+        "allow": true,
+        "selection": "never (publisher reading copy)",
+        "verdict": "safe"
+      },
+      "vllm": {
+        "allow": true,
+        "selection": "never (publisher reading copy)",
+        "verdict": "safe"
+      }
+    },
+    "selected_trees_all_safe": 57,
+    "version": "skills-guard-v16"
+  },
+  "omh": {
+    "bridge_commit": "8ea5569fa9d4d17c4103c330b148484b58a74462",
+    "bridge_version": "4.0.4",
+    "catalog_archive": {
+      "all_skill_tree_blobs": 446,
+      "bytes": 67860396,
+      "filename": "oh-my-hermes-736f8f7d4745c2def66ed9af53cf0a7af87c0df8.tar.gz",
+      "sha256": "bc79fce9c17073958da7bedd6f22f4f9a274042eeed91b7494060783126e702d",
+      "url": "https://codeload.github.com/rlaope/oh-my-hermes/tar.gz/736f8f7d4745c2def66ed9af53cf0a7af87c0df8"
+    },
+    "disk_names_total": 82,
+    "inventory_names": 90,
+    "managed_catalog_revision": "43476d74402d3943c234885dd43d4e4ff363991aa6293e6ce2a2d84e7b93cb6f",
+    "managed_home_version": "4.0.8",
+    "managed_names_and_hashes_verified": 155,
+    "matched_managed_files": 216,
+    "matched_support_files": 61,
+    "new_catalog_names": [
+      "model-compression",
+      "systematic-review"
+    ],
+    "official_wheel": {
+      "bytes": 8566006,
+      "filename": "oh_my_hermes-4.0.8-py3-none-any.whl",
+      "license_file": "oh_my_hermes-4.0.8.dist-info/licenses/LICENSE",
+      "sha256": "ec9678f7b9d91fb2c5bacc425d6d925cbdde719110e6567d0e0061e6a7e34a91",
+      "url": "https://github.com/rlaope/oh-my-hermes/releases/download/v4.0.8/oh_my_hermes-4.0.8-py3-none-any.whl"
+    },
+    "plugin_files_matched": 202,
+    "previous_catalog_count": 153,
+    "qualifies_plugin_skills": false,
+    "removed_catalog_names": [],
+    "rendered_source_commit": "736f8f7d4745c2def66ed9af53cf0a7af87c0df8",
+    "rendered_source_path": "skills",
+    "rendered_source_tree": "c846434aacfd263bab69176332eac356b0b0f611",
+    "selected_disk_names": [
+      "dag-ulw",
+      "omh-accessibility-audit",
+      "ulw-context",
+      "ulw-interview",
+      "ulw-loop",
+      "ulw-maestro",
+      "ulw-perf",
+      "ulw-plan",
+      "ulw-qa",
+      "ulw-research",
+      "ulw-work"
+    ],
+    "source_repository": "https://github.com/rlaope/oh-my-hermes.git",
+    "verified_bridge_blob_ids": {
+      "__init__.py": "7af92ee2f2bce5c40cf1e027b66338b6463e1be8",
+      "awareness.py": "ffed409d62d903106c6f04b742807fb66cb09d92",
+      "installed_skills.py": "0842d0ec9f8755b61532b26327bcd3f8b62e784e",
+      "plugin.yaml": "724e5fde77d75a427d85f6f9b50c2e5084ece5ac",
+      "skill_shortlist.py": "2af0ec32465c7315565a5892b00e76ae12b32268"
+    },
+    "visible_provider_names": [
+      "data-toolkit:analysis",
+      "quota:quota-check",
+      "tavily-plugin:tavily-best-practices",
+      "tavily-plugin:tavily-crawl",
+      "tavily-plugin:tavily-extract",
+      "tavily-plugin:tavily-map",
+      "tavily-plugin:tavily-research",
+      "tavily-plugin:tavily-search"
+    ],
+    "wheel_tag_commit": "c4a0496e57410d8c3eb7cf8b490a4b67c5a03874",
+    "wheel_tag_different_rendered_files": [
+      "skills/dag-ulw/SKILL.md",
+      "skills/omh-automation-blueprint/SKILL.md",
+      "skills/omh-automation-blueprint/toolkit/README.md",
+      "skills/omh-automation-blueprint/toolkit/examples/watch.json",
+      "skills/omh-automation-blueprint/toolkit/scripts/channel_watch.py"
+    ]
+  },
+  "orchestra": {
+    "commit": "773a52944ba4747a18bd4ae9ade53fff041adcbc",
+    "files": {
+      "11-evaluation/lm-evaluation-harness/SKILL.md": {
+        "blob": "9dec810a96cfdfee2431e9105c38121482b1da83",
+        "profile_comparison": "publisher-original-restored",
+        "sha256": "891b77bc09118393f9bd1235404ee3f0cf412f56e57dc4b454e2fbd8fd507bc3"
+      },
+      "11-evaluation/lm-evaluation-harness/references/api-evaluation.md": {
+        "blob": "db77f610b8b3223dc620c7f35b93443c4fb86487",
+        "profile_comparison": "identical",
+        "sha256": "433372d84b8bbd6c28e5b971c1aae7c5d2d032aae9ff23dd7d7a47a51277dc78"
+      },
+      "11-evaluation/lm-evaluation-harness/references/benchmark-guide.md": {
+        "blob": "e3031ecfa592b4e5d30fdd463fda0a75c89edd28",
+        "delivery": "publisher-link",
+        "profile_comparison": "original not redistributed; third-party benchmark examples",
+        "sha256": "c62e922cb06cf987e6979a827a40bf64a02ca84f10858c99a84816c80f8939fe",
+        "upstream_sha256": "6f3e6daf78cee21453cebc1c4688ee126fbf0d4566782496dd5841dd669ae295"
+      },
+      "11-evaluation/lm-evaluation-harness/references/custom-tasks.md": {
+        "blob": "c5c1e895e3899dfb63340b370f8c5eb13207fc9a",
+        "profile_comparison": "identical",
+        "sha256": "c6b5591c77c16570b43fa5f497405a65f35ef73d1702a3871cc0c8a257c76aeb"
+      },
+      "11-evaluation/lm-evaluation-harness/references/distributed-eval.md": {
+        "blob": "2132e5bef778cd802783de9ca8c0a23139defc44",
+        "profile_comparison": "identical",
+        "sha256": "3ddc4551f25ce0d3cb09f971f27191331fb65b5b4c882efd4a9bde7bdfb82353"
+      },
+      "12-inference-serving/vllm/SKILL.md": {
+        "blob": "36b260ba4db56fb36af7bf73614157049b04f9a6",
+        "profile_comparison": "publisher-original-restored",
+        "sha256": "57eaf97e982fe758b6fd0ef2281b6961940e4a1c8258f303b0ce02d55d0636c6"
+      },
+      "12-inference-serving/vllm/references/optimization.md": {
+        "blob": "3d0cac5893fee862ac8dfa733bfc44b930424fa8",
+        "profile_comparison": "identical",
+        "sha256": "0f860d337adb1d0723d4070d8b3144517f111ad7f653606927bc67a7a019b1ac"
+      },
+      "12-inference-serving/vllm/references/quantization.md": {
+        "blob": "44901a2ac54bed6778d177be814df797e93e3be5",
+        "profile_comparison": "identical",
+        "sha256": "5fb30ea9e8fbec4a7f3047f37d10c0900d10cd2df66555818ffd425a3b29b270"
+      },
+      "12-inference-serving/vllm/references/server-deployment.md": {
+        "blob": "da5b837bca49a454711e36a12d528b2e056258eb",
+        "profile_comparison": "identical",
+        "sha256": "7db618ec40b865fe2efacf46c04c3d5dc233fc64a3c63d26451afb97b795113e"
+      },
+      "12-inference-serving/vllm/references/troubleshooting.md": {
+        "blob": "c00cc9a96b5bbee298002e98849b884c31a69614",
+        "profile_comparison": "identical",
+        "sha256": "307acd908e60674017bd2363726e6b9be19410062e3db0645290a69802976283"
+      },
+      "18-multimodal/audiocraft/SKILL.md": {
+        "blob": "03b900a0b718c1057945483e0f107876ccdb9ae2",
+        "profile_comparison": "publisher-original-restored",
+        "sha256": "3f9efaebd7331bea86022a101329074c6eab8af2d33591e691c565fcba641a5f"
+      },
+      "18-multimodal/audiocraft/references/advanced-usage.md": {
+        "blob": "953be2b4a560cd5d33f6f5675d2f1f3733371ad0",
+        "profile_comparison": "identical",
+        "sha256": "5efe98c6ebcd0107e48c809cadc0e48591f9c235ac47014f39a40772fc45116d"
+      },
+      "18-multimodal/audiocraft/references/troubleshooting.md": {
+        "blob": "7b83e863d65186c80fcd139e425629baddd13bb8",
+        "profile_comparison": "identical",
+        "sha256": "af0c56aca0902aca6f05350caab3750de608cf904a4e6bb9dd0967c664d8de0e"
+      },
+      "18-multimodal/segment-anything/SKILL.md": {
+        "blob": "47526d145b42e61b47fc2dbd17478176d98f7c78",
+        "profile_comparison": "publisher-original-restored",
+        "sha256": "6ac5c2f96cf7d0ae5f787164678701266930129aa06cc21818f20f77dacb6a71"
+      },
+      "18-multimodal/segment-anything/references/advanced-usage.md": {
+        "blob": "95d2da2d1f6393ac5ea02c165be05f78c83906c2",
+        "profile_comparison": "identical",
+        "sha256": "73a46290ac6986333e5ef65b785afc7c9463d6835d8a67c5f74f418fa284fb39"
+      },
+      "18-multimodal/segment-anything/references/troubleshooting.md": {
+        "blob": "434e95bcd4c8ff50832045ebb7e7927d26903430",
+        "profile_comparison": "identical",
+        "sha256": "cbab544d97ddc3813b4f74c805086579e7bd51547ccf9830dd44fa5936b07b4e"
+      },
+      "LICENSE": {
+        "blob": "943d5753a5f02f9ef352ff8a1706f167004d6e6d",
+        "sha256": "80b5899a9ab121a2d4aae63724f0c11defba7f23da487086932bb9abfb0f2a00"
+      }
+    },
+    "license": "LICENSE",
+    "root": "upstream-reading/Orchestra-Research",
+    "source": "https://github.com/Orchestra-Research/AI-Research-SKILLs"
+  }
+}

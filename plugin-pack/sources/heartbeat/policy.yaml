@@ -1,0 +1,26 @@
+# kanban-heartbeat policy table (REQ-003): finding kind -> action.
+# A list is a ladder: the n-th entry is taken after n automatic actions on the task in the last 24 h,
+# the last entry from then on. ctx.get_config("policy") rows {kind: action} merge over this table;
+# a row set to null leaves the kind unclassified (for the supervisor harness, phase 2).
+# Classes: auto = reclaim, nudge, continue, reassign_same_role, assign, stop;
+# approval = archive, cancel, reassign_other, git (always a question); ask_human = a question.
+
+# stock kanban_diagnostics kinds
+stale_running: [reclaim, reassign_same_role, ask_human]   # dead executor
+stranded_in_ready: ask_human           # nothing claims it: a wrong or missing worker pool
+stuck_in_blocked: ask_human
+block_unblock_cycling: stop
+repeated_failures: stop
+repeated_crashes: stop
+review_dependency_deadlock: ask_human
+running_with_open_parents: ask_human
+hallucinated_cards: ask_human        # the completion was blocked; the card keeps its prior state
+prose_phantom_refs: ask_human        # the completion summary names task ids that do not exist
+triage_aux_unavailable: ask_human
+
+# own rules (detect.py)
+claim_expired: reclaim                 # team-board claim past its timeout (hermes-subagents D-24)
+no_progress: [nudge, nudge, ask_human]
+unassigned: ask_human                  # whom to assign
+long_review: ask_human
+needs_input: ask_human                 # unanswered for 24 h: the reminder (KH-ASK)

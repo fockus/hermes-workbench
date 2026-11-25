@@ -1,0 +1,4 @@
+name: heartbeat
+version: "0.1.0"
+description: "Kanban heartbeat: a no-model cron tick that finds stuck tasks on every board (hermes heartbeat tick|install|status)."
+author: fockus

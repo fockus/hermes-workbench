@@ -1,0 +1,23 @@
+# pydantic-monty 1.6.0 for code-mode, installed per interpreter into codemode/.deps/cp<XY>
+# by scripts/codemode-deps.sh (pip --target --require-hashes --no-deps --only-binary :all:).
+# Wheels: client cp313/cp314 and runtime for macOS arm64/x86_64 and Linux x86_64/aarch64.
+# Audit: codemode/SPIKE.md § Package audit (verdict ADOPT, 2026-11-20). Upgrade only through a
+# reviewed diff of this file (NFR-006).
+pydantic-monty==1.6.0 \
+    --hash=sha256:cf968bc9eccc93cf9806842a2513b815019fd5b10cb559821bfd1bedd5ae37d6
+pydantic-monty-client==1.6.0 \
+    --hash=sha256:a67519c57ab2685cc9d430262cac19d87a666bdb1068271970a3e5c783f02abc \
+    --hash=sha256:f844192a344624eaa692192ab468481ca6190fff9994eb9da37201f646a17cbc \
+    --hash=sha256:0361cdd82de50412aad00483206d170332e365abe4c7647add66d2d7aae71b08 \
+    --hash=sha256:e7624944528bdd462fded093a78641e7f7fdc6acee1223c6110ab00263b2d6ef \
+    --hash=sha256:5c880ddc4e75a9e43fd712f0732db1a307694812d987c8d49a76602933b23f9a \
+    --hash=sha256:5289fa97d8b437ddc3d1e66f372d1ddcb0e5274bce3cec20a3d01d0be7355e0f \
+    --hash=sha256:9994274d92df4323adfaa1c09fc7ba0e8971b783bfb233a43bcfff0760f8c643 \
+    --hash=sha256:08ebc0c694fb60e28475dd14f076dd19ab922fb5bd3e8ff350001cce4a785517
+pydantic-monty-runtime==1.6.0 \
+    --hash=sha256:a1a34bdb1fb9b9226786deb0d6b6015fdd60e5badd8da74bab76b3272c5fb22e \
+    --hash=sha256:a2a1b385236aef0ff4165490eabc1d2764bf2cb5389076e0b8be52aa438c14c8 \
+    --hash=sha256:3b5ed9340a7c7a1d1e62ab4218f792fb7439d47f680551453cf7935207ec7abb \
+    --hash=sha256:f0d7d9eacbd94c7be6912fc30fbd60283fe407e4428562fa535dbb3e6ae47461
+typing-extensions==4.16.0 \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8

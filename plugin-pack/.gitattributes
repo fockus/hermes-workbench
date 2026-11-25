@@ -1,0 +1,8 @@
+# Pinned input blobs; blank context lines in a unified diff are significant.
+sources/codemode/patch/tool-list-hook.patch whitespace=-blank-at-eol
+# Keep source snapshots byte-identical, including their final empty line.
+sources/keep-going/wiring.py whitespace=-blank-at-eof
+sources/recall/scope.py whitespace=-blank-at-eof
+sources/soul-composer/cli.py whitespace=-blank-at-eof
+sources/subagents/api.py whitespace=-blank-at-eof
+sources/subagents/enforce.py whitespace=-blank-at-eof

@@ -1,0 +1,3 @@
+# Direct version observed with the source service. Use a separate environment.
+# Also requires the matching Hermes host modules and Python sqlite3 with FTS5.
+numpy==2.4.3

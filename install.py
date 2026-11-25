@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import runpy
 import shutil
 import subprocess
 import sys
@@ -17,6 +18,11 @@ SKIN = 'skins/claude-graphite.yaml'
 BUNDLE = 'tui/dist/entry.js'
 RECEIPT = '.workbench-installed.json'
 EXEC_LOCK = ROOT / 'executors.lock.json'
+FULL_RECEIPT = '.workbench-full-profile.json'
+PENDING = '.workbench-full-pending'
+# Conservative unattended policy for these exact locked complete source trees, not a grant.
+PROFILE_HOLDBACK = {n: 'native community scan: caution; not admitted unattended'
+                    for n in ('omh', 'soul-composer', 'workflows')}
 
 
 def require(value, message):
@@ -65,13 +71,19 @@ def ui_artifacts():
             **{'source/' + p: h for p, h in LOCK['patched'].items()}}
 
 
-def verify_existing(dest, mode, executors=False):
+def verify_existing(dest, mode, executors=False, *, full=False, preparing=False):
     receipt = dest / RECEIPT
     require(receipt.is_file() and not receipt.is_symlink(), 'not a verified Workbench installation')
     data = json.loads(receipt.read_text())
     require(data.get('lock') == sha(ROOT / 'workbench.lock.json') and data.get('prefix') == str(dest),
             'different Workbench lock or relocated installation; choose a new prefix')
     require(data.get('mode') == mode, 'different installation mode; choose a new prefix')
+    require(data.get('full_profile', False) is full, 'different profile selection; choose a new prefix')
+    if full and not preparing:
+        require(not (dest/PENDING).exists(), 'incomplete full profile; choose a new prefix')
+        final = dest/FULL_RECEIPT
+        require(final == final.resolve() and final.is_file() and json.loads(final.read_text()) == full_record(dest),
+                'missing or changed full-profile files; nothing overwritten')
     require(data.get('executors') == (sha(EXEC_LOCK) if executors else None),
             'different executor option or lock; choose a new prefix')
     require(export_digest(dest / 'llm-wiki-src') == LOCK['components']['llm-wiki']['digest'], 'drift: llm-wiki')
@@ -84,21 +96,26 @@ def verify_existing(dest, mode, executors=False):
         require(export_digest(dest / 'memory-bank') == LOCK['components']['memory-bank']['installed_digest'],
                 'drift: memory-bank')
         expected['workbench'] = sha(ROOT / 'workbench')
-        expected.update({'profile/' + p: h for p, h in LOCK['assets'].items() if p.startswith('plugins/')})
+        if not full:
+            expected.update({'profile/' + p: h for p, h in LOCK['assets'].items() if p.startswith('plugins/')})
         entries.extend(['workbench', 'venv/bin/python'])
         expected['source/LICENSE'] = LOCK['assets']['LICENSES/Hermes-Agent.txt']
         entries.extend(['venv/bin/hermes', 'tool-bin/jq'])
-        for link, obj in mb_links(dest).items():
+        for link, obj in mb_links(dest, full).items():
             require(link.is_symlink() and link.resolve() == obj and obj.exists(), f'drift: {link}')
     if mode == 'tui':
         expected.update(ui_artifacts() | {BUNDLE: data.get('bundle')})
         entries.append('tool-bin/node')
     for path, digest in expected.items():
         obj = dest / path
-        require(obj.resolve() == obj and obj.is_file() and sha(obj) == digest, f'drift: {path}; nothing overwritten')
+        allowed = {digest}
+        if path == 'workbench' and not full:
+            # Same base lock, pre-pack launcher: do not require migrating an existing base profile.
+            allowed.add('2122f7ad59dd77d9c970f4e719fbdfedf4ac3746aef91c2a56a9b83ef6081f04')
+        require(obj.resolve() == obj and obj.is_file() and sha(obj) in allowed, f'drift: {path}; nothing overwritten')
     for entry in entries:
         require(os.access(dest / entry, os.X_OK), f'missing executable: {entry}')
-    print('Already installed; checked pinned artifacts. Configuration untouched.')
+    print('Verified Workbench runtime files; configuration untouched.')
 
 
 def tool(name, expected, env, tmp):
@@ -172,12 +189,13 @@ def legal_files(mode):
     return ['LICENSE', 'NOTICE.md', *[f'LICENSES/{name}.txt' for name in third_party]]
 
 
-def receipt_for(dest, mode, executors=False):
+def receipt_for(dest, mode, executors=False, *, full=False):
     for path in legal_files(mode):
         (dest / path).parent.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / path, dest / path)
     with (dest / RECEIPT).open('x') as receipt:
         json.dump(dict(mode=mode, lock=sha(ROOT / 'workbench.lock.json'),
+                       **({'full_profile': True} if full else {}),
                        **({'executors': sha(EXEC_LOCK)} if executors else {}),
                        bundle=sha(dest / BUNDLE) if mode == 'tui' else None, prefix=str(dest)), receipt)
 
@@ -236,17 +254,120 @@ def component(name, tmp, env):
     return tree
 
 
-def mb_links(dest):
+def mb_links(dest, full=False):
     profile = dest / 'profile'
     skills = profile / 'external-skills'
-    mb = dest / 'memory-bank'
+    mb = dest / ('plugin-pack/runtime/memory-bank' if full else 'memory-bank')
     return {**{skills / 'memory-bank' / f: mb / f for f in
                'SKILL.md LICENSE references docs scripts commands agents rules templates flow-templates hooks'.split()},
-            skills / 'mb/SKILL.md': mb / 'commands/mb.md', profile / 'plugins/memory-bank': mb / 'hermes/memory-bank'}
+            skills / 'mb/SKILL.md': mb / 'commands/mb.md',
+            **({} if full else {profile / 'plugins/memory-bank': mb / 'hermes/memory-bank'})}
 
 
-def install(dest, tree, mb, wiki, wiki_python, bins, env, ui, executors=False):
+def full_selection():
+    assets = runpy.run_path(str(ROOT/'skill-pack/install.py'))
+    manifest = assets['read_doc']()
+    skills = manifest['skills']
+    plugins = json.loads((ROOT/'plugin-pack/catalog.json').read_bytes())['registrations']
+    return {
+        'missing_skill_originals': [],  # no whole consolidation absent
+        'not_redistributed_verbatim': manifest['distribution_exclusions'],
+        'selected_skill_count': len(assets['selected'](skills)),
+        'reading_only_skill_names': sorted(n for n, s in skills.items() if s['delivery'] in ('publisher-reading','owner-reading')),
+        'not_selected_skill_variants': sorted(n for n,s in skills.items() if s.get('conflict') or s['delivery'] in ('publisher-reading','owner-reading')),
+        'protected_skill_names': sorted(n for n, s in skills.items() if s.get('conflict')),
+        'plugins_not_requested': sorted(PROFILE_HOLDBACK),
+        'plugins_requested_without_enable': sorted(r['name'] for r in plugins if r['channel'] != 'host' and r['name'] not in PROFILE_HOLDBACK),
+        'plugin_owned_skill_visibility': 'not verified', 'activation_verified': False,
+    }
+
+
+def full_config(dest, ui):
+    # New file only. JSON is YAML; no profile settings, endpoints or grants are imported.
+    config = {'skills': {'external_dirs': [str(dest/'profile/external-skills')]},
+              'plugins': {'enabled': [], 'disabled': []}}
+    if ui:
+        config['display'] = {'skin': 'claude-graphite'}
+    with (dest/'profile/config.yaml').open('x') as out:
+        json.dump(config, out, indent=2)
+
+
+def plugin_blobs(directory, catalog=False):
+    require(directory.is_dir() and directory == directory.resolve(), 'missing or redirected plugin: '+str(directory))
+    files = {}
+    def fail(error):
+        raise error
+    for folder, dirs, names in os.walk(directory, onerror=fail):
+        path = Path(folder)
+        for d in dirs[:]:
+            if d in ('.git', '__pycache__', '.deps') or (path/d).is_symlink():
+                dirs.remove(d)
+                if (path/d).is_symlink():
+                    names.append(d)
+        for name in names:
+            p = path/name
+            key = p.relative_to(directory).as_posix()
+            if catalog and key == '.hermes-catalog.json':
+                continue  # Written by the native PM; authoritative revision is in its sidecar outside the tree.
+            if p.is_symlink():
+                require(p.resolve().is_relative_to(directory), 'external source link: '+key)
+                raw = os.fsencode(p.readlink())
+            else:
+                require(p.is_file(), 'not a source file: '+key)
+                raw = p.read_bytes()
+            files[key] = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+    return hashlib.sha256(json.dumps(files, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def full_record(dest):
+    assets = runpy.run_path(str(ROOT/'skill-pack/install.py'))
+    skills = assets['read_doc']()['skills']
+    names = sorted(assets['selected'](skills))
+    for n in names:
+        assets['checked_tree'](dest/'profile/skills'/n, skills[n].get('edition', skills[n]))
+    directory = dest/'profile/plugins'
+    metadata = directory/'.install-metadata.json'
+    require(metadata.is_file() and metadata == metadata.resolve(), 'missing or redirected PM receipt')
+    receipts = json.loads(metadata.read_bytes())
+    plugin_hashes = {}
+    for r in json.loads((ROOT/'plugin-pack/catalog.json').read_bytes())['registrations']:
+        n = r['name']
+        if n in PROFILE_HOLDBACK:
+            require(not os.path.lexists(directory/n), 'unexpected excluded plugin: '+n)
+        elif r['channel'] != 'host':
+            row = receipts.get(n, {})
+            require(row.get('pinned') is True and row.get('revision'), 'missing pinned PM receipt: '+n)
+            digest = plugin_blobs(directory/n, bool(r.get('catalog')))
+            if r['channel'] == 'upstream':
+                require(row['revision'] == r['commit'] and digest == r['upstream_blobs_sha256'], 'upstream drift: '+n)
+            else:
+                require(digest == plugin_blobs(dest/'plugin-pack/packages'/n), 'assembled source drift: '+n)
+            plugin_hashes[n] = digest
+    return {'layout': 'profile', 'skills': names, 'plugins': plugin_hashes, 'held': PROFILE_HOLDBACK,
+            'pm_metadata': sha(metadata),
+            'inputs': {n: sha(ROOT/n) for n in ('plugin-pack/catalog.json','plugin-pack/files.sha256.json',
+                       'plugin-pack/profile.defaults.json','review-skills/pins.json','skill-pack/manifest.json')},
+            'selection': full_selection(), 'activation_verified': False}
+
+
+def pack_command(group, args, env, cwd):
+    run([sys.executable, '-IB', ROOT/group/'install.py', *args], env, cwd)
+
+
+def finish_full(dest, env):
+    pack_command('skill-pack', ['install', '--prefix', dest], env, dest/'home')
+    pack_command('plugin-pack', ['install', 'all', '--profile', 'integrated', '--prefix', dest], env, dest/'home')
+    record = full_record(dest)
+    with (dest/FULL_RECEIPT).open('x') as out:
+        json.dump(record, out, indent=2)
+    (dest/PENDING).unlink()
+    print('Installed admissible sources:', dest/'profile', '(not activated).')
+
+
+def install(dest, tree, mb, wiki, wiki_python, bins, env, ui, executors=False, *, full=False):
     dest.mkdir(mode=0o700)
+    if full:
+        (dest/PENDING).touch(exist_ok=False)
     repo = dest / 'source'
     shutil.move(tree, repo)
     shutil.move(mb, dest / 'memory-bank')
@@ -260,24 +381,37 @@ def install(dest, tree, mb, wiki, wiki_python, bins, env, ui, executors=False):
     if ui:
         (dest / 'profile/skins').mkdir()
         install_ui(dest, repo, bins, env)
-        run([launcher, 'config', 'set', 'display.skin', 'claude-graphite'], env, dest / 'home')
-        run([sys.executable, '-I', ROOT / 'tests/smoke.py', dest], env, dest / 'home')
+        if not full:
+            run([launcher, 'config', 'set', 'display.skin', 'claude-graphite'], env, dest / 'home')
+            run([sys.executable, '-I', ROOT / 'tests/smoke.py', dest], env, dest / 'home')
     wiki_runtime(dest, wiki, bins['uv'], wiki_python, env)
+    if full:
+        full_config(dest, ui)
+        pack = runpy.run_path(str(ROOT/'plugin-pack/install.py'))
+        pack['verify']()
+        store = dest/'plugin-pack'
+        store.mkdir()
+        pack['runtimes'](dest, store)
     wiki_root = dest / 'profile/llm-wiki'
     for args in [('init',), ('index', '--lexical-only')]:
         run([dest / 'llm-wiki', *args, '--root', wiki_root], env, dest / 'home')
-    run(['bash', dest / 'memory-bank/scripts/mb-init-bank.sh', '--project-root=' + str(dest / 'profile')],
-        env, dest / 'home')
+    bank_runtime = dest / ('plugin-pack/runtime/memory-bank' if full else 'memory-bank')
+    run(['bash', bank_runtime / 'scripts/mb-init-bank.sh', '--project-root=' + str(dest / 'profile')],
+        {**env, 'PYTHONDONTWRITEBYTECODE': '1', 'HERMES_HOME': str(dest/'profile'), 'HOME': str(dest/'home')}, dest / 'home')
     if executors:
         (dest / 'executors/bin').mkdir(parents=True)
-    for p in [*LOCK['assets'], *(json.loads(EXEC_LOCK.read_text()) if executors else ())]:
+    for p in [*([] if full else LOCK['assets']), *(json.loads(EXEC_LOCK.read_text()) if executors else ())]:
         if p.startswith('plugins/'):
             install_path = dest / 'profile' / p
             install_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / p, install_path)
-    for link, obj in mb_links(dest).items():
+    for link, obj in mb_links(dest, full).items():
         link.parent.mkdir(exist_ok=True, parents=True)
         link.symlink_to(obj)
+    if full:
+        receipt_for(dest, 'tui' if ui else 'base', executors, full=True)
+        finish_full(dest, env)
+        return
     dirs = json.loads(run([launcher, 'config', 'get', 'skills.external_dirs', '--json'], env, dest / 'home', capture=True))
     require(isinstance(dirs, list), 'skills.external_dirs is not a list')
     external = str(dest / 'profile/external-skills')
@@ -323,6 +457,7 @@ def main():
     parser.add_argument('--prefix', required=True, help='new directory under an existing parent')
     parser.add_argument('--source', type=Path, help='read-only local Git checkout; uses only committed objects')
     parser.add_argument('--check', action='store_true', help='verify source, assets and tools in temp; do not install')
+    parser.add_argument('--full-profile', action='store_true', help='install both profile packs together, without enabling external plugins')
     parser.add_argument('--with-executors', action='store_true', help='add local user-invoked coding CLI adapters (macOS)')
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--with-tui', action='store_true', help='also build the optional patched TUI and Graphite')
@@ -332,18 +467,24 @@ def main():
     source = args.source.expanduser().resolve(strict=True) if args.source else None
     dest = target(args.prefix, source)
     require(not (source and args.wiki), '--source applies only to Hermes')
+    require(not (args.full_profile and args.wiki), 'cannot combine --full-profile and --wiki')
     require(not args.with_executors or (not args.wiki and sys.platform == 'darwin'),
             '--with-executors requires a macOS Hermes installation')
+    if args.full_profile:
+        print('Full-profile selection (not a receipt):', json.dumps(full_selection(), sort_keys=True), flush=True)
     for path, digest in (LOCK['assets'] | (json.loads(EXEC_LOCK.read_text()) if args.with_executors else {})).items():
         require(sha(ROOT / path) == digest, f'distribution asset checksum differs: {path}')
     if dest.exists():
-        verify_existing(dest, 'wiki' if args.wiki else 'tui' if args.with_tui else 'base', args.with_executors)
+        verify_existing(dest, 'wiki' if args.wiki else 'tui' if args.with_tui else 'base', args.with_executors, full=args.full_profile)
         return
     with tempfile.TemporaryDirectory(prefix='workbench-') as temp:
         tmp = Path(temp).resolve()
         home = tmp / 'home'
         home.mkdir()
         env = environment(home, tmp)
+        if args.full_profile:
+            pack_command('skill-pack', ['verify'], env, tmp)
+            pack_command('plugin-pack', ['inventory'], env, tmp)
         if args.wiki:
             uv = tool('uv', 'uv ' + LOCK['uv'], env, tmp)
             wiki, py = prepare_wiki(tmp, env)
@@ -355,7 +496,7 @@ def main():
             mb = component('memory-bank', tmp, env)
             wiki, py = prepare_wiki(tmp, env)
             if not args.check:
-                install(dest, repo, mb, wiki, py, bins, env, args.with_tui, args.with_executors)
+                install(dest, repo, mb, wiki, py, bins, env, args.with_tui, args.with_executors, full=args.full_profile)
                 return
         print('Preflight passed; prefix not created.')
 

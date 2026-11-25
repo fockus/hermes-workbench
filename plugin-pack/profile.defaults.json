@@ -1,0 +1,71 @@
+{
+  "plugins": {
+    "enabled": [
+      "board-insights",
+      "cache-monitor",
+      "codemode",
+      "covsift",
+      "data-toolkit",
+      "heartbeat",
+      "kanban-gantt",
+      "keep-going",
+      "llm-wiki",
+      "memory-bank",
+      "memory-wiki",
+      "omh",
+      "quota",
+      "recall",
+      "rtk-rewrite",
+      "soul-composer",
+      "subagents",
+      "tavily-plugin",
+      "web-yandex",
+      "workflows"
+    ],
+    "disabled": [
+      "agentmemory",
+      "autorag",
+      "claude-subscription-directsdk-experimental",
+      "hermes-teammates",
+      "openviking",
+      "project-memory-bank"
+    ],
+    "entries": {
+      "codemode": {
+        "settings": {
+          "mode": "optin"
+        }
+      },
+      "web-yandex": {
+        "settings": {
+          "enabled": true
+        },
+        "allow_tool_override": false
+      },
+      "project-memory-bank": {
+        "settings": {
+          "enabled": true
+        },
+        "allow_tool_override": false
+      },
+      "keep-going": {
+        "settings": {
+          "allow_gateway_injection": true,
+          "watchdog": {
+            "enabled": true
+          }
+        }
+      },
+      "heartbeat": {
+        "settings": {
+          "deliver": "local"
+        }
+      }
+    }
+  },
+  "unlisted": [
+    "meeting-context",
+    "qyp-delegate",
+    "reminder-actions"
+  ]
+}

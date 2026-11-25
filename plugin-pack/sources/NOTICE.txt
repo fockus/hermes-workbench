@@ -1,0 +1,4 @@
+Original Hermes extensions by the author identified in the plugin manifests (fockus).
+Source snapshot: d0d354d708136a14ce6913d71c4fd4bba217b660. Publication of the author's code in Hermes Workbench is authorized; no new open-source license has been assigned to that code. The Workbench packaging-layer MIT license does not cover it. This notice also applies to the author's separate Recall service code.
+
+Third-party code retains its own terms. Workflows uses @tintinweb/pi-subagents 0.23.0; see vendor/pi-subagents/LICENSE in that package. Local adapters and the replacement json-schema.js are not assigned that third-party license by this notice. The optional CodeMode host diff includes Hermes Agent context (MIT; see Hermes-Agent-LICENSE.txt supplied with the assembled diff). Pydantic Monty, typing-extensions and other dependencies remain separately licensed. No dependency binaries or model weights are included here.

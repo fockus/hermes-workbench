@@ -1,0 +1,15 @@
+name: llm-wiki
+version: 0.1.0
+kind: standalone
+manifest_version: 2
+api_version: 1
+author: fockus
+license: MIT
+description: Local scope-aware search, reading and graph traversal for curated LLM Wikis.
+provides_tools: [llm_wiki_status, llm_wiki_search, llm_wiki_read, llm_wiki_graph]
+config_schema:
+  runtime_root:
+    type: str
+    default: ""
+    label: Trusted Wiki runtime checkout
+    description: Absolute path to a reviewed skill-llm-wiki checkout with its provisioned local Python environment.

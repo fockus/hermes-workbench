@@ -1,0 +1,4 @@
+name: keep-going
+version: "1.0.0"
+description: "Keep the turn going while the agent's todo list has open items and keeps progressing (bounded)."
+author: fockus

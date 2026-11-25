@@ -1,0 +1,16 @@
+name: recall
+version: "0.1.0"
+description: "hermes-recall: search past sessions, Memory Bank notes and the LLM Wiki by meaning through the local recall service (recall_search, /recall status)."
+author: fockus
+provides_tools: [recall_search]
+provides_hooks: [pre_llm_call, post_llm_call, post_compaction, on_session_finalize, on_session_delete]
+# Read through ctx.get_config; an unset key takes the default shown here. Nothing is enabled by this file.
+config_schema:
+  service_url:
+    type: string
+    default: ""
+    description: "Base URL of the local recall service (a loopback host only)."
+  wiki_runtime_root:
+    type: string
+    default: ""
+    description: "Root of the LLM Wiki runtime the service indexes; empty uses the service default."

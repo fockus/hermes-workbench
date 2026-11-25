@@ -1,0 +1,21 @@
+name: workflows
+version: "0.1.0"
+description: "Deterministic multi-agent workflow scripts (Claude Code / pi Workflow API) run by a vendored pi-subagents runtime, one Node runner per run."
+author: fockus
+config_schema:
+  router_model:
+    type: string
+    default: router
+    description: |
+      Model of the pattern router's classifier step. The default alias `router` tries one variant per provider in
+      order (router-codex, router-claude, router-opencode): a variant whose alias is configured and whose provider is
+      installed, the first that answers wins, a failed one falls to the next. Any other value is a pinned model name.
+      Add the variants to the user config (one alias maps to one provider and model; the opencode-go model id is
+      unverified, it is not in the curated opencode-go list):
+        delegation:
+          backends:
+            subagents:
+              aliases:
+                router-codex: {provider: openai-codex, model: gpt-5.6-terra}
+                router-claude: {provider: claude-subscription-directsdk, model: sonnet}
+                router-opencode: {provider: opencode-go, model: deepseek-v4.1-flash}

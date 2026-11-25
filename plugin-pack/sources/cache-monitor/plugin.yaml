@@ -1,0 +1,4 @@
+name: cache-monitor
+version: "1.0.0"
+description: "Logs the prompt-cache share per model request and names the first prefix part that broke the cache."
+author: fockus

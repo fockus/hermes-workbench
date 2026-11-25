@@ -1,0 +1,199 @@
+--- a/model_tools.py
++++ b/model_tools.py
+@@ -147,6 +147,85 @@ def _run_async(coro):
+     return _get_tool_loop().run_until_complete(coro)
+ 
+ 
++# --- per-session tool filters (the tool-list hook) ---------------------------
++# Defined before plugin discovery below: a plugin's register() may add a filter while this module is
++# still importing. Plugins add fn(session_id, tools) -> tools through register_tool_filter; every filter
++# sees the session's raw catalog and may only remove tools. The names it hides leave the catalog before
++# tool_search builds its listing, so the assembled list, the bridge's listing and the catalog read by
++# tool_search agree, and the hidden set is part of the tool-defs cache key. A session records its
++# filters' keep/hide answer per tool name the first time a list holds that name, so a name never flips
++# mid-session (the prompt cache holds), while the list itself still follows the stock cache and its
++# check_fn expiry. A filter that raises hides, for that request only, every name not decided yet.
++_TOOL_FILTERS: list = []
++_tool_filters_lock = threading.Lock()
++_session_decided: dict[str, dict[str, bool]] = {}  # session -> {tool name: kept}
++_SESSION_MEMO_MAX = 512
++
++
++def register_tool_filter(fn) -> None:
++    """Add a per-session tool filter ``fn(session_id, tools) -> tools`` (registering one twice is a no-op)."""
++    with _tool_filters_lock:
++        if fn not in _TOOL_FILTERS:
++            _TOOL_FILTERS.append(fn)
++            _session_decided.clear()
++
++
++def unregister_tool_filter(fn) -> None:
++    """Remove a tool filter (its owner unloads) together with every session's recorded answers."""
++    with _tool_filters_lock:
++        if fn in _TOOL_FILTERS:
++            _TOOL_FILTERS.remove(fn)
++        _session_decided.clear()
++
++
++def _session_hidden_tools(session_id: Optional[str], enabled_toolsets: Optional[list[str]],
++                          disabled_toolsets: Optional[list[str]]) -> frozenset:
++    """The names this session's filters hide from its raw catalog; filters run only on names it has not decided."""
++    sid = session_id or ""
++    with _tool_filters_lock:
++        filters = list(_TOOL_FILTERS)
++        decided = dict(_session_decided.get(sid, {}))
++    if not filters:
++        return frozenset()
++    catalog = _tool_definitions(enabled_toolsets, disabled_toolsets, True, True, frozenset())
++    names = {t["function"]["name"] for t in catalog}
++    if names - decided.keys():
++        kept = set(names)
++        for fn in filters:
++            try:
++                filtered = fn(sid, list(catalog))
++            except Exception as exc:
++                logger.warning("tool filter %r failed; this request hides the tools it had not decided: %s", fn, exc)
++                return frozenset(name for name in names if not decided.get(name, False))
++            if isinstance(filtered, list):
++                kept &= {t["function"]["name"] for t in filtered if isinstance(t, dict) and "function" in t}
++        with _tool_filters_lock:
++            memo = _session_decided.get(sid)
++            if memo is None:
++                if len(_session_decided) >= _SESSION_MEMO_MAX:
++                    _session_decided.pop(next(iter(_session_decided)))
++                memo = _session_decided[sid] = {}
++            for name in names:
++                memo.setdefault(name, name in kept)
++            decided = dict(memo)
++    return frozenset(name for name in names if not decided.get(name, True))
++
++
++def filter_agent_tools(agent) -> None:
++    """Re-select an agent's tools[] for its session: AIAgent assembles it before the session id exists. A
++    delegated child is filtered once its parent's plugins have bound it (subagent_start, delegate_tool)."""
++    with _tool_filters_lock:
++        if not _TOOL_FILTERS:
++            return
++    enabled, disabled = getattr(agent, "enabled_toolsets", None), getattr(agent, "disabled_toolsets", None)
++    if not _session_hidden_tools(agent.session_id, enabled, disabled):
++        return
++    from toolsets import agent_tool_surface
++    agent.tools = agent_tool_surface(agent, get_tool_definitions(
++        enabled_toolsets=enabled, disabled_toolsets=disabled, quiet_mode=True, session_id=agent.session_id) or [])
++    agent.valid_tool_names = {tool["function"]["name"] for tool in agent.tools} if agent.tools else set()
++
++
+ # --- Tool discovery (importing each tools/*.py triggers registry.register) ---
+ discover_builtin_tools()
+ 
+@@ -223,20 +302,30 @@ def _live_tool_defs_entry(cache_key: tuple) -> Optional[list[dict[str, Any]]]:
+ 
+ 
+ def get_tool_definitions(enabled_toolsets: Optional[list[str]] = None, disabled_toolsets: Optional[list[str]] = None,
+-                         quiet_mode: bool = False, skip_tool_search_assembly: bool = False) -> list[dict[str, Any]]:
++                         quiet_mode: bool = False, skip_tool_search_assembly: bool = False,
++                         session_id: Optional[str] = None) -> list[dict[str, Any]]:
+     """Tool definitions for model API calls, filtered by toolset.
+ 
+     enabled_toolsets None = all; disabled_toolsets are subtracted after enabling.
+     quiet_mode suppresses status prints and enables memoization.
+     skip_tool_search_assembly returns raw schemas for every enabled tool — only
+     the tool_search bridge should use it (it reads the real, uncollapsed catalog).
++    session_id is passed to the registered tool filters (register_tool_filter).
+     """
++    hidden = _session_hidden_tools(session_id, enabled_toolsets, disabled_toolsets)
++    return _tool_definitions(enabled_toolsets, disabled_toolsets, quiet_mode, skip_tool_search_assembly, hidden)
++
++
++def _tool_definitions(enabled_toolsets: Optional[list[str]], disabled_toolsets: Optional[list[str]], quiet_mode: bool,
++                      skip_tool_search_assembly: bool, hidden: frozenset) -> list[dict[str, Any]]:
++    """get_tool_definitions without the tools in *hidden* (the session's tool filters)."""
+     def compute():
+         return _compute_tool_definitions(enabled_toolsets, disabled_toolsets, quiet_mode,
+-                                         skip_tool_search_assembly=skip_tool_search_assembly)
++                                         skip_tool_search_assembly=skip_tool_search_assembly, hidden_tools=hidden)
+     if not quiet_mode:
+         return compute()
+     cache_key = _tool_defs_cache_key(enabled_toolsets, disabled_toolsets, skip_tool_search_assembly)
++    cache_key = None if cache_key is None else cache_key + (hidden,)
+     # Cache the freshly-computed list, but hand callers a shallow copy so downstream mutations (e.g.
+     # run_agent appending memory/LCM tool schemas to self.tools) don't poison the cache. Without this, a
+     # long-lived Gateway process accumulates duplicate tool names across agent inits and providers that
+@@ -520,7 +609,8 @@ _TOOL_SEARCH_LISTING_FORMS = {
+ 
+ 
+ def _compute_tool_definitions(enabled_toolsets: Optional[list[str]] = None, disabled_toolsets: Optional[list[str]] = None,
+-                              quiet_mode: bool = False, skip_tool_search_assembly: bool = False) -> list[dict[str, Any]]:
++                              quiet_mode: bool = False, skip_tool_search_assembly: bool = False,
++                              hidden_tools: frozenset = frozenset()) -> list[dict[str, Any]]:
+     """Uncached implementation of :func:`get_tool_definitions`."""
+     tools_to_include = _select_tool_names(enabled_toolsets, disabled_toolsets, quiet_mode)
+     # Selection is per schema, not per process/profile. Kanban's local checks
+@@ -528,6 +618,8 @@ def _compute_tool_definitions(enabled_toolsets: Optional[list[str]] = None, disa
+     from tools.kanban_toolset_context import scoped_kanban_toolset_selection
+     with scoped_kanban_toolset_selection(enabled_toolsets):
+         filtered_tools = _apply_dynamic_schemas(registry.get_definitions(tools_to_include, quiet=quiet_mode))
++    if hidden_tools:  # the session's tool filters, before tool_search builds its listing
++        filtered_tools = [t for t in filtered_tools if t["function"]["name"] not in hidden_tools]
+     global _last_resolved_tool_names
+     _last_resolved_tool_names = [t["function"]["name"] for t in filtered_tools]
+ 
+@@ -743,9 +835,10 @@ def _dispatch_bridge_tool(function_name: str, function_args: dict[str, Any],
+     # session (subagent, kanban worker) can't reach the whole registry via the bridge.
+     try:
+         current_defs = get_tool_definitions(enabled_toolsets=enabled_toolsets, disabled_toolsets=disabled_toolsets,
+-                                            quiet_mode=True, skip_tool_search_assembly=True) or []
++                                            quiet_mode=True, skip_tool_search_assembly=True,
++                                            session_id=ids.session_id if ids else None) or []
+     except Exception:
+         current_defs = []
+     args = function_args or {}
+     from tools.managed_gateway_identity import CallRef
+     call = CallRef(turn_id=ids.turn_id, tool_call_id=ids.tool_call_id) if ids else None
+--- a/agent/agent_init.py
++++ b/agent/agent_init.py
+@@ -2172,6 +2172,9 @@ def init_agent(
+         agent, session_id, session_db, parent_session_id, reasoning_config, max_tokens,
+         checkpoints_enabled, checkpoint_max_snapshots, checkpoint_max_total_size_mb, checkpoint_max_file_size_mb,
+     )
++    import model_tools
++    if not model_tools._is_delegated_child_context():  # a child: delegate_tool filters it once it is bound
++        model_tools.filter_agent_tools(agent)  # the tool-list hook: tools[] was built before the session id
+ 
+     # Load config once for memory, skills, and compression sections
+     try:
+--- a/agent/tool_executor.py
++++ b/agent/tool_executor.py
+@@ -376,7 +376,7 @@ def _tool_search_scoped_names(agent) -> frozenset:
+         return _ts.scoped_deferrable_names(model_tools.get_tool_definitions(
+             enabled_toolsets=getattr(agent, "enabled_toolsets", None),
+             disabled_toolsets=getattr(agent, "disabled_toolsets", None),
+-            quiet_mode=True, skip_tool_search_assembly=True,
++            quiet_mode=True, skip_tool_search_assembly=True, session_id=getattr(agent, "session_id", None),
+         ) or [])
+     except Exception:
+         return frozenset()
+--- a/tools/delegate_tool.py
++++ b/tools/delegate_tool.py
+@@ -382,6 +382,9 @@ def _build_child_agent(
+             child_session_id=getattr(child, "session_id", None), child_subagent_id=subagent_id,
+             child_role=effective_role, child_goal=goal,
+         )
++    import model_tools
++    with delegated_profile_scope(profile_home), delegated_child_context():  # the scope the child was built in
++        model_tools.filter_agent_tools(child)  # the tool-list hook: subagent_start has bound the child now
+     return child
+ 
+ def _run_single_child(
+--- a/tools/mcp_tool_agent.py
++++ b/tools/mcp_tool_agent.py
+@@ -159,7 +159,8 @@ def refresh_agent_mcp_tools(
+     from agent.delegation_backends import adopt_built_backend, saved_backend
+     built_backend = saved_backend()
+     new_defs = agent_tool_surface(agent, list(
+-        get_tool_definitions(enabled_toolsets=enabled, disabled_toolsets=disabled, quiet_mode=quiet_mode) or []))
++        get_tool_definitions(enabled_toolsets=enabled, disabled_toolsets=disabled, quiet_mode=quiet_mode,
++                             session_id=getattr(agent, "session_id", None)) or []))
+     new_names = {_def_name(t) for t in new_defs}
+     # Post-build families re-appended on LOCALS only; live attributes untouched until publish.
+     staged_engine_names = _reinject_post_build_tools(agent, new_defs, new_names)

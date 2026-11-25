@@ -1,0 +1,1821 @@
+{
+  "schema": 1,
+  "host": {
+    "repository": "NousResearch/hermes-agent",
+    "commit": "caafe5389ae585ef77387a962aee05b1bcf17029"
+  },
+  "registrations": [
+    {
+      "name": "browser/browser_use",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/browser/browser_use/plugin.yaml",
+      "blob": "ff926a50ea7a65bc2a7c468eecc5b597c146b03c",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "926b4fd8a300eb679397e002b49a599c530257d2"
+    },
+    {
+      "name": "browser/browserbase",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/browser/browserbase/plugin.yaml",
+      "blob": "5d976328a23f9fb570618740390825e913641f3a",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "d4a05e89052afaf1357433ec329c6eb0f9583fbc"
+    },
+    {
+      "name": "browser/firecrawl",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/browser/firecrawl/plugin.yaml",
+      "blob": "22da6a7f4b57875ae37bfd050b0141d0c1c3a3be",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "320730eda183ee28023201b608eb765383b45078"
+    },
+    {
+      "name": "cron_providers/chronos",
+      "state": "not-enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/cron_providers/chronos/plugin.yaml",
+      "blob": "aad48b35655c4141b2426f173807c1a493fd51d2",
+      "tree": "6e361a848e3993002e5936f56fe1dbf09b738c7d"
+    },
+    {
+      "name": "dashboard_auth/basic",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/dashboard_auth/basic/plugin.yaml",
+      "blob": "586688f71b259a22c4048cb34da599a1fd308ca6",
+      "tree": "51fce06b7ad9fd2fd601ec82642db94d8ce96725"
+    },
+    {
+      "name": "dashboard_auth/drain",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/dashboard_auth/drain/plugin.yaml",
+      "blob": "8afea2b61174b373319dcb4dafa741fd505539e5",
+      "tree": "ae1f716345bd900ab1c3a9a117498f8aa850d94f"
+    },
+    {
+      "name": "dashboard_auth/nous",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/dashboard_auth/nous/plugin.yaml",
+      "blob": "c395c0c91650208750030d187aa39ef711795a2e",
+      "tree": "322998d1e0e04c554b92f4aeb3fac2a1c6e61ada"
+    },
+    {
+      "name": "dashboard_auth/self_hosted",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/dashboard_auth/self_hosted/plugin.yaml",
+      "blob": "ced621beb1c6a6cfcb63b0caa55031ec4408b167",
+      "tree": "d50079506c2f92e1737a01078a8a6cabb938bbb0"
+    },
+    {
+      "name": "dashboard_auth/session_token",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/dashboard_auth/session_token/plugin.yaml",
+      "blob": "eec3299599124c59504f9be690f2b3f1d9bacfb7",
+      "tree": "a7aa74bf76854d2ff9070af33305b391b50cd855"
+    },
+    {
+      "name": "delegation/default",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/delegation/default/plugin.yaml",
+      "blob": "988b8c37c9b8d8db97ee60af232002b8ec31c48a",
+      "tree": "931b5f777c6116691312a736695eb7c80cf721b0"
+    },
+    {
+      "name": "disk-cleanup",
+      "state": "not-enabled",
+      "version": "2.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/disk-cleanup/plugin.yaml",
+      "blob": "5643e23bfc63df7c2d34f882742784a0827c378c",
+      "tree": "16a5655a4be3f10903437bee64953c27a1932e65"
+    },
+    {
+      "name": "google_meet",
+      "state": "not-enabled",
+      "version": "0.2.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/google_meet/plugin.yaml",
+      "blob": "0d6b2e0f358402789cede543e0b678b4ec314fd8",
+      "tree": "e1d41f234c76a89e9351febf77e2b8ba6ea6ec80"
+    },
+    {
+      "name": "image_gen/deepinfra",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/deepinfra/plugin.yaml",
+      "blob": "abc5c9acca3fc7ea1462e1e3dc59ff3f1c40812f",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "c21e4495d43234c644a692acc14fcd2ad8a87a6a"
+    },
+    {
+      "name": "image_gen/fal",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/fal/plugin.yaml",
+      "blob": "a478bbc20cdef2821732b4f3aab34296f71dc0ee",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "85eeb0eb4e017ccb9d5200b65a06e7d7dc26df7d"
+    },
+    {
+      "name": "image_gen/krea",
+      "state": "enabled",
+      "version": "1.1.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/krea/plugin.yaml",
+      "blob": "65e2a9a9dba82c33450b14e7ecdbedb23efdc974",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8e74dcf2c1322a3bbf0844e71d367cb28fe6bd04"
+    },
+    {
+      "name": "image_gen/meta-ai",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/meta-ai/plugin.yaml",
+      "blob": "0032c878b490c9797a11c9990cd86da8c59b3da1",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "b3465d4707a5e6bbf8899780ba8f3966ea67c29a"
+    },
+    {
+      "name": "image_gen/openai",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/openai/plugin.yaml",
+      "blob": "7169746cc0d0c50b7cb1925f02ed09d5bb5e52ec",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "1064dc58bb24cf00076fd93b6e97e2bf6fbe4bd4"
+    },
+    {
+      "name": "image_gen/openai-codex",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/openai-codex/plugin.yaml",
+      "blob": "b79db2e239affb768e741816e35ce67c910e2fb6",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8ccfe0a911caf5aaa71a378a5a6b7cc62b7d76e5"
+    },
+    {
+      "name": "image_gen/openrouter",
+      "state": "enabled",
+      "version": "1.1.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/openrouter/plugin.yaml",
+      "blob": "bff7f1154019bbde0665df96d8d01f083604583f",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "de358effe24a1e893e3850418fe3b2f945bf0bef"
+    },
+    {
+      "name": "image_gen/xai",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/image_gen/xai/plugin.yaml",
+      "blob": "1bebc7d725b05f6324678baf19b553a97435a900",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "180d8db7b1404cc31a24135346255a313dd131ab"
+    },
+    {
+      "name": "platforms/a2a",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/a2a/plugin.yaml",
+      "blob": "a45b0042721936880e6a42a15a4112e95c5a3679",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "fdded54db77b1811d21b186edc485b142a4732cc"
+    },
+    {
+      "name": "platforms/bluebubbles",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/bluebubbles/plugin.yaml",
+      "blob": "4a17d8bf8c3c16ff1db8d5145d469f48ff857a6d",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "44fa4e71df5c6b217f37bcf2d3b0a257b7bae50e"
+    },
+    {
+      "name": "platforms/buzz",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/buzz/plugin.yaml",
+      "blob": "fc3dc504e724ecfae1f2cb91c2c090a0d3d8d4c5",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "7b252d11a2982068349cb7794e8561b2272a1bd7"
+    },
+    {
+      "name": "platforms/dingtalk",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/dingtalk/plugin.yaml",
+      "blob": "ab2280382a9b9422626b09b9679ab149c8367b5d",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "c392c3657748cbc77d10409eddf992c8e3016210"
+    },
+    {
+      "name": "platforms/discord",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/discord/plugin.yaml",
+      "blob": "3e09fc9ec86e91b6a73994c607fe4003b7442094",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "1b8b3b4fd5cfa6d54c08cb083fe51e5927e107c0"
+    },
+    {
+      "name": "platforms/email",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/email/plugin.yaml",
+      "blob": "ec4af9fa3ad7b7f8276b8e23c84aa601eae34a38",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "f2970feb3c7244b03d0ab1691c2377ece1bac978"
+    },
+    {
+      "name": "platforms/feishu",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/feishu/plugin.yaml",
+      "blob": "0eabd947ea6c7c3d96babb6b0a0b27d4fe8eb23f",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "e2211060c563a8d96e73e6d5aa700c0091e7e45f"
+    },
+    {
+      "name": "platforms/google_chat",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/google_chat/plugin.yaml",
+      "blob": "d178a53085d4965095eb85151694f092f07ca98c",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8819cdd9e844d4b3fe096c22c3ab6a44f98a6946"
+    },
+    {
+      "name": "platforms/irc",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/irc/plugin.yaml",
+      "blob": "ccf83c4a031b1d16e9813ed769712fad011d1c80",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "608118ea3b21cd66f2b08021bdedf0df9ad29009"
+    },
+    {
+      "name": "platforms/line",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/line/plugin.yaml",
+      "blob": "2f06b3e545fed45547868c712924f8053b3bf7d8",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8259431758cfc92cb671f17bdadd5e2ba01ed783"
+    },
+    {
+      "name": "platforms/matrix",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/matrix/plugin.yaml",
+      "blob": "77d65d933960acb0030cb3f4758acadea1e25b1e",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "1670820ffe5bbe840568f9c49c1398adc8928e3d"
+    },
+    {
+      "name": "platforms/mattermost",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/mattermost/plugin.yaml",
+      "blob": "3ee5814cde89dae933d9eff8d08b509958c969c3",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8c5c21103bdbe5ce374010d40a02dac8b71bad56"
+    },
+    {
+      "name": "platforms/ntfy",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/ntfy/plugin.yaml",
+      "blob": "e476a36235f2fa24cc3cf7cd96f8e2e03af88a34",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "abac4af2b3ccac9346ecc55608de1785a0c53b9c"
+    },
+    {
+      "name": "platforms/photon",
+      "state": "enabled",
+      "version": "0.3.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/photon/plugin.yaml",
+      "blob": "1d6468582fa08297a38c8ce8cf139d04f1ffdde1",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "32b0b7926445f4180a74c54cdc73e2632722d912"
+    },
+    {
+      "name": "platforms/qqbot",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/qqbot/plugin.yaml",
+      "blob": "cad38a87002e2c47b88fef57325bdf9ba2bccb16",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "a92d05a4adb3a319577846bde289b44fa11aa9af"
+    },
+    {
+      "name": "platforms/raft",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/raft/plugin.yaml",
+      "blob": "81b772eedfedf9c2aab74d63955993d9a0c7d50a",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "3c0f24ae25296ac9045e42e9d8c8a92aa86a41a6"
+    },
+    {
+      "name": "platforms/signal",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/signal/plugin.yaml",
+      "blob": "019696f727ee6beb2694659e12d36463789a9112",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "bed5845d9f8202ffce38a43f3a1a1e8246da4825"
+    },
+    {
+      "name": "platforms/simplex",
+      "state": "enabled",
+      "version": "1.1.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/simplex/plugin.yaml",
+      "blob": "84ef401a668e95907154f1592d107ffe68b4086b",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "18fe174b01098e7432c4e1af1eaa4c537cca464d"
+    },
+    {
+      "name": "platforms/slack",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/slack/plugin.yaml",
+      "blob": "b04ac8b2ca18ea4509b7abba44ba35cf50c32095",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "de03c7483d8270aa617bf745fe15cf343b780268"
+    },
+    {
+      "name": "platforms/sms",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/sms/plugin.yaml",
+      "blob": "222106b6dd8c0a6d1d051ecc78ba8c4934cbd973",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "ea485832712d4e16480d8fce30f0f56857842317"
+    },
+    {
+      "name": "platforms/teams",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/teams/plugin.yaml",
+      "blob": "4296905d0f4654ad5118433d8328ae7d4d08ad8d",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "5d7740cafe329406ccecb2f0af7b41ea46eb39e2"
+    },
+    {
+      "name": "platforms/telegram",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/telegram/plugin.yaml",
+      "blob": "76ea417f29d3ddb3e66636bf4198e5d4ec36e728",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "971bac1dd5f2ee3ab9981c9c9a7a8d8a4e389739"
+    },
+    {
+      "name": "platforms/wecom",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/wecom/plugin.yaml",
+      "blob": "ea213be9ddde1bd8b7474801914c2f9bda7da594",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "5351886fb418b146b3268097c858d453037c2be8"
+    },
+    {
+      "name": "platforms/weixin",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/weixin/plugin.yaml",
+      "blob": "cc3e88c706a5a09c81335c90d0665c871831a025",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "935a909f7496c6dfb75dd314281395184457403a"
+    },
+    {
+      "name": "platforms/whatsapp",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/whatsapp/plugin.yaml",
+      "blob": "7446f5240b0e6e4422551bc7d196226ca8ef1d9e",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "fb6f3974de30f27e8803c70cd552e76dcf6840f9"
+    },
+    {
+      "name": "platforms/whatsapp_cloud",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/platforms/whatsapp_cloud/plugin.yaml",
+      "blob": "38809cb47a2086facfcb74b23749845635fd3673",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "97083d5d1ed3e78d819e4cdfc381836a293e6328"
+    },
+    {
+      "name": "security-guidance",
+      "state": "not-enabled",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "channel": "host",
+      "manifest": "plugins/security-guidance/plugin.yaml",
+      "blob": "0224a28029806e272d26670eeb7acf5bd56b7010",
+      "tree": "5b361551c7170c31585e0ba52d6de605f5aa74c3"
+    },
+    {
+      "name": "teams_pipeline",
+      "state": "not-enabled",
+      "version": "0.1.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/teams_pipeline/plugin.yaml",
+      "blob": "c9287ac0836e7a3b7ce69d8199a7b99ebbbfbf07",
+      "tree": "daeed46a72fcc86a7d46045bb5298a553cd7eee7"
+    },
+    {
+      "name": "video_gen/deepinfra",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/video_gen/deepinfra/plugin.yaml",
+      "blob": "cec28f4283f7bbb9415b35c02c352bde8229d145",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "20b6bf327579239d22d4e7bba62e7537b40beb47"
+    },
+    {
+      "name": "video_gen/fal",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/video_gen/fal/plugin.yaml",
+      "blob": "2003a817e78b66dfe1b386156f226cad304324c1",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "627f92412cc906f1865db38e538f4badf7d0242c"
+    },
+    {
+      "name": "video_gen/openrouter",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/video_gen/openrouter/plugin.yaml",
+      "blob": "e1ab62a31adb8707e0c952f60756fd5b72a97b5b",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "1b1bf98d356306d0ea7df773e2edac3e877801f0"
+    },
+    {
+      "name": "video_gen/xai",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/video_gen/xai/plugin.yaml",
+      "blob": "3fec62e08fa6bf36b9d544068c98d25713bb6618",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "1fa4000488be3515f1a0c4ada23ae2fe4214bcc9"
+    },
+    {
+      "name": "web/brave_free",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/brave_free/plugin.yaml",
+      "blob": "3b39a34e18de24f36deba1aa2c74a7582cb35707",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "3b950aff1dd02d79cf781384cd411d41be0458da"
+    },
+    {
+      "name": "web/ddgs",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/ddgs/plugin.yaml",
+      "blob": "e85236c14cf12a06f3e70917224444a8d6091593",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "b0b15c25a72b2e34815cc3a01eb8f51f0ee655d1"
+    },
+    {
+      "name": "web/exa",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/exa/plugin.yaml",
+      "blob": "1eceefb6ac546c3f557577b106d92c380d1fdd73",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "987da1044bf5f82f5daa15064141ff04edffdd4b"
+    },
+    {
+      "name": "web/firecrawl",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/firecrawl/plugin.yaml",
+      "blob": "6910545a5a62851b243434a3f88994b37fe5df6c",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "5d181c465201459ab43dcac870ee97ae8e902603"
+    },
+    {
+      "name": "web/keenable",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/keenable/plugin.yaml",
+      "blob": "a11b7ca73d6c511a8b81acbafc9a6554c15bf969",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "e8d91ad16e69d700c0f643d0c4dcc5c7defecf27"
+    },
+    {
+      "name": "web/openai_native",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/openai_native/plugin.yaml",
+      "blob": "a00054eacd406200ea6a9f9ed5ea671481eec511",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "92a09cf1a5b9d5235ac9a7d7c3e2c5b4f5eab4ac"
+    },
+    {
+      "name": "web/parallel",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/parallel/plugin.yaml",
+      "blob": "01bf0da58effa680e3b07ac0ee681888a9b75aeb",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "d57221d3ae179eabd8dfd48863768bb932f33d82"
+    },
+    {
+      "name": "web/perplexity",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/perplexity/plugin.yaml",
+      "blob": "a19edb0c286710add2bcad3dbe3fd8f88067c29d",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "995f8f59f1119cfc957a729d6dbfd7c248fc02f0"
+    },
+    {
+      "name": "web/searxng",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/searxng/plugin.yaml",
+      "blob": "3d758bad58bdba157616b5c819f321279e9353a3",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "8952d9ed93819c89e1e16e7652553e508a2b1599"
+    },
+    {
+      "name": "web/tavily",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/tavily/plugin.yaml",
+      "blob": "3ac90594e57cb985e94790be6e00a9106bc1bfdb",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "7ae5f14225f106928b8a5a400239000f39ef0111"
+    },
+    {
+      "name": "web/xai",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "host",
+      "manifest": "plugins/web/xai/plugin.yaml",
+      "blob": "03874fea989cac7eab056e39267ec1bf036b99d4",
+      "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+      "tree": "d3af70f7019c067d25336dff6bed7a7012c968cb"
+    },
+    {
+      "name": "agentmemory",
+      "state": "disabled",
+      "version": "0.9.33",
+      "license": "Apache-2.0",
+      "channel": "upstream",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "subdir": "integrations/hermes",
+      "commit": "28ffc538b81b265e2f649354ed9f88b0c12ae414",
+      "manifest_blob": "3fac3389bb130deafdd912d96cbc1dd9732be225",
+      "catalog": "agentmemory",
+      "requirements": "Own AgentMemory server, assigned project and secret if authentication is required. No capture scope is supplied.",
+      "python_dependencies": [],
+      "root_notice": "notices/rohitg00--agentmemory-28ffc538.txt",
+      "upstream_file_count": 4,
+      "upstream_blobs_sha256": "b1cf0200252a73f18e0838d334359b7e00cfe004964a89e616ba00c1dd915428"
+    },
+    {
+      "name": "autorag",
+      "state": "disabled",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "channel": "upstream",
+      "url": "https://github.com/Marker-Inc-Korea/AutoRAG",
+      "subdir": "plugins/hermes",
+      "commit": "40ef977a1262fb1090b2be04556739994eb29225",
+      "manifest_blob": "22e1873e93cc2cf5d362228b9bf0dd2b953999b6",
+      "catalog": "autorag",
+      "requirements": "Node/npx, @autorag/librarian@2.13.12, isolated workspace, explicit permission for selected data. Do not enable by default.",
+      "python_dependencies": [],
+      "root_notice": "notices/Marker-Inc-Korea--AutoRAG-40ef977a.txt",
+      "upstream_file_count": 14,
+      "upstream_blobs_sha256": "0913b3c35897ac5e8fcc441e67a1f7b71c83d90ee00dfd08d066f3520ec7be24"
+    },
+    {
+      "name": "board-insights",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/kwpings/board-insights",
+      "subdir": ".",
+      "commit": "af7fc666800a7506a7d6296e485a4ea9f49254b3",
+      "manifest_blob": "e4b771d424aa120f59c55ea54542502904a0541f",
+      "catalog": "board-insights",
+      "requirements": "Workbench Kanban data if the page is used. No key.",
+      "python_dependencies": [],
+      "root_notice": "notices/kwpings--board-insights-af7fc666.txt",
+      "upstream_file_count": 29,
+      "upstream_blobs_sha256": "eecb79d4fcb815fb88f58e86ff31d914bec93dfa77d06a21045c39ff530ac8d6"
+    },
+    {
+      "name": "cache-monitor",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/cache-monitor",
+      "requirements": "Pinned Hermes request hooks.",
+      "python_dependencies": []
+    },
+    {
+      "name": "claude-subscription-directsdk-experimental",
+      "state": "disabled",
+      "version": "0.3.5",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/NousResearch/hermes-official-plugins",
+      "subdir": "claude-subscription-directsdk",
+      "commit": "6313fad5ddf2c060e7b16782f4860c0d5cdbfcac",
+      "manifest_blob": "8712f3baf3de4045bebe2d0b1ca2de59a06edef4",
+      "catalog": "claude-subscription-directsdk",
+      "requirements": "Disabled. A separately installed Claude Code and operator account would be required for use; no probe or auth supplied.",
+      "python_dependencies": [],
+      "root_notice": "notices/NousResearch--hermes-official-plugins-6313fad5.txt",
+      "upstream_file_count": 58,
+      "upstream_blobs_sha256": "376616451b97eb260c2b6024dfc2ae5193e3fcabd06e27182fbbd9186d1b00b4"
+    },
+    {
+      "name": "codemode",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/codemode",
+      "requirements": "Real typed Hermes SDK. Matching CPython wheels in requirements.lock under .deps/cpXY. Never apply the optional tool-filter patch built for a different host automatically.",
+      "python_dependencies": []
+    },
+    {
+      "name": "covsift",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/rodricksz4h5/covsift",
+      "subdir": ".",
+      "commit": "5d2ea15e76887225c7286fe884fb0a065829b3d7",
+      "manifest_blob": "423dc5c4dffdc66f3bf5244d20c8c3b94be8faac",
+      "catalog": "covsift",
+      "requirements": "Python stdlib; caller-selected local report.",
+      "python_dependencies": [],
+      "root_notice": "notices/rodricksz4h5--covsift-5d2ea15e.txt",
+      "upstream_file_count": 6,
+      "upstream_blobs_sha256": "298558217e35ae6911c33f4b3ed83deb035d2085c820881b56121c080609f119"
+    },
+    {
+      "name": "data-toolkit",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/data-toolkit",
+      "requirements": "Native manifest Python dependencies; Docling/OCR model assets require separate permission.",
+      "python_dependencies": [
+        "docling==2.150.1",
+        "pandas>=3.1.1,<4",
+        "numpy>=2.5.4,<3",
+        "polars>=2.1.0,<3",
+        "pyarrow>=26.0.1,<27",
+        "matplotlib>=3.11.2,<4",
+        "scikit-learn>=1.9.1,<2",
+        "scipy>=1.18.1,<2",
+        "openpyxl>=3.1.5,<4"
+      ]
+    },
+    {
+      "name": "heartbeat",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/heartbeat",
+      "requirements": "Local Kanban. Scheduling/delivery is an independent opt-in; no cron job or destination is copied.",
+      "python_dependencies": []
+    },
+    {
+      "name": "hermes-teammates",
+      "state": "disabled",
+      "version": "1.8.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/100yenadmin/hermes-teammates",
+      "subdir": ".",
+      "commit": "28a7eb0d47afc09e75d535878e617775684f25da",
+      "manifest_blob": "848d195a3a2e10ada016dc905bdd96930fd1dbf3",
+      "catalog": "hermes-teammates",
+      "requirements": "Own roster and model access; no team or credentials included.",
+      "python_dependencies": [],
+      "root_notice": "notices/100yenadmin--hermes-teammates-28a7eb0d.txt",
+      "upstream_file_count": 444,
+      "upstream_blobs_sha256": "30446903f358c180e7f30aa816a0d4bcb150f6c22e02bde1e550f5c5e1de9013"
+    },
+    {
+      "name": "kanban-gantt",
+      "state": "enabled",
+      "version": "1.9.0",
+      "license": "GPL-3.0-unspecified",
+      "channel": "upstream",
+      "url": "https://github.com/e-is/hermes-kanban-gantt",
+      "subdir": ".",
+      "commit": "c14cbf5afd75ffb942c77b708ffc682aa46d5f86",
+      "manifest_blob": "467616a54f23c78a43c9f5d311fc596dec98dc95",
+      "catalog": "kanban-gantt",
+      "requirements": "Optional Hermes Desktop/dashboard, Workbench Kanban; no key.",
+      "python_dependencies": [],
+      "root_notice": "notices/e-is--hermes-kanban-gantt-c14cbf5a.txt",
+      "upstream_file_count": 160,
+      "upstream_blobs_sha256": "8dd9b5ae58429c1403e500b742dbb649f8f20f4c8200adc3f4edc77ee2e9c5d5"
+    },
+    {
+      "name": "keep-going",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/keep-going",
+      "requirements": "Hermes todo hooks; gateway follow-up only with operator approval.",
+      "python_dependencies": []
+    },
+    {
+      "name": "llm-wiki",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "MIT",
+      "channel": "base-overlay",
+      "path": "base-overlays/llm-wiki",
+      "requirements": "Original plugin and plugin skill. In the pack profile, prepare verified Wiki runtime first; installer binds runtime_root and its .venv. No Wiki data copied.",
+      "python_dependencies": []
+    },
+    {
+      "name": "meeting-context",
+      "state": "not-enabled",
+      "version": "0.1.0",
+      "license": "upstream repository terms (and nested notices)",
+      "channel": "upstream",
+      "url": "https://github.com/oshapovalovmail-dot/hermes-agent",
+      "subdir": "integrations/local-plugins/meeting-context",
+      "commit": "06791bdbba642ce7d1b159b6e98e78cb9ad014c3",
+      "manifest_blob": "ff8ae3b836635e9d22aa4d6a401b7eb649937c16",
+      "requirements": "Own transcript folder and explicit meeting/topic mappings. Not activated.",
+      "python_dependencies": [],
+      "root_notice": "notices/oshapovalovmail-dot--hermes-agent-06791bdb.txt",
+      "upstream_file_count": 3,
+      "upstream_blobs_sha256": "a0f2a7e2aa2e77d2498b755519e7f65275be4249c17e0c5a2e8dac3231479ab6"
+    },
+    {
+      "name": "memory-bank",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "base-overlay",
+      "path": "base-overlays/memory-bank",
+      "requirements": "Original adapter, local team guard and runtime changes. In the pack profile, prepare verified runtimes first; the adapter binds to that prepared runtime.",
+      "python_dependencies": []
+    },
+    {
+      "name": "memory-wiki",
+      "state": "enabled",
+      "version": "1.1.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/NousResearch/hermes-official-plugins",
+      "subdir": "memory-wiki",
+      "commit": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+      "manifest_blob": "b8f9b49d53f7ba2ae8177c7315a95c46347fb3ee",
+      "catalog": "hermes-memory-wiki",
+      "requirements": "Own profile only; UI reads history on use. No existing history included.",
+      "python_dependencies": [],
+      "root_notice": "notices/NousResearch--hermes-official-plugins-e7a218f2.txt",
+      "upstream_file_count": 19,
+      "upstream_blobs_sha256": "d7f668a63af595caf7f681dfabb89770f52e41067c5d0bb0253cfc5014bf8c9b"
+    },
+    {
+      "name": "omh",
+      "state": "enabled",
+      "version": "4.0.4",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/rlaope/oh-my-hermes",
+      "subdir": "src/plugin_bundle/omh",
+      "commit": "8ea5569fa9d4d17c4103c330b148484b58a74462",
+      "manifest_blob": "724e5fde77d75a427d85f6f9b50c2e5084ece5ac",
+      "catalog": "omh",
+      "requirements": "Native bridge; separate pinned OMH CLI/home for optional features, operator key only for optional Jev calls. No user home/roles copied.",
+      "python_dependencies": [],
+      "root_notice": "notices/rlaope--oh-my-hermes-8ea5569f.txt",
+      "upstream_file_count": 202,
+      "upstream_blobs_sha256": "237c38d3f39c83d80d1b9fd56d131d33998db85e2ba661bd24b1d615a1eae371"
+    },
+    {
+      "name": "openviking",
+      "state": "disabled",
+      "version": "2.1.2",
+      "license": "MIT (Hermes example); AGPL-3.0 upstream server",
+      "channel": "upstream",
+      "url": "https://github.com/volcengine/OpenViking",
+      "subdir": "examples/hermes-plugin",
+      "commit": "e855796c83f9eb575d9b0f3082926660730f6a63",
+      "manifest_blob": "3848ec53d865b4c9328ad7c6b30e624792c6fa13",
+      "catalog": "openviking",
+      "requirements": "Disabled. Set up own OpenViking server, storage, credentials and optional embeddings; no service provisioned.",
+      "python_dependencies": [
+        "httpx>=0.27,<1",
+        "psutil>=5.9,<9",
+        "packaging>=23,<27"
+      ],
+      "root_notice": "notices/volcengine--OpenViking-e855796c.txt",
+      "upstream_file_count": 28,
+      "upstream_blobs_sha256": "e92544295f3491ad35455915966c5d199fed4c10b26058d7fee7d5bbb8f9160d"
+    },
+    {
+      "name": "project-memory-bank",
+      "state": "disabled",
+      "version": "0.1.0",
+      "license": "upstream repository terms (and nested notices)",
+      "channel": "upstream",
+      "url": "https://github.com/oshapovalovmail-dot/hermes-agent",
+      "subdir": "integrations/local-plugins/project-memory-bank",
+      "commit": "06791bdbba642ce7d1b159b6e98e78cb9ad014c3",
+      "manifest_blob": "4ba6cc23e7880a328869af709948d6ff8c026015",
+      "requirements": "Disabled. Own project bindings and directory; plugin includes its licensed runtime subset.",
+      "python_dependencies": [],
+      "root_notice": "notices/oshapovalovmail-dot--hermes-agent-06791bdb.txt",
+      "upstream_file_count": 11,
+      "upstream_blobs_sha256": "171bc8cad0507ab11df7290791a967548d8587becac888588b130f9189f646cf"
+    },
+    {
+      "name": "quota",
+      "state": "enabled",
+      "version": "3.0.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/rarf/hermes-quota-plugin",
+      "subdir": ".",
+      "commit": "89a2ca39a28dddcdcf01cf587519ea3861274b7a",
+      "manifest_blob": "9cfe3413bc346bd7b1eeb81c4aa77a4755f91422",
+      "catalog": "quota",
+      "requirements": "Use only operator-selected provider accounts; no auth/keychain/cache transferred.",
+      "python_dependencies": [],
+      "root_notice": "notices/rarf--hermes-quota-plugin-89a2ca39.txt",
+      "upstream_file_count": 145,
+      "upstream_blobs_sha256": "594edeb0dfc8ae5e8c2b5b15f33e2383fd236309d8bcf469a76c12cd8402b0b2"
+    },
+    {
+      "name": "qyp-delegate",
+      "state": "not-enabled",
+      "version": "1.0.0",
+      "license": "upstream repository terms (and nested notices)",
+      "channel": "upstream",
+      "url": "https://github.com/oshapovalovmail-dot/hermes-agent",
+      "subdir": "integrations/local-plugins/qyp-delegate",
+      "commit": "06791bdbba642ce7d1b159b6e98e78cb9ad014c3",
+      "manifest_blob": "70bdfd82885abe0758cb95dbfd16a5f724440497",
+      "requirements": "Not activated. User-authorized SSH worker, restricted account, allowed workdirs and own credentials.",
+      "python_dependencies": [],
+      "root_notice": "notices/oshapovalovmail-dot--hermes-agent-06791bdb.txt",
+      "upstream_file_count": 4,
+      "upstream_blobs_sha256": "55bc6f31a45e0052b9dd007783279724d33531c58ff78d2f1676d2069355eda3"
+    },
+    {
+      "name": "recall",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/recall",
+      "requirements": "Standalone plugin with recall_search and hooks. No default service URL. Set an explicitly isolated loopback service; capture/index only operator-authorized new data; semantic mode needs licensed models.",
+      "python_dependencies": []
+    },
+    {
+      "name": "reminder-actions",
+      "state": "not-enabled",
+      "version": "1.0.0",
+      "license": "upstream repository terms (and nested notices)",
+      "channel": "upstream",
+      "url": "https://github.com/oshapovalovmail-dot/hermes-agent",
+      "subdir": "integrations/local-plugins/reminder-actions",
+      "commit": "06791bdbba642ce7d1b159b6e98e78cb9ad014c3",
+      "manifest_blob": "222af2e24c7eb5838718eb19fa6002f17924717c",
+      "requirements": "Not activated. Own Telegram account, owner, bindings and reminders; no IDs copied.",
+      "python_dependencies": [
+        "python-telegram-bot[webhooks]==22.8"
+      ],
+      "root_notice": "notices/oshapovalovmail-dot--hermes-agent-06791bdb.txt",
+      "upstream_file_count": 5,
+      "upstream_blobs_sha256": "fb3ee02fabf30158695e65e01da1a51240014583a31d662e012ee6f5c0c622c2"
+    },
+    {
+      "name": "rtk-rewrite",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "channel": "upstream",
+      "url": "https://github.com/rtk-ai/rtk",
+      "subdir": "hooks/hermes/rtk-rewrite",
+      "commit": "e288a18c04452fd26192f59132e5324a8bb6924d",
+      "manifest_blob": "7a08e40b54b7405fd686a7356058c1642464775e",
+      "requirements": "Full native callback; RTK 1.2.0 OSS on Workbench PATH. No shell hooks/global init. See release auxiliary artifact.",
+      "python_dependencies": [],
+      "root_notice": "notices/rtk-ai--rtk-e288a18c.txt",
+      "upstream_file_count": 2,
+      "upstream_blobs_sha256": "4c5c35d2fe9807c60d48df61ad0723a14c40500bff57f34c5f7221cca73fbf13"
+    },
+    {
+      "name": "soul-composer",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/soul-composer",
+      "requirements": "Original composer, no SOUL, bricks, team, recipes or profiles. On start may build team; use isolated Workbench HOME only.",
+      "python_dependencies": []
+    },
+    {
+      "name": "subagents",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/subagents",
+      "requirements": "Hermes delegation hooks and operator model backend. Optional filter requires compatible host; no host patch or model routing copied.",
+      "python_dependencies": []
+    },
+    {
+      "name": "tavily-plugin",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "MIT",
+      "channel": "upstream",
+      "url": "https://github.com/tavily-ai/tavily-hermes-plugin",
+      "subdir": ".",
+      "commit": "ac556341056dc903988f63d627d595e468f1cfa9",
+      "manifest_blob": "c443535424d4df080d84fcb1deaf1a592bf7d68b",
+      "catalog": "tavily-plugin",
+      "requirements": "Hosted Tavily MCP and your own TAVILY_API_KEY (or separately configured supported login); requires compatible Hermes MCP extra.",
+      "python_dependencies": [],
+      "root_notice": "notices/tavily-ai--tavily-hermes-plugin-ac556341.txt",
+      "upstream_file_count": 34,
+      "upstream_blobs_sha256": "c255066b1257dfa01ae02d33159d7d94c9c696bd31f752f0091c1a0e00465153"
+    },
+    {
+      "name": "web-yandex",
+      "state": "enabled",
+      "version": "1.0.0",
+      "license": "upstream repository terms (and nested notices)",
+      "channel": "upstream",
+      "url": "https://github.com/oshapovalovmail-dot/hermes-agent",
+      "subdir": "integrations/local-plugins/web-yandex",
+      "commit": "06791bdbba642ce7d1b159b6e98e78cb9ad014c3",
+      "manifest_blob": "fc726167e26d66b214cf63f076b6c5bba42e96dc",
+      "requirements": "Own Yandex Search API key and folder; optional operator HTTPS context endpoint.",
+      "python_dependencies": [
+        "httpx>=0.28.1,<1"
+      ],
+      "root_notice": "notices/oshapovalovmail-dot--hermes-agent-06791bdb.txt",
+      "upstream_file_count": 4,
+      "upstream_blobs_sha256": "7a13e79aa9970d05909ffe899441f70064920ac2894941e00bfa3657e3e1b4e4"
+    },
+    {
+      "name": "workflows",
+      "state": "enabled",
+      "version": "0.1.0",
+      "license": "owner-authored; no new license granted",
+      "channel": "packaged",
+      "path": "sources/workflows",
+      "requirements": "Node, subagents, own model backend; vendored pi-subagents 0.23.0. Review upstream provenance of progress.js before redistributing that file. No service/model run at installation.",
+      "python_dependencies": []
+    }
+  ],
+  "separate": {
+    "desktop-plugin": [
+      {
+        "name": "autorag",
+        "state": "installed-activation-unverified",
+        "owner": "autorag",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "plugin.js"
+        ]
+      },
+      {
+        "name": "board-insights",
+        "state": "installed-activation-unverified",
+        "owner": "board-insights",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "plugin.js"
+        ]
+      },
+      {
+        "name": "kanban-gantt",
+        "state": "installed-activation-unverified",
+        "owner": "kanban-gantt",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "gantt-core.js",
+          "graph-core.js",
+          "plugin.js",
+          "ws-core.js"
+        ]
+      },
+      {
+        "name": "memory-wiki",
+        "state": "installed-activation-unverified",
+        "owner": "memory-wiki",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "plugin.js"
+        ]
+      },
+      {
+        "name": "omh",
+        "state": "installed-activation-unverified",
+        "owner": "omh",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "plugin.js"
+        ]
+      },
+      {
+        "name": "quota",
+        "state": "installed-activation-unverified",
+        "owner": "quota",
+        "source_subdir": "desktop",
+        "paired_files": [
+          "plugin.js"
+        ]
+      }
+    ],
+    "plugin-skill": [
+      {
+        "name": "autorag:automate",
+        "state": "owner-disabled",
+        "owner": "autorag"
+      },
+      {
+        "name": "autorag:schedule",
+        "state": "owner-disabled",
+        "owner": "autorag"
+      },
+      {
+        "name": "autorag:search",
+        "state": "owner-disabled",
+        "owner": "autorag"
+      },
+      {
+        "name": "autorag:setup",
+        "state": "owner-disabled",
+        "owner": "autorag"
+      },
+      {
+        "name": "data-toolkit:analysis",
+        "state": "visible",
+        "owner": "data-toolkit"
+      },
+      {
+        "name": "hermes-teammates:teammates-report-problem",
+        "state": "owner-disabled",
+        "owner": "hermes-teammates"
+      },
+      {
+        "name": "hermes-teammates:teammates-workflow",
+        "state": "owner-disabled",
+        "owner": "hermes-teammates"
+      },
+      {
+        "name": "llm-wiki:work-with-wiki",
+        "state": "installed-not-visible",
+        "owner": "llm-wiki"
+      },
+      {
+        "name": "quota:quota-check",
+        "state": "visible",
+        "owner": "quota"
+      },
+      {
+        "name": "tavily-plugin:tavily-best-practices",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "tavily-plugin:tavily-crawl",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "tavily-plugin:tavily-extract",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "tavily-plugin:tavily-map",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "tavily-plugin:tavily-research",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "tavily-plugin:tavily-search",
+        "state": "visible",
+        "owner": "tavily-plugin"
+      },
+      {
+        "name": "workflows:workflow-patterns",
+        "state": "installed-not-visible",
+        "owner": "workflows"
+      }
+    ],
+    "provider-plugin": [
+      {
+        "name": "computer_use/cua",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/computer_use/cua/plugin.yaml",
+        "blob": "abf0826ff5d7df18f57e49d36f5f0197a11044a8",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "216219be8baaed1361045de6d0be94ba08fe00f5"
+      },
+      {
+        "name": "config_backends/remote",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/config_backends/remote/plugin.yaml",
+        "blob": "584428d6a28aaf3ca2daea6368b3125d0f8fc318",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "bc1f14d11e14f976afb455c88eebab7fc0d93c6b"
+      },
+      {
+        "name": "memory/byterover",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/memory/byterover/plugin.yaml",
+        "blob": "a813c34eb21f16995f11a7b53b67bf9dc7f66814",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "3daf6900e046b12b272116ff59c5e6385b618b2b"
+      },
+      {
+        "name": "memory/retaindb",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/memory/retaindb/plugin.yaml",
+        "blob": "743581cd1026cce68cec34ca88606d1a9f2a6278",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "3b3822dca58e07fdc52e29dc9ace67f66853fcc5"
+      },
+      {
+        "name": "model-providers/actual",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/actual/plugin.yaml",
+        "blob": "ab78164a568be526943c2eedb0aeb4e59c525f1c",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "4554fbcb08652741ee66e4985662abd72ea4da5f"
+      },
+      {
+        "name": "model-providers/ai-gateway",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/ai-gateway/plugin.yaml",
+        "blob": "252ca42ed6c1f8c115d95858ee4cbfdc23180f63",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "bc85bc785021a67746207832c476d611935c8403"
+      },
+      {
+        "name": "model-providers/alibaba",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/alibaba/plugin.yaml",
+        "blob": "08fcf50bf138b16817f74a6b3cfb38a30c7c18a1",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "b9bac67976ae8e4cafb2f846eaf3f7ad6bb12b19"
+      },
+      {
+        "name": "model-providers/alibaba-coding-plan",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/alibaba-coding-plan/plugin.yaml",
+        "blob": "a158f23d990007317e6c5837b18bd0226ba92034",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "0cc1b7eb601122806c9f952025191281c2b08fa6"
+      },
+      {
+        "name": "model-providers/anthropic",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/anthropic/plugin.yaml",
+        "blob": "7770a5ce850161cf4cd7d22e633a49ceec04fcfa",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "87daaa9a2e1f919b8c9390930e327f4b07887f47"
+      },
+      {
+        "name": "model-providers/arcee",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/arcee/plugin.yaml",
+        "blob": "8a12c5203362c8ca92e23f9e5049a0281a9b9fe4",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ba5062f36903e94363d30b45becadafe2ebe33bd"
+      },
+      {
+        "name": "model-providers/azure-foundry",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/azure-foundry/plugin.yaml",
+        "blob": "806e44d0b283a2324f7e1031e4969b68d1d92c73",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "9492aa29b0345ea27077453fb5b4125e1429958b"
+      },
+      {
+        "name": "model-providers/bedrock",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/bedrock/plugin.yaml",
+        "blob": "8516f29e4169e3b70613de97607b89ab11e7e7df",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ef9df7c203e54f3c3a46b28cb4cf00ecfef2a8af"
+      },
+      {
+        "name": "model-providers/commandcode",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/commandcode/plugin.yaml",
+        "blob": "9edf1b3fd1ac825bce1683a68da4e5cd2459ecf9",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ab841980c166f21ff69610963a6f630a9a3e7496"
+      },
+      {
+        "name": "model-providers/custom",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/custom/plugin.yaml",
+        "blob": "9784ee2028bd5b98f39d1b183bb3d70d5838529f",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "33d5422196e370ad073e0de343999dfca4675866"
+      },
+      {
+        "name": "model-providers/deepinfra",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/deepinfra/plugin.yaml",
+        "blob": "595a6f8f8448dcb4398b775679b3fca44b72074c",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "2aaaea35558d3371ca11dbd42ea15b6dc2e99b4a"
+      },
+      {
+        "name": "model-providers/deepseek",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/deepseek/plugin.yaml",
+        "blob": "0a33565f800cba81e49ba6594ef55d21e9780d5d",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "dff35c5acc1f5bbfa22788dba32a7cc363da6d91"
+      },
+      {
+        "name": "model-providers/fireworks",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/fireworks/plugin.yaml",
+        "blob": "dc9b25602ac07f4e365f7e9371f6cfb7199fd502",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "703210bcfb0b8890e28f3c72899e25ea54ffd3ba"
+      },
+      {
+        "name": "model-providers/gemini",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/gemini/plugin.yaml",
+        "blob": "cd586b08868c8ff11b71ee79931f420ff4894911",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "4dce080b35b70d6d15fafc990dc5cf6e906c24db"
+      },
+      {
+        "name": "model-providers/gmi",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/gmi/plugin.yaml",
+        "blob": "95f61a48a09e05d5e7a28ef2fbb94b9bd1284408",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "916d1b388b4a5f877008463d51176392b11e1627"
+      },
+      {
+        "name": "model-providers/huggingface",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/huggingface/plugin.yaml",
+        "blob": "006368718bb9a00ffb504dc3a0e8ca139514e8d8",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "4fd84c326c52b405d0eecff32d4403dd173fa3cb"
+      },
+      {
+        "name": "model-providers/kilocode",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/kilocode/plugin.yaml",
+        "blob": "96ea65440a5ffb88a62d171cf377c66a235df9c5",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "1f687b735f0401d66273a706d1cdb5d90399140f"
+      },
+      {
+        "name": "model-providers/kimi-coding",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/kimi-coding/plugin.yaml",
+        "blob": "c9f00d87b60bad5b2ea84ecd0d38ae0cef21297a",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "0463d0ee751e6c57ff0a64aec4a9193e0cba7d40"
+      },
+      {
+        "name": "model-providers/lmstudio",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/lmstudio/plugin.yaml",
+        "blob": "abece9d3a5b12cb40e4922169a9f3551e49191ce",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ab42cbf76e970300ba073159903ec57d1a19a547"
+      },
+      {
+        "name": "model-providers/meta-ai",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/meta-ai/plugin.yaml",
+        "blob": "f7da2c3a3f2ed483b28a3eedb52ae66c7e4388b3",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "1ac909614a42ca3e4032b30a0b4aa7b93a2aa699"
+      },
+      {
+        "name": "model-providers/minimax",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/minimax/plugin.yaml",
+        "blob": "131eb7de16c97d1d70a834d05019b32a119de84d",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "42c503d992e4ed7ac38a6aa26b4c1eb09e97cb9f"
+      },
+      {
+        "name": "model-providers/nebius-token-factory",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/nebius-token-factory/plugin.yaml",
+        "blob": "b76acc5d558dae59757fa8e74ccecbdb608b69b2",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "60fc08f3faae10bced1404ab2860421b2f51dda9"
+      },
+      {
+        "name": "model-providers/nous",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/nous/plugin.yaml",
+        "blob": "6ec234b6ee64921ee89af2bdaa49a5a987a00d27",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "a7f847f53a4bab48e68ca05a144f40d63ac53e8e"
+      },
+      {
+        "name": "model-providers/novita",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/novita/plugin.yaml",
+        "blob": "d572ca616bddf45e07e772b8e7ebae5f6337ca64",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "84b9989553c0b64c95410e74e61f99138c066f5d"
+      },
+      {
+        "name": "model-providers/nvidia",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/nvidia/plugin.yaml",
+        "blob": "dd548034ccee0b4e122ef8252701089ea6cb575d",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "f60356dd3e575c5269a43c1ea2c6812e297a2826"
+      },
+      {
+        "name": "model-providers/ollama-cloud",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/ollama-cloud/plugin.yaml",
+        "blob": "a0ebed67a95d3bcd86fdacd25d5372ef663b14f5",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ae9af44e2a407029355376e12e117a975fae5f27"
+      },
+      {
+        "name": "model-providers/openai-codex",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/openai-codex/plugin.yaml",
+        "blob": "f397cd4f6f30e1533c8779c46d129ef238186d24",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "4e72f011be9f746bc906a0e0074ae49a03ecb171"
+      },
+      {
+        "name": "model-providers/opencode-zen",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/opencode-zen/plugin.yaml",
+        "blob": "23a3c90da19ca8548cc74dad704c285a47da3746",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "e90df8f9df1321c25ded7c7d0dd3cd09e9d231fd"
+      },
+      {
+        "name": "model-providers/openrouter",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/openrouter/plugin.yaml",
+        "blob": "e278aadaeef4e75d3e05324b92bbaae886403fd7",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "a7c81a4936a88af53c4cf15f68fb1cc3b04e1943"
+      },
+      {
+        "name": "model-providers/qwen-oauth",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/qwen-oauth/plugin.yaml",
+        "blob": "2cecc002fef994fb75faf92934971282f4745dd9",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "38c3dfb65e27259ff0be1302264bd6e307d0e3f1"
+      },
+      {
+        "name": "model-providers/router",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/router/plugin.yaml",
+        "blob": "aeb6dbbb41452786bab1c25cfc342335be7e63af",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "3c5f23a66f3a270b8d9d008a980cf32764218b0e"
+      },
+      {
+        "name": "model-providers/solstice",
+        "state": "available",
+        "version": "0.1.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/solstice/plugin.yaml",
+        "blob": "be943a1fc4f13da67bfca47eb65e61dbfcc06b81",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "48c71a80f47d994e622e3453b0d3e7ae3c5a5002"
+      },
+      {
+        "name": "model-providers/stepfun",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/stepfun/plugin.yaml",
+        "blob": "36d3e36f01ec2f42fa585ff840fca6b470a051e4",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "8421634b30234f15f6b1c9c84daba4f26926e05a"
+      },
+      {
+        "name": "model-providers/tencent-tokenhub",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/tencent-tokenhub/plugin.yaml",
+        "blob": "9765c40433f70944ee48087cf17e7c40d4961418",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "ac5f1465e6431c1b2cdc129094a16cad8ab2d036"
+      },
+      {
+        "name": "model-providers/upstage",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/upstage/plugin.yaml",
+        "blob": "4de2e3d4ba5d1074e991cae23c6847840d1a1181",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "51cb0b4ad36a6853569525703ffeced3d8b78723"
+      },
+      {
+        "name": "model-providers/vertex",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/vertex/plugin.yaml",
+        "blob": "eb7479a0b58a98f6d5923beef543e45d297f2639",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "336b1d893d9e2993cac43e5ae842b976f774f7f5"
+      },
+      {
+        "name": "model-providers/xai",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/xai/plugin.yaml",
+        "blob": "10e884e8a109b58841b909956cd29cc3cca5c12a",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "83a19fe3896d831ad753c268b5f6f87ba875cb87"
+      },
+      {
+        "name": "model-providers/xiaomi",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/xiaomi/plugin.yaml",
+        "blob": "e422fb701352ea121e365a4a939aa2da4b35b050",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "956df491af0f1b3e9b0ff4d4734be03003f7f07c"
+      },
+      {
+        "name": "model-providers/zai",
+        "state": "available",
+        "version": "1.0.0",
+        "license": "MIT",
+        "channel": "host",
+        "manifest": "plugins/model-providers/zai/plugin.yaml",
+        "blob": "a7bf3736eb6f20d04cee740af5a1113d72489420",
+        "requirements": "Availability is not configuration: supply your own service/account/credentials where required by this upstream provider.",
+        "tree": "a250170a43912045aad4b04420c4ff3deaf2fc09"
+      }
+    ],
+    "service": [
+      {
+        "name": "gateway",
+        "state": "registered-count-1",
+        "installed_by_pack": false
+      },
+      {
+        "name": "recall",
+        "state": "registered-count-1",
+        "installed_by_pack": false
+      },
+      {
+        "name": "vendor-hermes-unclassified",
+        "state": "registered-count-1",
+        "installed_by_pack": false
+      }
+    ]
+  },
+  "source_provenance": {
+    "codemode": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "codemode",
+      "tree": "296acbe620937157547a7bb725da67a3c57e7bb9"
+    },
+    "subagents": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "subagents",
+      "tree": "d47de026980d65e598796d6cb1a7bb8fcf124473"
+    },
+    "recall": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "recall/plugin",
+      "tree": "11b59f2cec44b8365378c77749e1acf7a5cb142c"
+    },
+    "soul-composer": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "soulcomposer",
+      "tree": "0ea3a7a3020c590e171bac69272cbe6a4bb6022b"
+    },
+    "workflows": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "workflows",
+      "tree": "15f0906b914cff89a38315768bab0cb5420326b8"
+    },
+    "heartbeat": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "heartbeat",
+      "tree": "6030c5082c168479bce59b9c908d3571189f127c"
+    },
+    "cache-monitor": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "cache-monitor",
+      "tree": "ca481f0bb831446fd85efcd61576bb29d699d982"
+    },
+    "keep-going": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "keep-going",
+      "tree": "9e1428e14406009415aac1053c8d1ae7ad4c310d"
+    },
+    "data-toolkit": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "data-toolkit",
+      "tree": "f98a2b7288b2b659e4ca4628d65b9ac79ca8d9cf"
+    },
+    "recall-service": {
+      "commit": "d0d354d708136a14ce6913d71c4fd4bba217b660",
+      "source_directory": "recall/hermes_recall",
+      "tree": "7706c565b26fcd8f61c576e7736e59e930dbde08"
+    },
+    "llm-wiki": {
+      "commit": "c5bdf680393a429d857397d03918406c2d0260cf",
+      "source_directory": "hermes/llm-wiki",
+      "working_tree_edits": []
+    },
+    "memory-bank": {
+      "commit": "e62fdcf438c7ebc1f2e6de5b63791da6f26ec238",
+      "source_directory": "hermes/memory-bank",
+      "working_tree_edits": [
+        "__init__.py",
+        "team_guard.py",
+        "scripts/mb-rules.sh",
+        "rules/RULES.md"
+      ]
+    }
+  }
+}

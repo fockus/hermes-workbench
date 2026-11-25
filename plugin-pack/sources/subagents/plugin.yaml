@@ -1,0 +1,4 @@
+name: subagents
+version: "0.1.0"
+description: "Typed subagents, orchestrator mode, global limits, names, short results and messaging on top of stock delegate_task."
+author: fockus
